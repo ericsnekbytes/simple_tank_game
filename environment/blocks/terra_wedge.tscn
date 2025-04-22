@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://civcotkfpxj10"]
+
+[ext_resource type="ArrayMesh" uid="uid://bo0cyf3lui7fp" path="res://art/blocks/wegde_wedge.res" id="1_44n8y"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hj5xy"]
+points = PackedVector3Array(0.5, 1, -0.5, 0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 1, -0.5, -0.5, 0, 0.5, -0.5, 0, -0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h0slw"]
+albedo_color = Color(0.988281, 0.362462, 0.0231628, 1)
+
+[node name="TerraCube" type="StaticBody3D"]
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_hj5xy")
+
+[node name="ModelPivot" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ModelPivot"]
+material_override = SubResource("StandardMaterial3D_h0slw")
+mesh = ExtResource("1_44n8y")
+skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/TerraCube")

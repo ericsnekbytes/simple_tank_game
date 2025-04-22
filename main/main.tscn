@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpd8l0a2hfbge"]
+
+[ext_resource type="Script" uid="uid://do6n7w8d4fs2k" path="res://main/main.gd" id="1_b3021"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_b3021")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FpsLabel" type="Label" parent="UI"]
+visible = false
+top_level = true
+z_index = 4096
+layout_mode = 1
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 64.0
+offset_bottom = 47.0
+text = "FPS: -1"
+
+[node name="ScenePivot" type="Node" parent="."]
