@@ -35,7 +35,7 @@ script = ExtResource("1_f0njb")
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
-transform = Transform3D(1, 0, 0, 0, 0.630405, 0.776267, 0, -0.776267, 0.630405, 0, 3.63661, 3.0534)
+transform = Transform3D(1, 7.10543e-15, -3.55271e-15, 0, 0.630405, 0.776267, 0, -0.776267, 0.630405, 0, 7.25149, 3.0534)
 
 [node name="ModelPivot" type="Node3D" parent="."]
 

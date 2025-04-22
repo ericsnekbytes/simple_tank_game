@@ -8,6 +8,7 @@ var global_pivot = null:
 #var debug_on = true
 var debug_on = false
 var rng = RandomNumberGenerator.new()
+var MAX_PCOUNT = 4
 
 
 # Called when the node enters the scene tree for the first time.
