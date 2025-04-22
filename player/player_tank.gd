@@ -5,6 +5,7 @@ extends CharacterBody3D
 var player_id = -1
 var start_process = false
 #@onready var player_cam = $CameraPivot/Camera3D
+@onready var cannon = $ModelPivot/CannonPivot
 # ....
 var GRAVITY_BASE = Vector3(0, -9.8, 0)
 var MAX_THRUST = 10
@@ -75,10 +76,11 @@ func _physics_process(delta: float) -> void:
 
 		# Do rotations, check for and clamp overrotations
 		transform = transform.orthonormalized()
-		#var planned_pitch = player_cam.transform.rotated(player_cam.basis.x, look_pitch * delta)
-		#if planned_pitch.basis.y.y > sin(PI / 90.0): # planned_pitch.basis.z.y <= 0 and 
-			#player_cam.rotate(player_cam.basis.x, look_pitch * delta)
-		#player_cam.rotate(Vector3(0, 1, 0), look_spin * delta)
+		# Do cannon rotation if needed (for mortar shells)
+		if false:  # TODO finish arcing mortar gun
+			var planned_pitch = cannon.transform.rotated(cannon.basis.x, look_pitch * delta)
+			if planned_pitch.basis.y.y > sin(PI / 90.0): # planned_pitch.basis.z.y <= 0 and 
+				cannon.rotate(cannon.basis.x * -1, look_pitch * delta)
 		rotate(Vector3(0, 1, 0), look_spin * delta)
 
 		# Sum up motion  # TODO

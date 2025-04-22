@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c0wpedxn5d6fg"]
+[gd_scene load_steps=10 format=3 uid="uid://c0wpedxn5d6fg"]
 
 [ext_resource type="Script" uid="uid://eoodsmq3plg4" path="res://player/player_tank.gd" id="1_f0njb"]
 
@@ -15,6 +15,9 @@ size = Vector3(0.5, 1, 2)
 top_radius = 0.2
 bottom_radius = 0.2
 height = 1.5
+
+[sub_resource type="BoxMesh" id="BoxMesh_cfc1i"]
+size = Vector3(0.5, 0.5, 0.75)
 
 [sub_resource type="BoxMesh" id="BoxMesh_84av1"]
 size = Vector3(1, 0.5, 1)
@@ -56,9 +59,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0.5, 0)
 mesh = SubResource("BoxMesh_vgk1m")
 skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/PlayerTank")
 
-[node name="cannon" type="MeshInstance3D" parent="ModelPivot"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.2, 0.5)
+[node name="CannonPivot" type="Node3D" parent="ModelPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+
+[node name="cannon" type="MeshInstance3D" parent="ModelPivot/CannonPivot"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.5)
 mesh = SubResource("CylinderMesh_vgk1m")
+skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/PlayerTank/ModelPivot")
+
+[node name="block" type="MeshInstance3D" parent="ModelPivot/CannonPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.125)
+mesh = SubResource("BoxMesh_cfc1i")
 
 [node name="turret" type="MeshInstance3D" parent="ModelPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
