@@ -9,6 +9,9 @@ var player_id := -1
 var start_process := false
 #@onready var player_cam = $CameraPivot/Camera3D
 @onready var cannon = $ModelPivot/CannonPivot
+@onready var cannon_pivot = $ModelPivot/CannonPivot
+@onready var cannon_spawn_pos = cannon_pivot.global_position
+@onready var cannon_spawn_basis = cannon_pivot.basis
 # ....
 var enable_health_regen = true
 @onready var health_regen_wait = $HealthRegenWait  # Timer to start health regen
@@ -52,9 +55,11 @@ var MAX_SPIN := PI
 var MAX_PITCH := PI
 # ....
 @onready var gun_rocket = $WeaponPivot/GunRocket
-@onready var gun_order = [gun_rocket.weapon_id]
+@onready var gun_mortar = $WeaponPivot/GunMortar
+@onready var gun_order = [gun_rocket.weapon_id, gun_mortar.weapon_id]
 @onready var guns = {
 	gun_rocket.weapon_id: gun_rocket,
+	gun_mortar.weapon_id: gun_mortar,
 }
 var active_weapon_index = 0:
 	set(value):
@@ -69,6 +74,7 @@ var spawn_basis := Basis()
 func _ready() -> void:
 	# Configure guns
 	gun_rocket.owning_player = self
+	gun_mortar.owning_player = self
 	sync_weapon()
 
 	# Health UI
@@ -86,9 +92,9 @@ func set_weapon_order(order):
 
 
 func prepare_weapon_change():
-	pass
-	#if gun_order[active_weapon_index] == gun_grav.weapon_id:
-		#gun_grav.force_drop()
+	if gun_order[active_weapon_index] == gun_mortar.weapon_id:
+		#cannon_pivot.global_position = cannon_spawn_pos
+		cannon_pivot.basis = cannon_spawn_basis
 
 
 func sync_weapon():
@@ -105,6 +111,10 @@ func sync_weapon():
 			if gun.is_in_group('gun_has_ui'):
 				gun.set_ui_visible(false)
 			gun.start_process = false
+
+
+func get_cannon_firing_data():
+	return {'global_pos': cannon_pivot.global_position, 'global_basis': cannon_pivot.global_basis}
 
 
 func _on_health_regen_uptick_timeout() -> void:
@@ -133,18 +143,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event.is_action('shoot'):
 			if Input.is_action_just_pressed('shoot'):
 				print('foobar %s' % self)
+		if event.is_pressed() and event.is_action('swap_gun'):
+			active_weapon_index += 1
 
 
 func _physics_process(delta: float) -> void:
 	if start_process:
 		var current_time := Time.get_ticks_msec()
-
-		#if enable_health_regen:
-			#if health_regen_active and health < 100 and (current_time - last_regen_timestamp > health_regen_period):
-				#health += health_regen_increment
-				#last_regen_timestamp = current_time
-				#if health >= 100:
-					#health_regen_active = false
 
 		var start_velocity := velocity
 		var motion_vector := Vector3.ZERO
@@ -201,9 +206,9 @@ func _physics_process(delta: float) -> void:
 		# Do rotations, check for and clamp overrotations
 		transform = transform.orthonormalized()
 		# Do cannon rotation if needed (for mortar shells)
-		if false:  # TODO finish arcing mortar gun
+		if gun_order[active_weapon_index] == gun_mortar.weapon_id:  # TODO finish arcing mortar gun
 			var planned_pitch = cannon.transform.rotated(cannon.basis.x, look_pitch * delta)
-			if planned_pitch.basis.y.y > sin(PI / 90.0): # planned_pitch.basis.z.y <= 0 and 
+			if planned_pitch.basis.y.y > sin(PI / 45): # planned_pitch.basis.z.y <= 0 and 
 				cannon.rotate(cannon.basis.x * -1, look_pitch * delta)
 		rotate(Vector3(0, 1, 0), look_spin * delta)
 

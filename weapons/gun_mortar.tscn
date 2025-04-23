@@ -1,0 +1,120 @@
+[gd_scene load_steps=4 format=3 uid="uid://bflnfy31fb7gf"]
+
+[ext_resource type="Script" uid="uid://cg4mbvbm3ymuv" path="res://weapons/gun_mortar.gd" id="1_0kv2k"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_dkscp"]
+top_radius = 0.11
+bottom_radius = 0.11
+height = 0.22
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_mcssg"]
+top_radius = 0.07
+bottom_radius = 0.07
+height = 0.6
+
+[node name="GunMortar" type="Node3D" groups=["gun_has_ui"]]
+script = ExtResource("1_0kv2k")
+
+[node name="FiringTimer" type="Timer" parent="."]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.0434325, 0, 0)
+mesh = SubResource("CylinderMesh_dkscp")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.182329, 0, 0)
+mesh = SubResource("CylinderMesh_mcssg")
+
+[node name="AmmoTimer" type="Timer" parent="."]
+wait_time = 1.667
+autostart = true
+
+[node name="HUD" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="HUD"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 744.0
+offset_top = 408.0
+offset_right = 752.0
+offset_bottom = 416.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Reticule" type="Control" parent="HUD"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Pip1" type="TextureRect" parent="HUD/Reticule"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.5
+offset_top = -47.5
+offset_right = 47.5
+offset_bottom = 47.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Pip2" type="TextureRect" parent="HUD/Reticule"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.5
+offset_top = -47.5
+offset_right = 47.5
+offset_bottom = 47.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Pip3" type="TextureRect" parent="HUD/Reticule"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.5
+offset_top = -47.5
+offset_right = 47.5
+offset_bottom = 47.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Center" type="TextureRect" parent="HUD/Reticule"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.5
+offset_top = -47.5
+offset_right = 47.5
+offset_bottom = 47.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="timeout" from="FiringTimer" to="." method="fire"]
+[connection signal="timeout" from="AmmoTimer" to="." method="_on_ammo_timer_timeout"]

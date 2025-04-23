@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://c0wpedxn5d6fg"]
+[gd_scene load_steps=16 format=3 uid="uid://c0wpedxn5d6fg"]
 
 [ext_resource type="Script" uid="uid://eoodsmq3plg4" path="res://player/player_tank.gd" id="1_f0njb"]
 [ext_resource type="PackedScene" uid="uid://8lbbbwe2ufow" path="res://weapons/gun_rocket.tscn" id="2_vgk1m"]
 [ext_resource type="PackedScene" uid="uid://cir51a4c2f32b" path="res://art/cat.glb" id="3_84av1"]
+[ext_resource type="PackedScene" uid="uid://bflnfy31fb7gf" path="res://weapons/gun_mortar.tscn" id="3_v5163"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_f0njb"]
 size = Vector3(1, 0.5, 2)
@@ -95,6 +96,9 @@ mesh = SubResource("BoxMesh_84av1")
 [node name="WeaponPivot" type="Node3D" parent="."]
 
 [node name="GunRocket" parent="WeaponPivot" instance=ExtResource("2_vgk1m")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1.26318, 0.790138)
+
+[node name="GunMortar" parent="WeaponPivot" instance=ExtResource("3_v5163")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1.26318, 0.790138)
 
 [node name="ColliderTrack" type="CollisionShape3D" parent="."]
