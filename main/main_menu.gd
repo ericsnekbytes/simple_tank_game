@@ -24,3 +24,7 @@ func _input(event):
 	if event.is_action('ui_accept'):
 		print('Mainmenu accept')
 		get_viewport().gui_get_focus_owner().pressed.emit()
+
+
+func _on_exit_btn_pressed() -> void:
+	get_tree().quit()
