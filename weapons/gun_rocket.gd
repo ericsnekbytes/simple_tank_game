@@ -16,13 +16,13 @@ var firing = false:  # There's no device-specific is_action_just_pressed, so we 
 		if value != firing:
 			firing = value
 			print('Firing %s' % value)
-var rounds_per_min = 240
+var rounds_per_min = 150
 var last_fire_timestamp = 0
 var fire_cooldown = 60.0 / rounds_per_min
 var enable_auto_fire = true
 # ....
 @onready var ammo_timer = $AmmoTimer
-var ammo_enabled = true
+var ammo_enabled = false
 var ammo_count = 3:
 	set(value):
 		if value < 0:
