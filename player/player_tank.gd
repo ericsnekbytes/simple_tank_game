@@ -135,6 +135,10 @@ func take_hit(damage: float):
 	#hit_by.emit(self, shooter_id)
 
 
+func hide_gui():
+	$Control.hide()
+
+
 func _unhandled_input(event: InputEvent) -> void:
 	var current_time = Time.get_ticks_msec()
 

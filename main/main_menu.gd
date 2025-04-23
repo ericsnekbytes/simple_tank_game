@@ -7,6 +7,9 @@ signal request_scene(scene_id, args)
 func _ready():
 	GameData.global_pivot = $SubViewportContainer/Level/GlobalPivot
 	$MarginContainer/VBoxContainer/SinglePlayerBtn.grab_focus()
+	
+	for player in [$SubViewportContainer/Level/PlayerTank, $SubViewportContainer/Level/PlayerTank2]:
+		player.hide_gui()
 
 
 func _on_single_player_btn_pressed():
