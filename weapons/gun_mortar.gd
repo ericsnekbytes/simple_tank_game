@@ -63,7 +63,7 @@ func fire():
 				bullet.global_position = firing_data['global_pos'] + (bullet.basis.z * 3)
 			#bullet.global_basis = bullet_basis
 			#bullet.global_position = Vector3(0, -.5, 0) + global_position + bullet_basis.z#.rotated(global_basis.y.normalized(), PI) * 3
-			bullet.velocity = bullet.basis.z*bullet.MAX_SPEED#.rotated(global_basis.y.normalized(), PI) * bullet.MAX_SPEED
+			bullet.linear_velocity = bullet.basis.z*bullet.MAX_SPEED#.rotated(global_basis.y.normalized(), PI) * bullet.MAX_SPEED
 			ammo_count -= 1
 			ammo_timer.start()
 
