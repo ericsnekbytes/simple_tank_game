@@ -20,7 +20,7 @@ var in_motion = true  # We stop motion and hide the rocket to do a flash/detonat
 @onready var impact_timer = $ImpactTimer
 @onready var detonate_flash = $DetonationFlash
 #@onready var sparks = $DetonateSparks
-var damage = 55
+var damage = 33
 
 
 func _ready():

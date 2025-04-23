@@ -811,3 +811,4 @@ environment = SubResource("Environment_gdc7e")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Env"]
 transform = Transform3D(1, 0, 0, 0, 0.658033, 0.752989, 0, -0.752989, 0.658033, 0, 8, 0)
+shadow_enabled = true

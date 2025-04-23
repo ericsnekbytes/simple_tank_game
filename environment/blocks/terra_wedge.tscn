@@ -6,7 +6,7 @@
 points = PackedVector3Array(0.5, 1, -0.5, 0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 1, -0.5, -0.5, 0, 0.5, -0.5, 0, -0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h0slw"]
-albedo_color = Color(0.988281, 0.362462, 0.0231628, 1)
+albedo_color = Color(0.0231628, 0.275752, 0.988281, 1)
 
 [node name="TerraCube" type="StaticBody3D"]
 
