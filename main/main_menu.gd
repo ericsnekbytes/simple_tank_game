@@ -14,7 +14,7 @@ func _on_single_player_btn_pressed():
 
 
 func _on_two_player_btn_pressed():
-	request_scene.emit('FREE_FOR_ALL', 4)
+	request_scene.emit('FREE_FOR_ALL', 3)
 
 
 func _input(event):

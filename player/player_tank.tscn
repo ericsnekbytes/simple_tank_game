@@ -1,6 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://c0wpedxn5d6fg"]
+[gd_scene load_steps=15 format=3 uid="uid://c0wpedxn5d6fg"]
 
 [ext_resource type="Script" uid="uid://eoodsmq3plg4" path="res://player/player_tank.gd" id="1_f0njb"]
+[ext_resource type="PackedScene" uid="uid://8lbbbwe2ufow" path="res://weapons/gun_rocket.tscn" id="2_vgk1m"]
+[ext_resource type="PackedScene" uid="uid://cir51a4c2f32b" path="res://art/cat.glb" id="3_84av1"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_f0njb"]
 size = Vector3(1, 0.5, 2)
@@ -26,7 +28,22 @@ size = Vector3(1, 0.5, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f0njb"]
 
-[node name="PlayerTank" type="CharacterBody3D"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cfc1i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_84av1"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5163"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 0, 0, 1)
+corner_detail = 1
+
+[node name="PlayerTank" type="CharacterBody3D" groups=["player"]]
+collision_layer = 2
+collision_mask = 3
 floor_constant_speed = true
 floor_max_angle = 1.0472
 script = ExtResource("1_f0njb")
@@ -37,7 +54,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 transform = Transform3D(1, 7.10543e-15, -3.55271e-15, 0, 0.630405, 0.776267, 0, -0.776267, 0.630405, 0, 7.25149, 3.0534)
 
-[node name="ModelPivot" type="Node3D" parent="."]
+[node name="ModelPivot" type="Node3D" parent="." groups=["player"]]
 
 [node name="body" type="MeshInstance3D" parent="ModelPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -75,6 +92,11 @@ mesh = SubResource("BoxMesh_cfc1i")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 mesh = SubResource("BoxMesh_84av1")
 
+[node name="WeaponPivot" type="Node3D" parent="."]
+
+[node name="GunRocket" parent="WeaponPivot" instance=ExtResource("2_vgk1m")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1.26318, 0.790138)
+
 [node name="ColliderTrack" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.5, 0.5, 0)
 shape = SubResource("CapsuleShape3D_vgk1m")
@@ -94,3 +116,68 @@ shape = SubResource("CapsuleShape3D_vgk1m")
 [node name="ColliderBody" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_f0njb")
+
+[node name="cat" parent="." instance=ExtResource("3_84av1")]
+transform = Transform3D(-0.129904, 0, 0.075, 0, 0.15, 0, -0.075, 0, -0.129904, 0.587403, 1.17926, -0.635939)
+
+[node name="HealthRegenWait" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true
+
+[node name="HealthRegenUptick" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HealthBar" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="HealthFill" type="ProgressBar" parent="Control/HealthBar"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -159.0
+offset_top = -40.0
+offset_right = -31.0
+offset_bottom = -28.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxEmpty_cfc1i")
+theme_override_styles/fill = SubResource("StyleBoxFlat_84av1")
+value = 50.0
+show_percentage = false
+
+[node name="HealthScale" type="ProgressBar" parent="Control/HealthBar/HealthFill"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -4.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_v5163")
+show_percentage = false
+
+[connection signal="timeout" from="HealthRegenWait" to="." method="_on_health_regen_wait_timeout"]
+[connection signal="timeout" from="HealthRegenUptick" to="." method="_on_health_regen_uptick_timeout"]
