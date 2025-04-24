@@ -90,3 +90,8 @@ func end_game():
 
 func _physics_process(delta: float) -> void:
 	InputHandler.poll_for_devices()
+
+
+func _on_killbox_body_entered(body: Node3D) -> void:
+	if body.is_in_group('player'):
+		body.take_hit(105)

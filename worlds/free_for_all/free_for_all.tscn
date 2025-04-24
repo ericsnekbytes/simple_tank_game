@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3gglys48pxon"]
+[gd_scene load_steps=9 format=3 uid="uid://b3gglys48pxon"]
 
 [ext_resource type="Script" uid="uid://djjkocurjo8dk" path="res://worlds/free_for_all/free_for_all.gd" id="1_cw6gg"]
 [ext_resource type="PackedScene" uid="uid://ch53jvswgclw3" path="res://environment/blocks/terra_cube.tscn" id="2_ms0pe"]
 [ext_resource type="PackedScene" uid="uid://civcotkfpxj10" path="res://environment/blocks/terra_wedge.tscn" id="3_gkx6j"]
 [ext_resource type="PackedScene" uid="uid://c0wpedxn5d6fg" path="res://player/player_tank.tscn" id="4_www3a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_www3a"]
+size = Vector3(1000, 4, 1000)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_www3a"]
 sky_top_color = Color(0.227451, 0.458824, 1, 1)
@@ -804,6 +807,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 11.5)
 [node name="TerraCube12" parent="Level" instance=ExtResource("3_gkx6j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, 2.5)
 
+[node name="Killbox" type="Area3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Killbox"]
+shape = SubResource("BoxShape3D_www3a")
+
 [node name="Env" type="Node3D" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Env"]
@@ -812,3 +822,5 @@ environment = SubResource("Environment_gdc7e")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Env"]
 transform = Transform3D(1, 0, 0, 0, 0.658033, 0.752989, 0, -0.752989, 0.658033, 0, 8, 0)
 shadow_enabled = true
+
+[connection signal="body_entered" from="Level/Killbox" to="." method="_on_killbox_body_entered"]
