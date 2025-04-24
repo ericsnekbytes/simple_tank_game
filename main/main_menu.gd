@@ -17,6 +17,10 @@ func _on_single_player_btn_pressed():
 
 
 func _on_two_player_btn_pressed():
+	request_scene.emit('FREE_FOR_ALL', 2)
+
+
+func _on_three_player_btn_pressed() -> void:
 	request_scene.emit('FREE_FOR_ALL', 3)
 
 
