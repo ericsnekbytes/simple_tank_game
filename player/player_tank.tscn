@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c0wpedxn5d6fg"]
+[gd_scene load_steps=18 format=3 uid="uid://c0wpedxn5d6fg"]
 
 [ext_resource type="Script" uid="uid://eoodsmq3plg4" path="res://player/player_tank.gd" id="1_f0njb"]
 [ext_resource type="PackedScene" uid="uid://8lbbbwe2ufow" path="res://weapons/gun_rocket.tscn" id="2_vgk1m"]
@@ -28,6 +28,14 @@ size = Vector3(1, 0.5, 1)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vgk1m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f0njb"]
+
+[sub_resource type="Gradient" id="Gradient_v5163"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cfc1i"]
+gradient = SubResource("Gradient_v5163")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cfc1i"]
 
@@ -131,7 +139,7 @@ one_shot = true
 [node name="HealthRegenUptick" type="Timer" parent="."]
 wait_time = 0.5
 
-[node name="Control" type="Control" parent="."]
+[node name="Hud" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -139,7 +147,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HealthBar" type="Control" parent="Control"]
+[node name="EffectIndicator" type="TextureRect" parent="Hud"]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -256.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("GradientTexture2D_cfc1i")
+
+[node name="EffectTimer" type="Timer" parent="Hud/EffectIndicator"]
+wait_time = 0.65
+one_shot = true
+
+[node name="HealthBar" type="Control" parent="Hud"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -149,7 +173,7 @@ anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="HealthFill" type="ProgressBar" parent="Control/HealthBar"]
+[node name="HealthFill" type="ProgressBar" parent="Hud/HealthBar"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -167,7 +191,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_84av1")
 value = 50.0
 show_percentage = false
 
-[node name="HealthScale" type="ProgressBar" parent="Control/HealthBar/HealthFill"]
+[node name="HealthScale" type="ProgressBar" parent="Hud/HealthBar/HealthFill"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0

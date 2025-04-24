@@ -48,6 +48,10 @@ var health: float = 100.0:
 		
 		#print("Set health " + str(new_value))
 # ....
+@onready var effect_timer = $Hud/EffectIndicator/EffectTimer
+@export var effect_curve: Curve
+@onready var effect_indicator = $Hud/EffectIndicator
+# ....
 var GRAVITY_BASE := Vector3(0, -9.8, 0)
 var MAX_THRUST := 10
 var MAX_SPEED := 10
@@ -82,8 +86,27 @@ func _ready() -> void:
 	health_changed.emit(health)
 
 
+func update_hud():
+	if not effect_timer.is_stopped():
+		effect_indicator.show()
+		effect_indicator.self_modulate.a = 1.0 - ((effect_timer.wait_time - effect_timer.time_left) / effect_timer.wait_time)
+	else:
+		effect_indicator.hide()
+
+
+func show_effect_indicator(color_string=null):
+	print('Show effect %s' % Time.get_ticks_msec())
+	effect_timer.start()
+	if color_string != null:
+		var color = Color(color_string)
+		var clear_variant = Color(color)
+		clear_variant.a = 0
+		effect_indicator.texture.gradient.set_color(0, color)
+		effect_indicator.texture.gradient.set_color(1, clear_variant)
+
+
 func update_health_label(value: float) -> void:
-	$Control/HealthBar/HealthFill.value = value
+	$Hud/HealthBar/HealthFill.value = value
 
 
 func set_weapon_order(order):
@@ -128,6 +151,7 @@ func _on_health_regen_wait_timeout() -> void:
 func take_hit(damage: float):
 	health -= damage
 	print('%s take hit %s' % [self, damage])
+	show_effect_indicator()
 	#var hit_direction = 1.0 * transform.basis.y.signed_angle_to(hit_position - $Pivot/Camera3D.global_position, transform.basis.z)
 	#indicate_damaged.emit(hit_direction)
 
@@ -136,7 +160,7 @@ func take_hit(damage: float):
 
 
 func hide_gui():
-	$Control.hide()
+	$Hud.hide()
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -227,4 +251,4 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		#player_cam.global_position = global_position + Vector3(0, 1.65, 0)
 
-		#update_hud()
+		update_hud()
