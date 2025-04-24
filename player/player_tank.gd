@@ -133,6 +133,7 @@ func sync_weapon():
 			if gun.is_in_group('gun_has_ui'):
 				gun.set_ui_visible(true)
 		else:
+			gun.stop()
 			gun.hide()
 			if gun.is_in_group('gun_has_ui'):
 				gun.set_ui_visible(false)

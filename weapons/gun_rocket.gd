@@ -95,6 +95,11 @@ func set_ui_visible(state):
 		$HUD.hide()
 
 
+func stop():
+	firing = false
+	firing_timer.stop()
+
+
 func _unhandled_input(event):
 	if start_process:
 		var player_device = InputHandler.get_player_device(owning_player.player_id)

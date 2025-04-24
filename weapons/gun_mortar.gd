@@ -72,6 +72,11 @@ func _on_ammo_timer_timeout():
 	ammo_count += 1
 
 
+func stop():
+	firing = false
+	firing_timer.stop()
+
+
 #func sync_pips():
 	#if ammo_count == 0:
 		#$HUD/Reticule/Pip1.hide()
