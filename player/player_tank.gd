@@ -249,6 +249,13 @@ func _physics_process(delta: float) -> void:
 		motion_vector = gravity_vec + ground_motion
 		if motion_vector.length() > MAX_SPEED:
 			motion_vector = motion_vector.normalized() * MAX_SPEED
+		# Spin tank body to direction of motion
+		if not ground_motion.is_zero_approx():
+			var new_body_basis = Basis.IDENTITY
+			new_body_basis.y = Vector3(0, 1, 0)
+			new_body_basis.z = ground_motion.normalized()
+			new_body_basis.x = new_body_basis.y.cross(new_body_basis.z)
+			$ModelPivot/Body.global_basis = new_body_basis
 
 		velocity = motion_vector
 

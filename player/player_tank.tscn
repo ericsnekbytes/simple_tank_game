@@ -5,15 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://cir51a4c2f32b" path="res://art/cat.glb" id="3_84av1"]
 [ext_resource type="PackedScene" uid="uid://bflnfy31fb7gf" path="res://weapons/gun_mortar.tscn" id="3_v5163"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_f0njb"]
-size = Vector3(1, 0.5, 2)
-
-[sub_resource type="BoxMesh" id="BoxMesh_v5163"]
-size = Vector3(1, 0.25, 2)
-
-[sub_resource type="BoxMesh" id="BoxMesh_vgk1m"]
-size = Vector3(0.5, 1, 2)
-
 [sub_resource type="CylinderMesh" id="CylinderMesh_vgk1m"]
 top_radius = 0.2
 bottom_radius = 0.2
@@ -24,6 +15,15 @@ size = Vector3(0.5, 0.5, 0.75)
 
 [sub_resource type="BoxMesh" id="BoxMesh_84av1"]
 size = Vector3(1, 0.5, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_f0njb"]
+size = Vector3(1, 0.5, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_v5163"]
+size = Vector3(1, 0.25, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vgk1m"]
+size = Vector3(0.3, 1, 2)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vgk1m"]
 
@@ -65,26 +65,6 @@ transform = Transform3D(1, 7.10543e-15, -3.55271e-15, 0, 0.630405, 0.776267, 0, 
 
 [node name="ModelPivot" type="Node3D" parent="." groups=["player"]]
 
-[node name="body" type="MeshInstance3D" parent="ModelPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_f0njb")
-skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/PlayerTank")
-
-[node name="body2" type="MeshInstance3D" parent="ModelPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.875, 0)
-mesh = SubResource("BoxMesh_v5163")
-skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/PlayerTank")
-
-[node name="track" type="MeshInstance3D" parent="ModelPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.5, 0)
-mesh = SubResource("BoxMesh_vgk1m")
-skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/PlayerTank")
-
-[node name="track2" type="MeshInstance3D" parent="ModelPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0.5, 0)
-mesh = SubResource("BoxMesh_vgk1m")
-skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/PlayerTank")
-
 [node name="CannonPivot" type="Node3D" parent="ModelPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 
@@ -100,6 +80,31 @@ mesh = SubResource("BoxMesh_cfc1i")
 [node name="turret" type="MeshInstance3D" parent="ModelPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 mesh = SubResource("BoxMesh_84av1")
+
+[node name="Body" type="Node3D" parent="ModelPivot"]
+
+[node name="body" type="MeshInstance3D" parent="ModelPivot/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_f0njb")
+skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/PlayerTank")
+
+[node name="body2" type="MeshInstance3D" parent="ModelPivot/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.875, 0)
+mesh = SubResource("BoxMesh_v5163")
+skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/PlayerTank")
+
+[node name="track" type="MeshInstance3D" parent="ModelPivot/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.5, 0)
+mesh = SubResource("BoxMesh_vgk1m")
+skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/PlayerTank")
+
+[node name="track2" type="MeshInstance3D" parent="ModelPivot/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0.5, 0)
+mesh = SubResource("BoxMesh_vgk1m")
+skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/PlayerTank")
+
+[node name="cat" parent="ModelPivot/Body" instance=ExtResource("3_84av1")]
+transform = Transform3D(-0.129904, 0, 0.075, 0, 0.15, 0, -0.075, 0, -0.129904, 0.587403, 1.17926, -0.635939)
 
 [node name="WeaponPivot" type="Node3D" parent="."]
 
@@ -128,9 +133,6 @@ shape = SubResource("CapsuleShape3D_vgk1m")
 [node name="ColliderBody" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_f0njb")
-
-[node name="cat" parent="." instance=ExtResource("3_84av1")]
-transform = Transform3D(-0.129904, 0, 0.075, 0, 0.15, 0, -0.075, 0, -0.129904, 0.587403, 1.17926, -0.635939)
 
 [node name="HealthRegenWait" type="Timer" parent="."]
 wait_time = 5.0
