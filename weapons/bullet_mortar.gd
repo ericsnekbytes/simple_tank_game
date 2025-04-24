@@ -5,7 +5,7 @@ signal item_capture(node)
 var owning_player = null
 var start_process = false
 # ....
-var MAX_SPEED = 12
+var MAX_SPEED = 9
 # ....
 var decal_scn = preload("res://environment/exp_decal.tscn")
 var triggered = false

@@ -211,9 +211,10 @@ func _physics_process(delta: float) -> void:
 		transform = transform.orthonormalized()
 		# Do cannon rotation if needed (for mortar shells)
 		if gun_order[active_weapon_index] == gun_mortar.weapon_id:  # TODO finish arcing mortar gun
-			var planned_pitch = cannon.transform.rotated(cannon.basis.x, look_pitch * delta)
-			if planned_pitch.basis.y.y > sin(PI / 45): # planned_pitch.basis.z.y <= 0 and 
-				cannon.rotate(cannon.basis.x * -1, look_pitch * delta)
+			var planned_pitch = cannon_pivot.basis.rotated(cannon.basis.x * -1, look_pitch * delta)
+			if planned_pitch.y.y > sin(PI / 90): # planned_pitch.basis.z.y <= 0 and 
+				cannon_pivot.basis = planned_pitch
+				#cannon.
 		rotate(Vector3(0, 1, 0), look_spin * delta)
 
 		# Sum up motion  # TODO
