@@ -98,6 +98,33 @@ func set_ui_visible(state):
 		$HUD.hide()
 
 
+func update_pitch_indicator(value: Basis):
+	print([value.y.y, value.y.x])
+	if value.y.z <0:
+		print('+')
+		var horizon_delta = 1 - abs(value.y.y)
+
+		# Set above-horizon indicator bars
+		$HUD/MortarPitchIndicator/TopFill1.value = horizon_delta
+		$HUD/MortarPitchIndicator/TopFill2.value = horizon_delta
+
+		# Set below-horizon indicator bars
+		$HUD/MortarPitchIndicator/Lower/LowFill1.value = 0
+		$HUD/MortarPitchIndicator/Lower/LowFill2.value = 0
+	else:
+		print('-')
+		var horizon_delta = 1 - abs(value.y.y)
+
+		# Set above-horizon indicator bars
+		$HUD/MortarPitchIndicator/TopFill1.value = 0
+		$HUD/MortarPitchIndicator/TopFill2.value = 0
+
+		# Set below-horizon indicator bars
+		$HUD/MortarPitchIndicator/Lower/LowFill1.value = horizon_delta
+		$HUD/MortarPitchIndicator/Lower/LowFill2.value = horizon_delta
+		
+
+
 func _unhandled_input(event):
 	if start_process:
 		var player_device = InputHandler.get_player_device(owning_player.player_id)

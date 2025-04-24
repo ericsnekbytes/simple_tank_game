@@ -4,6 +4,7 @@ extends CharacterBody3D
 
 signal died(node)
 signal health_changed(value: float)
+signal cannon_pitch_changed(value: float)
 
 var player_id := -1
 var start_process := false
@@ -79,6 +80,7 @@ func _ready() -> void:
 	# Configure guns
 	gun_rocket.owning_player = self
 	gun_mortar.owning_player = self
+	cannon_pitch_changed.connect(gun_mortar.update_pitch_indicator)
 	sync_weapon()
 
 	# Health UI
@@ -118,6 +120,7 @@ func prepare_weapon_change():
 	if gun_order[active_weapon_index] == gun_mortar.weapon_id:
 		#cannon_pivot.global_position = cannon_spawn_pos
 		cannon_pivot.basis = cannon_spawn_basis
+		#gun_mortar.visible = true
 
 
 func sync_weapon():
@@ -238,7 +241,7 @@ func _physics_process(delta: float) -> void:
 			var planned_pitch = cannon_pivot.basis.rotated(cannon.basis.x * -1, look_pitch * delta)
 			if planned_pitch.y.y > sin(PI / 90): # planned_pitch.basis.z.y <= 0 and 
 				cannon_pivot.basis = planned_pitch
-				#cannon.
+			cannon_pitch_changed.emit(cannon_pivot.basis)
 		rotate(Vector3(0, 1, 0), look_spin * delta)
 
 		# Sum up motion  # TODO
