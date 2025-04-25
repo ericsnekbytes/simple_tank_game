@@ -65,6 +65,7 @@ swap_gun={
 3d_physics/layer_1="env"
 3d_physics/layer_2="player"
 3d_physics/layer_3="bullets"
+3d_physics/layer_4="craft_blk"
 
 [physics]
 
