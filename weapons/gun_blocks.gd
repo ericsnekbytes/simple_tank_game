@@ -34,7 +34,7 @@ var ammo_count = 3:
 var max_ammo_count = 3
 # ....
 var preview_enabled = false
-var preview_block = null
+@onready var preview_block = $CraftCubePreview
 
 
 # Called when the node enters the scene tree for the first time.
@@ -138,7 +138,11 @@ func _unhandled_input(event):
 
 
 func update_preview():
-	pass
+	preview_block.global_basis = Basis()
+	preview_block.global_position = $Cursor.global_position + Vector3(-.5, 0, -.5)
+	preview_block.global_position.x = roundf(preview_block.global_position.x)
+	preview_block.global_position.y = roundf(preview_block.global_position.y)
+	preview_block.global_position.z = roundf(preview_block.global_position.z)
 
 
 func _physics_process(delta: float) -> void:

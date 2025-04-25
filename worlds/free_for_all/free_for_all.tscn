@@ -103,19 +103,19 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 2
 [node name="Level" type="Node3D" parent="."]
 
 [node name="TerraCube11" parent="Level" instance=ExtResource("3_gkx6j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 1, -9.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, -10)
 
 [node name="TerraCube12" parent="Level" instance=ExtResource("3_gkx6j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 1, -9.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1, -10)
 
 [node name="TerraCube21" parent="Level" instance=ExtResource("3_gkx6j")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.5, 1, -11.5)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10, 1, -11)
 
 [node name="TerraCube22" parent="Level" instance=ExtResource("3_gkx6j")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.5, 1, -12.5)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10, 1, -12)
 
 [node name="TerraCube17" parent="Level" instance=ExtResource("3_gkx6j")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -11.5, 1, 9.5)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -11, 1, 10)
 
 [node name="Node3D" type="Node3D" parent="Level"]
 
@@ -213,13 +213,13 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 1, 
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, 9)
 
 [node name="TerraCube18" parent="Level" instance=ExtResource("3_gkx6j")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -12.5, 1, 9.5)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -12, 1, 10)
 
 [node name="TerraCube19" parent="Level" instance=ExtResource("3_gkx6j")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 9.5, 1, 11.5)
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 10, 1, 11)
 
 [node name="TerraCube20" parent="Level" instance=ExtResource("3_gkx6j")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 9.5, 1, 12.5)
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 10, 1, 12)
 
 [node name="Killbox" type="Area3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
