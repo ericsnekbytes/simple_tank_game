@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dt6b11m3vfhxj"]
+[gd_scene load_steps=6 format=3 uid="uid://dt6b11m3vfhxj"]
 
 [ext_resource type="Script" uid="uid://dgr1sby22xiod" path="res://weapons/gun_blocks.gd" id="1_jp12w"]
 
@@ -12,15 +12,25 @@ top_radius = 0.07
 bottom_radius = 0.07
 height = 0.6
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jp12w"]
+transparency = 1
+albedo_color = Color(0.423529, 0.423529, 0.423529, 0.517647)
+
+[sub_resource type="SphereMesh" id="SphereMesh_jp12w"]
+radius = 0.1
+height = 0.2
+
 [node name="GunBlocks" type="Node3D" groups=["gun_has_ui"]]
 script = ExtResource("1_jp12w")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.0434325, 0, 0)
+visible = false
 mesh = SubResource("CylinderMesh_dkscp")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.182329, 0, 0)
+visible = false
 mesh = SubResource("CylinderMesh_mcssg")
 
 [node name="HUD" type="Control" parent="."]
@@ -37,3 +47,8 @@ grow_vertical = 2
 [node name="AmmoTimer" type="Timer" parent="."]
 wait_time = 1.667
 autostart = true
+
+[node name="Cursor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, -1, 0)
+material_override = SubResource("StandardMaterial3D_jp12w")
+mesh = SubResource("SphereMesh_jp12w")

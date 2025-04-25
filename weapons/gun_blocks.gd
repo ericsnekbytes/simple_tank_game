@@ -73,7 +73,7 @@ func fire():
 
 	var block = block_scn.instantiate()
 	GameData.global_pivot.add_child(block)
-	block.global_position = owning_player.global_position + (owning_player.global_basis.z * 3)
+	block.global_position = $Cursor.global_position + Vector3(-.5, 0, -.5)
 	block.global_position.x = roundf(block.global_position.x)
 	block.global_position.y = roundf(block.global_position.y)
 	block.global_position.z = roundf(block.global_position.z)
