@@ -61,10 +61,12 @@ var MAX_PITCH := PI
 # ....
 @onready var gun_rocket = $WeaponPivot/GunRocket
 @onready var gun_mortar = $WeaponPivot/GunMortar
-@onready var gun_order = [gun_rocket.weapon_id, gun_mortar.weapon_id]
+@onready var gun_blocks = $WeaponPivot/GunBlocks
+@onready var gun_order = [gun_rocket.weapon_id, gun_mortar.weapon_id, gun_blocks.weapon_id]
 @onready var guns = {
 	gun_rocket.weapon_id: gun_rocket,
 	gun_mortar.weapon_id: gun_mortar,
+	gun_blocks.weapon_id: gun_blocks,
 }
 var active_weapon_index = 0:
 	set(value):
@@ -80,6 +82,7 @@ func _ready() -> void:
 	# Configure guns
 	gun_rocket.owning_player = self
 	gun_mortar.owning_player = self
+	gun_blocks.owning_player = self
 	cannon_pitch_changed.connect(gun_mortar.update_pitch_indicator)
 	sync_weapon()
 

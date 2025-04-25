@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://dt6b11m3vfhxj"]
+
+[ext_resource type="Script" uid="uid://dgr1sby22xiod" path="res://weapons/gun_blocks.gd" id="1_jp12w"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_dkscp"]
+top_radius = 0.11
+bottom_radius = 0.11
+height = 0.22
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_mcssg"]
+top_radius = 0.07
+bottom_radius = 0.07
+height = 0.6
+
+[node name="GunBlocks" type="Node3D" groups=["gun_has_ui"]]
+script = ExtResource("1_jp12w")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.0434325, 0, 0)
+mesh = SubResource("CylinderMesh_dkscp")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.182329, 0, 0)
+mesh = SubResource("CylinderMesh_mcssg")
+
+[node name="HUD" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FiringTimer" type="Timer" parent="."]
+
+[node name="AmmoTimer" type="Timer" parent="."]
+wait_time = 1.667
+autostart = true
