@@ -15,7 +15,7 @@ height = 0.6
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jp12w"]
 transparency = 1
-albedo_color = Color(0.423529, 0.423529, 0.423529, 0.517647)
+albedo_color = Color(0.423529, 0.423529, 0.423529, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_jp12w"]
 radius = 0.1

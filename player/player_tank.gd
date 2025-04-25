@@ -169,6 +169,10 @@ func hide_gui():
 	$Hud.hide()
 
 
+func reset_body():
+	$ModelPivot/Body.basis = Basis()
+
+
 func _unhandled_input(event: InputEvent) -> void:
 	var current_time = Time.get_ticks_msec()
 

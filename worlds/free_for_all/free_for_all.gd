@@ -79,6 +79,7 @@ func handle_player_death(pnode: PlayerTank):
 	pnode.global_basis = pnode.spawn_basis
 	pnode.health = 100
 	pnode.dead = false
+	pnode.reset_body()
 
 
 func end_game():
