@@ -53,7 +53,7 @@ size = Vector2i(958, 538)
 render_target_update_mode = 4
 
 [node name="Player1" parent="SplitScreenContainer/TopRow/SvpCont1/SubViewport" instance=ExtResource("4_www3a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
 
 [node name="SvpCont2" type="SubViewportContainer" parent="SplitScreenContainer/TopRow"]
 layout_mode = 2
@@ -66,7 +66,7 @@ size = Vector2i(958, 538)
 render_target_update_mode = 4
 
 [node name="Player2" parent="SplitScreenContainer/TopRow/SvpCont2/SubViewport" instance=ExtResource("4_www3a")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.5, 1, 9.5)
+transform = Transform3D(-1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, -20, 1, 23)
 
 [node name="BottomRow" type="HBoxContainer" parent="SplitScreenContainer"]
 layout_mode = 2
@@ -83,7 +83,7 @@ size = Vector2i(958, 538)
 render_target_update_mode = 4
 
 [node name="Player3" parent="SplitScreenContainer/BottomRow/SvpCont3/SubViewport" instance=ExtResource("4_www3a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, 0.5)
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 4, 2, 22)
 
 [node name="SvpCont4" type="SubViewportContainer" parent="SplitScreenContainer/BottomRow"]
 layout_mode = 2
@@ -96,716 +96,47 @@ size = Vector2i(958, 538)
 render_target_update_mode = 4
 
 [node name="Player4" parent="SplitScreenContainer/BottomRow/SvpCont4/SubViewport" instance=ExtResource("4_www3a")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7, 1, 9.5)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -24, 2, 1)
 
 [node name="GlobalPivot" type="Node3D" parent="."]
 
 [node name="Level" type="Node3D" parent="."]
 
-[node name="TerraCube" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
-
-[node name="TerraCube2" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -0.5)
-
-[node name="TerraCube3" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -1.5)
-
-[node name="TerraCube9" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, 1.5)
-
-[node name="TerraCube10" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, 0.5)
-
-[node name="TerraCube4" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -1.5)
-
-[node name="TerraCube5" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
-
-[node name="TerraCube6" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0.5)
-
-[node name="TerraCube7" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 1.5)
-
-[node name="TerraCube8" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
-
-[node name="TerraCube31" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -0.5)
-
-[node name="TerraCube32" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -1.5)
-
-[node name="TerraCube33" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0.5)
-
-[node name="TerraCube34" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 1.5)
-
-[node name="TerraCube35" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -0.5)
-
-[node name="TerraCube36" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -1.5)
-
-[node name="TerraCube37" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 0.5)
-
-[node name="TerraCube38" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 1.5)
-
 [node name="TerraCube11" parent="Level" instance=ExtResource("3_gkx6j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, 2.5)
 
-[node name="TerraCube13" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -0.5)
-
-[node name="TerraCube14" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
-
-[node name="TerraCube15" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -1.5)
-
-[node name="TerraCube16" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, 1.5)
-
-[node name="TerraCube17" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, 0.5)
-
-[node name="TerraCube71" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, -0.5)
-
-[node name="TerraCube72" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, -1.5)
-
-[node name="TerraCube73" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, -0.5)
-
-[node name="TerraCube74" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, -1.5)
-
-[node name="TerraCube75" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
-
-[node name="TerraCube76" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -1.5)
-
-[node name="TerraCube77" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
-
-[node name="TerraCube78" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -1.5)
-
-[node name="TerraCube227" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, -2.5)
-
-[node name="TerraCube228" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, -2.5)
-
-[node name="TerraCube229" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -2.5)
-
-[node name="TerraCube230" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -2.5)
-
-[node name="TerraCube211" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -0.5)
-
-[node name="TerraCube212" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -1.5)
-
-[node name="TerraCube213" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -0.5)
-
-[node name="TerraCube214" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -1.5)
-
-[node name="TerraCube215" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -2.5)
-
-[node name="TerraCube216" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -3.5)
-
-[node name="TerraCube217" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -2.5)
-
-[node name="TerraCube218" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -3.5)
-
-[node name="TerraCube219" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -4.5)
-
-[node name="TerraCube220" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -5.5)
-
-[node name="TerraCube221" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -4.5)
-
-[node name="TerraCube222" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -5.5)
-
-[node name="TerraCube223" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -6.5)
-
-[node name="TerraCube224" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -7.5)
-
-[node name="TerraCube225" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -6.5)
-
-[node name="TerraCube226" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -7.5)
-
-[node name="TerraCube231" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -3.5)
-
-[node name="TerraCube232" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -4.5)
-
-[node name="TerraCube233" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -5.5)
-
-[node name="TerraCube234" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -6.5)
-
-[node name="TerraCube235" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -7.5)
-
-[node name="TerraCube18" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -1.5)
-
-[node name="TerraCube19" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0.5)
-
-[node name="TerraCube20" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.5)
-
-[node name="TerraCube21" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 1.5)
-
-[node name="TerraCube23" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -0.5)
-
-[node name="TerraCube24" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -1.5)
-
-[node name="TerraCube25" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0.5)
-
-[node name="TerraCube26" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 1.5)
-
-[node name="TerraCube27" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -0.5)
-
-[node name="TerraCube28" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -1.5)
-
-[node name="TerraCube29" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 0.5)
-
-[node name="TerraCube30" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 1.5)
-
-[node name="TerraCube22" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 1.5)
-
-[node name="TerraCube39" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 2.5)
-
-[node name="TerraCube40" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 2.5)
-
-[node name="TerraCube41" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 2.5)
-
-[node name="TerraCube42" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 2.5)
-
-[node name="TerraCube43" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 2.5)
-
-[node name="TerraCube44" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 2.5)
-
-[node name="TerraCube45" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 2.5)
-
-[node name="TerraCube46" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 2.5)
-
-[node name="TerraCube47" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 3.5)
-
-[node name="TerraCube48" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 3.5)
-
-[node name="TerraCube49" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 3.5)
-
-[node name="TerraCube50" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 3.5)
-
-[node name="TerraCube51" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 3.5)
-
-[node name="TerraCube52" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 3.5)
-
-[node name="TerraCube53" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 3.5)
-
-[node name="TerraCube54" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 3.5)
-
-[node name="TerraCube55" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 4.5)
-
-[node name="TerraCube56" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 4.5)
-
-[node name="TerraCube57" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 4.5)
-
-[node name="TerraCube58" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 4.5)
-
-[node name="TerraCube59" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 4.5)
-
-[node name="TerraCube60" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 4.5)
-
-[node name="TerraCube61" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 4.5)
-
-[node name="TerraCube62" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 4.5)
-
-[node name="TerraCube63" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 5.5)
-
-[node name="TerraCube64" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 5.5)
-
-[node name="TerraCube65" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 5.5)
-
-[node name="TerraCube66" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 5.5)
-
-[node name="TerraCube67" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 5.5)
-
-[node name="TerraCube68" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 5.5)
-
-[node name="TerraCube69" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 5.5)
-
-[node name="TerraCube70" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 5.5)
-
-[node name="TerraCube79" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, -0.5)
-
-[node name="TerraCube80" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, -1.5)
-
-[node name="TerraCube81" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 0.5)
-
-[node name="TerraCube82" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 1.5)
-
-[node name="TerraCube83" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -0.5)
-
-[node name="TerraCube84" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -1.5)
-
-[node name="TerraCube85" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 0.5)
-
-[node name="TerraCube86" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 1.5)
-
-[node name="TerraCube87" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, -0.5)
-
-[node name="TerraCube88" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, -1.5)
-
-[node name="TerraCube89" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 0.5)
-
-[node name="TerraCube90" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 1.5)
-
-[node name="TerraCube91" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, -0.5)
-
-[node name="TerraCube92" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, -1.5)
-
-[node name="TerraCube93" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 0.5)
-
-[node name="TerraCube94" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 1.5)
-
-[node name="TerraCube95" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 2.5)
-
-[node name="TerraCube96" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 2.5)
-
-[node name="TerraCube97" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 2.5)
-
-[node name="TerraCube98" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 2.5)
-
-[node name="TerraCube99" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 3.5)
-
-[node name="TerraCube100" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 3.5)
-
-[node name="TerraCube101" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 3.5)
-
-[node name="TerraCube102" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 3.5)
-
-[node name="TerraCube103" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 4.5)
-
-[node name="TerraCube104" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 4.5)
-
-[node name="TerraCube105" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 4.5)
-
-[node name="TerraCube106" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 4.5)
-
-[node name="TerraCube107" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 5.5)
-
-[node name="TerraCube108" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 5.5)
-
-[node name="TerraCube109" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 5.5)
-
-[node name="TerraCube111" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, -0.5)
-
-[node name="TerraCube112" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, -1.5)
-
-[node name="TerraCube113" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 0.5)
-
-[node name="TerraCube114" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 1.5)
-
-[node name="TerraCube115" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, -0.5)
-
-[node name="TerraCube116" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, -1.5)
-
-[node name="TerraCube117" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 0.5)
-
-[node name="TerraCube118" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 1.5)
-
-[node name="TerraCube119" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 2.5)
-
-[node name="TerraCube120" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 2.5)
-
-[node name="TerraCube121" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 3.5)
-
-[node name="TerraCube122" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 3.5)
-
-[node name="TerraCube123" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 4.5)
-
-[node name="TerraCube124" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 4.5)
-
-[node name="TerraCube125" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 5.5)
-
-[node name="TerraCube126" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 5.5)
-
-[node name="TerraCube110" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 5.5)
-
-[node name="TerraCube127" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 6.5)
-
-[node name="TerraCube128" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 6.5)
-
-[node name="TerraCube129" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 6.5)
-
-[node name="TerraCube130" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 6.5)
-
-[node name="TerraCube131" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 6.5)
-
-[node name="TerraCube132" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 6.5)
-
-[node name="TerraCube133" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 6.5)
-
-[node name="TerraCube134" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 6.5)
-
-[node name="TerraCube135" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 7.5)
-
-[node name="TerraCube136" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 7.5)
-
-[node name="TerraCube137" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 7.5)
-
-[node name="TerraCube138" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 7.5)
-
-[node name="TerraCube139" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 7.5)
-
-[node name="TerraCube140" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 7.5)
-
-[node name="TerraCube141" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 7.5)
-
-[node name="TerraCube142" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 7.5)
-
-[node name="TerraCube143" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 6.5)
-
-[node name="TerraCube144" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 6.5)
-
-[node name="TerraCube145" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 6.5)
-
-[node name="TerraCube146" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 6.5)
-
-[node name="TerraCube147" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 7.5)
-
-[node name="TerraCube148" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 7.5)
-
-[node name="TerraCube149" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 7.5)
-
-[node name="TerraCube150" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 6.5)
-
-[node name="TerraCube151" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 6.5)
-
-[node name="TerraCube152" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 7.5)
-
-[node name="TerraCube153" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 7.5)
-
-[node name="TerraCube154" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 7.5)
-
-[node name="TerraCube155" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 8.5)
-
-[node name="TerraCube156" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 8.5)
-
-[node name="TerraCube157" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 8.5)
-
-[node name="TerraCube158" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 8.5)
-
-[node name="TerraCube159" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 8.5)
-
-[node name="TerraCube160" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 8.5)
-
-[node name="TerraCube161" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 8.5)
-
-[node name="TerraCube162" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 8.5)
-
-[node name="TerraCube163" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 9.5)
-
-[node name="TerraCube164" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 9.5)
-
-[node name="TerraCube165" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 9.5)
-
-[node name="TerraCube166" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 9.5)
-
-[node name="TerraCube167" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 9.5)
-
-[node name="TerraCube168" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 9.5)
-
-[node name="TerraCube169" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 9.5)
-
-[node name="TerraCube170" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 9.5)
-
-[node name="TerraCube171" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 8.5)
-
-[node name="TerraCube172" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 8.5)
-
-[node name="TerraCube173" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 8.5)
-
-[node name="TerraCube174" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 8.5)
-
-[node name="TerraCube175" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 9.5)
-
-[node name="TerraCube176" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 9.5)
-
-[node name="TerraCube177" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 9.5)
-
-[node name="TerraCube178" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 8.5)
-
-[node name="TerraCube179" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 8.5)
-
-[node name="TerraCube180" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 9.5)
-
-[node name="TerraCube181" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 9.5)
-
-[node name="TerraCube182" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 9.5)
-
-[node name="TerraCube183" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 10.5)
-
-[node name="TerraCube184" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 10.5)
-
-[node name="TerraCube185" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 10.5)
-
-[node name="TerraCube186" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 10.5)
-
-[node name="TerraCube187" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 10.5)
-
-[node name="TerraCube188" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 10.5)
-
-[node name="TerraCube189" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 10.5)
-
-[node name="TerraCube190" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 10.5)
-
-[node name="TerraCube191" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 11.5)
-
-[node name="TerraCube192" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 11.5)
-
-[node name="TerraCube193" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 11.5)
-
-[node name="TerraCube194" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 11.5)
-
-[node name="TerraCube195" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 11.5)
-
-[node name="TerraCube196" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 11.5)
-
-[node name="TerraCube197" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 11.5)
-
-[node name="TerraCube198" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 11.5)
-
-[node name="TerraCube199" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 10.5)
-
-[node name="TerraCube200" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 10.5)
-
-[node name="TerraCube201" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 10.5)
-
-[node name="TerraCube202" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 10.5)
-
-[node name="TerraCube203" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 11.5)
-
-[node name="TerraCube204" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 11.5)
-
-[node name="TerraCube205" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 11.5)
-
-[node name="TerraCube206" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 10.5)
-
-[node name="TerraCube207" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 10.5)
-
-[node name="TerraCube208" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 11.5)
-
-[node name="TerraCube209" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 11.5)
-
-[node name="TerraCube210" parent="Level" instance=ExtResource("2_ms0pe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 11.5)
-
 [node name="TerraCube12" parent="Level" instance=ExtResource("3_gkx6j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, 2.5)
+
+[node name="TerraCube21" parent="Level" instance=ExtResource("3_gkx6j")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -19.5, 1, 0.5)
+
+[node name="TerraCube22" parent="Level" instance=ExtResource("3_gkx6j")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -19.5, 1, -0.5)
+
+[node name="TerraCube13" parent="Level" instance=ExtResource("3_gkx6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 1, 21)
+
+[node name="TerraCube14" parent="Level" instance=ExtResource("3_gkx6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 1, 21)
+
+[node name="TerraCube17" parent="Level" instance=ExtResource("3_gkx6j")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -21.5, 1, 21.5)
+
+[node name="TerraCube18" parent="Level" instance=ExtResource("3_gkx6j")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -22.5, 1, 21.5)
+
+[node name="TerraCube19" parent="Level" instance=ExtResource("3_gkx6j")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -0.5, 1, 23.5)
+
+[node name="TerraCube20" parent="Level" instance=ExtResource("3_gkx6j")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -0.5, 1, 24.5)
+
+[node name="TerraCube15" parent="Level" instance=ExtResource("3_gkx6j")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -9.5, 1, 3)
+
+[node name="TerraCube16" parent="Level" instance=ExtResource("3_gkx6j")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -10.5, 1, 3)
 
 [node name="Killbox" type="Area3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
@@ -813,6 +144,2885 @@ collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Killbox"]
 shape = SubResource("BoxShape3D_www3a")
+
+[node name="Plat1" type="Node3D" parent="Level"]
+
+[node name="TerraCube" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+
+[node name="TerraCube2" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -0.5)
+
+[node name="TerraCube3" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -1.5)
+
+[node name="TerraCube9" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, 1.5)
+
+[node name="TerraCube10" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, 0.5)
+
+[node name="TerraCube4" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -1.5)
+
+[node name="TerraCube5" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+
+[node name="TerraCube6" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0.5)
+
+[node name="TerraCube7" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 1.5)
+
+[node name="TerraCube8" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+
+[node name="TerraCube31" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -0.5)
+
+[node name="TerraCube32" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -1.5)
+
+[node name="TerraCube33" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0.5)
+
+[node name="TerraCube34" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 1.5)
+
+[node name="TerraCube35" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -0.5)
+
+[node name="TerraCube36" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -1.5)
+
+[node name="TerraCube37" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 0.5)
+
+[node name="TerraCube38" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 1.5)
+
+[node name="TerraCube13" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -0.5)
+
+[node name="TerraCube14" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
+
+[node name="TerraCube15" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -1.5)
+
+[node name="TerraCube16" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, 1.5)
+
+[node name="TerraCube17" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, 0.5)
+
+[node name="TerraCube71" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, -0.5)
+
+[node name="TerraCube72" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, -1.5)
+
+[node name="TerraCube73" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, -0.5)
+
+[node name="TerraCube74" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, -1.5)
+
+[node name="TerraCube75" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
+
+[node name="TerraCube76" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -1.5)
+
+[node name="TerraCube77" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
+
+[node name="TerraCube78" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -1.5)
+
+[node name="TerraCube227" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, -2.5)
+
+[node name="TerraCube228" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, -2.5)
+
+[node name="TerraCube229" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -2.5)
+
+[node name="TerraCube230" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -2.5)
+
+[node name="TerraCube211" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -0.5)
+
+[node name="TerraCube212" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -1.5)
+
+[node name="TerraCube213" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -0.5)
+
+[node name="TerraCube214" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -1.5)
+
+[node name="TerraCube215" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -2.5)
+
+[node name="TerraCube216" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -3.5)
+
+[node name="TerraCube217" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -2.5)
+
+[node name="TerraCube218" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -3.5)
+
+[node name="TerraCube219" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -4.5)
+
+[node name="TerraCube220" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -5.5)
+
+[node name="TerraCube221" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -4.5)
+
+[node name="TerraCube222" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -5.5)
+
+[node name="TerraCube223" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -6.5)
+
+[node name="TerraCube224" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -7.5)
+
+[node name="TerraCube225" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -6.5)
+
+[node name="TerraCube226" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -7.5)
+
+[node name="TerraCube231" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -3.5)
+
+[node name="TerraCube232" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -4.5)
+
+[node name="TerraCube233" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -5.5)
+
+[node name="TerraCube234" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -6.5)
+
+[node name="TerraCube235" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -7.5)
+
+[node name="TerraCube18" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -1.5)
+
+[node name="TerraCube19" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0.5)
+
+[node name="TerraCube20" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.5)
+
+[node name="TerraCube21" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 1.5)
+
+[node name="TerraCube23" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -0.5)
+
+[node name="TerraCube24" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -1.5)
+
+[node name="TerraCube25" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0.5)
+
+[node name="TerraCube26" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 1.5)
+
+[node name="TerraCube27" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -0.5)
+
+[node name="TerraCube28" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -1.5)
+
+[node name="TerraCube29" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 0.5)
+
+[node name="TerraCube30" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 1.5)
+
+[node name="TerraCube22" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 1.5)
+
+[node name="TerraCube39" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 2.5)
+
+[node name="TerraCube40" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 2.5)
+
+[node name="TerraCube41" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 2.5)
+
+[node name="TerraCube42" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 2.5)
+
+[node name="TerraCube43" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 2.5)
+
+[node name="TerraCube44" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 2.5)
+
+[node name="TerraCube45" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 2.5)
+
+[node name="TerraCube46" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 2.5)
+
+[node name="TerraCube47" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 3.5)
+
+[node name="TerraCube48" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 3.5)
+
+[node name="TerraCube49" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 3.5)
+
+[node name="TerraCube50" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 3.5)
+
+[node name="TerraCube51" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 3.5)
+
+[node name="TerraCube52" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 3.5)
+
+[node name="TerraCube53" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 3.5)
+
+[node name="TerraCube54" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 3.5)
+
+[node name="TerraCube55" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 4.5)
+
+[node name="TerraCube56" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 4.5)
+
+[node name="TerraCube57" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 4.5)
+
+[node name="TerraCube58" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 4.5)
+
+[node name="TerraCube59" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 4.5)
+
+[node name="TerraCube60" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 4.5)
+
+[node name="TerraCube61" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 4.5)
+
+[node name="TerraCube62" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 4.5)
+
+[node name="TerraCube63" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 5.5)
+
+[node name="TerraCube64" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 5.5)
+
+[node name="TerraCube65" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 5.5)
+
+[node name="TerraCube66" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 5.5)
+
+[node name="TerraCube67" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 5.5)
+
+[node name="TerraCube68" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 5.5)
+
+[node name="TerraCube69" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 5.5)
+
+[node name="TerraCube70" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 5.5)
+
+[node name="TerraCube79" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, -0.5)
+
+[node name="TerraCube80" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, -1.5)
+
+[node name="TerraCube81" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 0.5)
+
+[node name="TerraCube82" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 1.5)
+
+[node name="TerraCube83" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -0.5)
+
+[node name="TerraCube84" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -1.5)
+
+[node name="TerraCube85" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 0.5)
+
+[node name="TerraCube86" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 1.5)
+
+[node name="TerraCube87" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, -0.5)
+
+[node name="TerraCube88" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, -1.5)
+
+[node name="TerraCube89" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 0.5)
+
+[node name="TerraCube90" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 1.5)
+
+[node name="TerraCube91" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, -0.5)
+
+[node name="TerraCube92" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, -1.5)
+
+[node name="TerraCube93" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 0.5)
+
+[node name="TerraCube94" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 1.5)
+
+[node name="TerraCube95" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 2.5)
+
+[node name="TerraCube96" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 2.5)
+
+[node name="TerraCube97" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 2.5)
+
+[node name="TerraCube98" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 2.5)
+
+[node name="TerraCube99" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 3.5)
+
+[node name="TerraCube100" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 3.5)
+
+[node name="TerraCube101" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 3.5)
+
+[node name="TerraCube102" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 3.5)
+
+[node name="TerraCube103" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 4.5)
+
+[node name="TerraCube104" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 4.5)
+
+[node name="TerraCube105" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 4.5)
+
+[node name="TerraCube106" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 4.5)
+
+[node name="TerraCube107" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 5.5)
+
+[node name="TerraCube108" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 5.5)
+
+[node name="TerraCube109" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 5.5)
+
+[node name="TerraCube111" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, -0.5)
+
+[node name="TerraCube112" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, -1.5)
+
+[node name="TerraCube113" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 0.5)
+
+[node name="TerraCube114" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 1.5)
+
+[node name="TerraCube115" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, -0.5)
+
+[node name="TerraCube116" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, -1.5)
+
+[node name="TerraCube117" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 0.5)
+
+[node name="TerraCube118" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 1.5)
+
+[node name="TerraCube119" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 2.5)
+
+[node name="TerraCube120" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 2.5)
+
+[node name="TerraCube121" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 3.5)
+
+[node name="TerraCube122" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 3.5)
+
+[node name="TerraCube123" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 4.5)
+
+[node name="TerraCube124" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 4.5)
+
+[node name="TerraCube125" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 5.5)
+
+[node name="TerraCube126" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 5.5)
+
+[node name="TerraCube110" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 5.5)
+
+[node name="TerraCube127" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 6.5)
+
+[node name="TerraCube128" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 6.5)
+
+[node name="TerraCube129" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 6.5)
+
+[node name="TerraCube130" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 6.5)
+
+[node name="TerraCube131" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 6.5)
+
+[node name="TerraCube132" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 6.5)
+
+[node name="TerraCube133" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 6.5)
+
+[node name="TerraCube134" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 6.5)
+
+[node name="TerraCube135" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 7.5)
+
+[node name="TerraCube136" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 7.5)
+
+[node name="TerraCube137" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 7.5)
+
+[node name="TerraCube138" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 7.5)
+
+[node name="TerraCube139" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 7.5)
+
+[node name="TerraCube140" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 7.5)
+
+[node name="TerraCube141" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 7.5)
+
+[node name="TerraCube142" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 7.5)
+
+[node name="TerraCube143" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 6.5)
+
+[node name="TerraCube144" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 6.5)
+
+[node name="TerraCube145" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 6.5)
+
+[node name="TerraCube146" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 6.5)
+
+[node name="TerraCube147" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 7.5)
+
+[node name="TerraCube148" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 7.5)
+
+[node name="TerraCube149" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 7.5)
+
+[node name="TerraCube150" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 6.5)
+
+[node name="TerraCube151" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 6.5)
+
+[node name="TerraCube152" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 7.5)
+
+[node name="TerraCube153" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 7.5)
+
+[node name="TerraCube154" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 7.5)
+
+[node name="TerraCube155" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 8.5)
+
+[node name="TerraCube156" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 8.5)
+
+[node name="TerraCube157" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 8.5)
+
+[node name="TerraCube158" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 8.5)
+
+[node name="TerraCube159" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 8.5)
+
+[node name="TerraCube160" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 8.5)
+
+[node name="TerraCube161" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 8.5)
+
+[node name="TerraCube162" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 8.5)
+
+[node name="TerraCube163" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 9.5)
+
+[node name="TerraCube164" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 9.5)
+
+[node name="TerraCube165" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 9.5)
+
+[node name="TerraCube166" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 9.5)
+
+[node name="TerraCube167" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 9.5)
+
+[node name="TerraCube168" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 9.5)
+
+[node name="TerraCube169" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 9.5)
+
+[node name="TerraCube170" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 9.5)
+
+[node name="TerraCube171" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 8.5)
+
+[node name="TerraCube172" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 8.5)
+
+[node name="TerraCube173" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 8.5)
+
+[node name="TerraCube174" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 8.5)
+
+[node name="TerraCube175" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 9.5)
+
+[node name="TerraCube176" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 9.5)
+
+[node name="TerraCube177" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 9.5)
+
+[node name="TerraCube178" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 8.5)
+
+[node name="TerraCube179" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 8.5)
+
+[node name="TerraCube180" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 9.5)
+
+[node name="TerraCube181" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 9.5)
+
+[node name="TerraCube182" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 9.5)
+
+[node name="TerraCube183" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 10.5)
+
+[node name="TerraCube184" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 10.5)
+
+[node name="TerraCube185" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 10.5)
+
+[node name="TerraCube186" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 10.5)
+
+[node name="TerraCube187" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 10.5)
+
+[node name="TerraCube188" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 10.5)
+
+[node name="TerraCube189" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 10.5)
+
+[node name="TerraCube190" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 10.5)
+
+[node name="TerraCube191" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 11.5)
+
+[node name="TerraCube192" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 11.5)
+
+[node name="TerraCube193" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 11.5)
+
+[node name="TerraCube194" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 11.5)
+
+[node name="TerraCube195" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 11.5)
+
+[node name="TerraCube196" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 11.5)
+
+[node name="TerraCube197" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 11.5)
+
+[node name="TerraCube198" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 11.5)
+
+[node name="TerraCube199" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 10.5)
+
+[node name="TerraCube200" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 10.5)
+
+[node name="TerraCube201" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 10.5)
+
+[node name="TerraCube202" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 10.5)
+
+[node name="TerraCube203" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 11.5)
+
+[node name="TerraCube204" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 11.5)
+
+[node name="TerraCube205" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 11.5)
+
+[node name="TerraCube206" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 10.5)
+
+[node name="TerraCube207" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 10.5)
+
+[node name="TerraCube208" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 11.5)
+
+[node name="TerraCube209" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 11.5)
+
+[node name="TerraCube210" parent="Level/Plat1" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 11.5)
+
+[node name="Plat3" type="Node3D" parent="Level"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -22, 0, 2)
+
+[node name="TerraCube" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+
+[node name="TerraCube2" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -0.5)
+
+[node name="TerraCube3" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -1.5)
+
+[node name="TerraCube9" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, 1.5)
+
+[node name="TerraCube10" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, 0.5)
+
+[node name="TerraCube4" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -1.5)
+
+[node name="TerraCube5" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+
+[node name="TerraCube6" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0.5)
+
+[node name="TerraCube7" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 1.5)
+
+[node name="TerraCube8" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+
+[node name="TerraCube31" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -0.5)
+
+[node name="TerraCube32" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -1.5)
+
+[node name="TerraCube33" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0.5)
+
+[node name="TerraCube34" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 1.5)
+
+[node name="TerraCube35" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -0.5)
+
+[node name="TerraCube36" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -1.5)
+
+[node name="TerraCube37" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 0.5)
+
+[node name="TerraCube38" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 1.5)
+
+[node name="TerraCube13" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -0.5)
+
+[node name="TerraCube14" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
+
+[node name="TerraCube15" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -1.5)
+
+[node name="TerraCube16" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, 1.5)
+
+[node name="TerraCube17" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, 0.5)
+
+[node name="TerraCube71" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, -0.5)
+
+[node name="TerraCube72" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, -1.5)
+
+[node name="TerraCube73" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, -0.5)
+
+[node name="TerraCube74" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, -1.5)
+
+[node name="TerraCube75" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
+
+[node name="TerraCube76" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -1.5)
+
+[node name="TerraCube77" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
+
+[node name="TerraCube78" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -1.5)
+
+[node name="TerraCube227" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, -2.5)
+
+[node name="TerraCube228" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, -2.5)
+
+[node name="TerraCube229" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -2.5)
+
+[node name="TerraCube230" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -2.5)
+
+[node name="TerraCube211" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -0.5)
+
+[node name="TerraCube212" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -1.5)
+
+[node name="TerraCube213" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -0.5)
+
+[node name="TerraCube214" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -1.5)
+
+[node name="TerraCube215" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -2.5)
+
+[node name="TerraCube216" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -3.5)
+
+[node name="TerraCube217" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -2.5)
+
+[node name="TerraCube218" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -3.5)
+
+[node name="TerraCube219" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -4.5)
+
+[node name="TerraCube220" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -5.5)
+
+[node name="TerraCube221" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -4.5)
+
+[node name="TerraCube222" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -5.5)
+
+[node name="TerraCube223" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -6.5)
+
+[node name="TerraCube224" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -7.5)
+
+[node name="TerraCube225" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -6.5)
+
+[node name="TerraCube226" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -7.5)
+
+[node name="TerraCube231" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -3.5)
+
+[node name="TerraCube232" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -4.5)
+
+[node name="TerraCube233" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -5.5)
+
+[node name="TerraCube234" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -6.5)
+
+[node name="TerraCube235" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -7.5)
+
+[node name="TerraCube18" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -1.5)
+
+[node name="TerraCube19" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0.5)
+
+[node name="TerraCube20" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.5)
+
+[node name="TerraCube21" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 1.5)
+
+[node name="TerraCube23" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -0.5)
+
+[node name="TerraCube24" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -1.5)
+
+[node name="TerraCube25" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0.5)
+
+[node name="TerraCube26" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 1.5)
+
+[node name="TerraCube27" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -0.5)
+
+[node name="TerraCube28" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -1.5)
+
+[node name="TerraCube29" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 0.5)
+
+[node name="TerraCube30" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 1.5)
+
+[node name="TerraCube22" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 1.5)
+
+[node name="TerraCube39" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 2.5)
+
+[node name="TerraCube40" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 2.5)
+
+[node name="TerraCube41" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 2.5)
+
+[node name="TerraCube42" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 2.5)
+
+[node name="TerraCube43" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 2.5)
+
+[node name="TerraCube44" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 2.5)
+
+[node name="TerraCube45" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 2.5)
+
+[node name="TerraCube46" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 2.5)
+
+[node name="TerraCube47" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 3.5)
+
+[node name="TerraCube48" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 3.5)
+
+[node name="TerraCube49" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 3.5)
+
+[node name="TerraCube50" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 3.5)
+
+[node name="TerraCube51" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 3.5)
+
+[node name="TerraCube52" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 3.5)
+
+[node name="TerraCube53" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 3.5)
+
+[node name="TerraCube54" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 3.5)
+
+[node name="TerraCube55" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 4.5)
+
+[node name="TerraCube56" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 4.5)
+
+[node name="TerraCube57" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 4.5)
+
+[node name="TerraCube58" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 4.5)
+
+[node name="TerraCube59" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 4.5)
+
+[node name="TerraCube60" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 4.5)
+
+[node name="TerraCube61" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 4.5)
+
+[node name="TerraCube62" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 4.5)
+
+[node name="TerraCube63" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 5.5)
+
+[node name="TerraCube64" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 5.5)
+
+[node name="TerraCube65" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 5.5)
+
+[node name="TerraCube66" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 5.5)
+
+[node name="TerraCube67" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 5.5)
+
+[node name="TerraCube68" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 5.5)
+
+[node name="TerraCube69" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 5.5)
+
+[node name="TerraCube70" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 5.5)
+
+[node name="TerraCube79" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, -0.5)
+
+[node name="TerraCube80" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, -1.5)
+
+[node name="TerraCube81" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 0.5)
+
+[node name="TerraCube82" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 1.5)
+
+[node name="TerraCube83" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -0.5)
+
+[node name="TerraCube84" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -1.5)
+
+[node name="TerraCube85" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 0.5)
+
+[node name="TerraCube86" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 1.5)
+
+[node name="TerraCube87" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, -0.5)
+
+[node name="TerraCube88" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, -1.5)
+
+[node name="TerraCube89" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 0.5)
+
+[node name="TerraCube90" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 1.5)
+
+[node name="TerraCube91" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, -0.5)
+
+[node name="TerraCube92" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, -1.5)
+
+[node name="TerraCube93" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 0.5)
+
+[node name="TerraCube94" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 1.5)
+
+[node name="TerraCube95" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 2.5)
+
+[node name="TerraCube96" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 2.5)
+
+[node name="TerraCube97" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 2.5)
+
+[node name="TerraCube98" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 2.5)
+
+[node name="TerraCube99" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 3.5)
+
+[node name="TerraCube100" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 3.5)
+
+[node name="TerraCube101" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 3.5)
+
+[node name="TerraCube102" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 3.5)
+
+[node name="TerraCube103" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 4.5)
+
+[node name="TerraCube104" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 4.5)
+
+[node name="TerraCube105" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 4.5)
+
+[node name="TerraCube106" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 4.5)
+
+[node name="TerraCube107" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 5.5)
+
+[node name="TerraCube108" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 5.5)
+
+[node name="TerraCube109" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 5.5)
+
+[node name="TerraCube111" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, -0.5)
+
+[node name="TerraCube112" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, -1.5)
+
+[node name="TerraCube113" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 0.5)
+
+[node name="TerraCube114" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 1.5)
+
+[node name="TerraCube115" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, -0.5)
+
+[node name="TerraCube116" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, -1.5)
+
+[node name="TerraCube117" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 0.5)
+
+[node name="TerraCube118" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 1.5)
+
+[node name="TerraCube119" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 2.5)
+
+[node name="TerraCube120" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 2.5)
+
+[node name="TerraCube121" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 3.5)
+
+[node name="TerraCube122" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 3.5)
+
+[node name="TerraCube123" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 4.5)
+
+[node name="TerraCube124" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 4.5)
+
+[node name="TerraCube125" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 5.5)
+
+[node name="TerraCube126" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 5.5)
+
+[node name="TerraCube110" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 5.5)
+
+[node name="TerraCube127" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 6.5)
+
+[node name="TerraCube128" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 6.5)
+
+[node name="TerraCube129" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 6.5)
+
+[node name="TerraCube130" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 6.5)
+
+[node name="TerraCube131" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 6.5)
+
+[node name="TerraCube132" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 6.5)
+
+[node name="TerraCube133" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 6.5)
+
+[node name="TerraCube134" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 6.5)
+
+[node name="TerraCube135" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 7.5)
+
+[node name="TerraCube136" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 7.5)
+
+[node name="TerraCube137" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 7.5)
+
+[node name="TerraCube138" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 7.5)
+
+[node name="TerraCube139" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 7.5)
+
+[node name="TerraCube140" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 7.5)
+
+[node name="TerraCube141" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 7.5)
+
+[node name="TerraCube142" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 7.5)
+
+[node name="TerraCube143" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 6.5)
+
+[node name="TerraCube144" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 6.5)
+
+[node name="TerraCube145" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 6.5)
+
+[node name="TerraCube146" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 6.5)
+
+[node name="TerraCube147" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 7.5)
+
+[node name="TerraCube148" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 7.5)
+
+[node name="TerraCube149" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 7.5)
+
+[node name="TerraCube150" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 6.5)
+
+[node name="TerraCube151" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 6.5)
+
+[node name="TerraCube152" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 7.5)
+
+[node name="TerraCube153" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 7.5)
+
+[node name="TerraCube154" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 7.5)
+
+[node name="TerraCube155" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 8.5)
+
+[node name="TerraCube156" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 8.5)
+
+[node name="TerraCube157" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 8.5)
+
+[node name="TerraCube158" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 8.5)
+
+[node name="TerraCube159" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 8.5)
+
+[node name="TerraCube160" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 8.5)
+
+[node name="TerraCube161" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 8.5)
+
+[node name="TerraCube162" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 8.5)
+
+[node name="TerraCube163" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 9.5)
+
+[node name="TerraCube164" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 9.5)
+
+[node name="TerraCube165" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 9.5)
+
+[node name="TerraCube166" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 9.5)
+
+[node name="TerraCube167" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 9.5)
+
+[node name="TerraCube168" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 9.5)
+
+[node name="TerraCube169" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 9.5)
+
+[node name="TerraCube170" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 9.5)
+
+[node name="TerraCube171" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 8.5)
+
+[node name="TerraCube172" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 8.5)
+
+[node name="TerraCube173" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 8.5)
+
+[node name="TerraCube174" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 8.5)
+
+[node name="TerraCube175" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 9.5)
+
+[node name="TerraCube176" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 9.5)
+
+[node name="TerraCube177" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 9.5)
+
+[node name="TerraCube178" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 8.5)
+
+[node name="TerraCube179" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 8.5)
+
+[node name="TerraCube180" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 9.5)
+
+[node name="TerraCube181" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 9.5)
+
+[node name="TerraCube182" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 9.5)
+
+[node name="TerraCube183" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 10.5)
+
+[node name="TerraCube184" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 10.5)
+
+[node name="TerraCube185" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 10.5)
+
+[node name="TerraCube186" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 10.5)
+
+[node name="TerraCube187" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 10.5)
+
+[node name="TerraCube188" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 10.5)
+
+[node name="TerraCube189" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 10.5)
+
+[node name="TerraCube190" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 10.5)
+
+[node name="TerraCube191" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 11.5)
+
+[node name="TerraCube192" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 11.5)
+
+[node name="TerraCube193" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 11.5)
+
+[node name="TerraCube194" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 11.5)
+
+[node name="TerraCube195" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 11.5)
+
+[node name="TerraCube196" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 11.5)
+
+[node name="TerraCube197" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 11.5)
+
+[node name="TerraCube198" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 11.5)
+
+[node name="TerraCube199" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 10.5)
+
+[node name="TerraCube200" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 10.5)
+
+[node name="TerraCube201" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 10.5)
+
+[node name="TerraCube202" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 10.5)
+
+[node name="TerraCube203" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 11.5)
+
+[node name="TerraCube204" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 11.5)
+
+[node name="TerraCube205" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 11.5)
+
+[node name="TerraCube206" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 10.5)
+
+[node name="TerraCube207" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 10.5)
+
+[node name="TerraCube208" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 11.5)
+
+[node name="TerraCube209" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 11.5)
+
+[node name="TerraCube210" parent="Level/Plat3" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 11.5)
+
+[node name="Plat2" type="Node3D" parent="Level"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -20, 0, 24)
+
+[node name="TerraCube" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+
+[node name="TerraCube2" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -0.5)
+
+[node name="TerraCube3" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -1.5)
+
+[node name="TerraCube9" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, 1.5)
+
+[node name="TerraCube10" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, 0.5)
+
+[node name="TerraCube4" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -1.5)
+
+[node name="TerraCube5" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+
+[node name="TerraCube6" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0.5)
+
+[node name="TerraCube7" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 1.5)
+
+[node name="TerraCube8" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+
+[node name="TerraCube31" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -0.5)
+
+[node name="TerraCube32" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -1.5)
+
+[node name="TerraCube33" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0.5)
+
+[node name="TerraCube34" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 1.5)
+
+[node name="TerraCube35" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -0.5)
+
+[node name="TerraCube36" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -1.5)
+
+[node name="TerraCube37" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 0.5)
+
+[node name="TerraCube38" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 1.5)
+
+[node name="TerraCube13" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -0.5)
+
+[node name="TerraCube14" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
+
+[node name="TerraCube15" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -1.5)
+
+[node name="TerraCube16" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, 1.5)
+
+[node name="TerraCube17" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, 0.5)
+
+[node name="TerraCube238" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 1, 10)
+
+[node name="TerraCube239" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 1, 9)
+
+[node name="TerraCube241" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 1, 9)
+
+[node name="TerraCube242" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 1, 8)
+
+[node name="TerraCube243" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 1, 7)
+
+[node name="TerraCube244" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 1, 8)
+
+[node name="TerraCube245" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 1, 7)
+
+[node name="TerraCube246" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 1, 6)
+
+[node name="TerraCube247" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 1, 5)
+
+[node name="TerraCube248" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 1, 6)
+
+[node name="TerraCube249" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 1, 5)
+
+[node name="TerraCube250" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 1, 4)
+
+[node name="TerraCube252" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 1, 4)
+
+[node name="TerraCube253" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 1, 20)
+
+[node name="TerraCube255" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 1, 20)
+
+[node name="TerraCube256" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 1, 19)
+
+[node name="TerraCube257" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 1, 18)
+
+[node name="TerraCube258" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 1, 19)
+
+[node name="TerraCube259" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 1, 18)
+
+[node name="TerraCube260" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 1, 17)
+
+[node name="TerraCube261" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 1, 16)
+
+[node name="TerraCube262" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 1, 17)
+
+[node name="TerraCube263" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 1, 16)
+
+[node name="TerraCube266" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 1, 15)
+
+[node name="TerraCube71" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, -0.5)
+
+[node name="TerraCube72" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, -1.5)
+
+[node name="TerraCube73" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, -0.5)
+
+[node name="TerraCube74" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, -1.5)
+
+[node name="TerraCube75" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
+
+[node name="TerraCube76" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -1.5)
+
+[node name="TerraCube77" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
+
+[node name="TerraCube78" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -1.5)
+
+[node name="TerraCube227" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, -2.5)
+
+[node name="TerraCube228" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, -2.5)
+
+[node name="TerraCube229" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -2.5)
+
+[node name="TerraCube230" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -2.5)
+
+[node name="TerraCube211" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -0.5)
+
+[node name="TerraCube212" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -1.5)
+
+[node name="TerraCube213" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -0.5)
+
+[node name="TerraCube214" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -1.5)
+
+[node name="TerraCube215" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -2.5)
+
+[node name="TerraCube216" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -3.5)
+
+[node name="TerraCube217" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -2.5)
+
+[node name="TerraCube218" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -3.5)
+
+[node name="TerraCube219" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -4.5)
+
+[node name="TerraCube220" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -5.5)
+
+[node name="TerraCube221" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -4.5)
+
+[node name="TerraCube222" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -5.5)
+
+[node name="TerraCube223" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -6.5)
+
+[node name="TerraCube224" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -7.5)
+
+[node name="TerraCube225" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -6.5)
+
+[node name="TerraCube226" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -7.5)
+
+[node name="TerraCube231" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -3.5)
+
+[node name="TerraCube232" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -4.5)
+
+[node name="TerraCube233" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -5.5)
+
+[node name="TerraCube234" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -6.5)
+
+[node name="TerraCube235" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -7.5)
+
+[node name="TerraCube18" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -1.5)
+
+[node name="TerraCube19" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0.5)
+
+[node name="TerraCube20" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.5)
+
+[node name="TerraCube21" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 1.5)
+
+[node name="TerraCube23" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -0.5)
+
+[node name="TerraCube24" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -1.5)
+
+[node name="TerraCube25" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0.5)
+
+[node name="TerraCube26" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 1.5)
+
+[node name="TerraCube27" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -0.5)
+
+[node name="TerraCube28" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -1.5)
+
+[node name="TerraCube29" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 0.5)
+
+[node name="TerraCube30" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 1.5)
+
+[node name="TerraCube22" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 1.5)
+
+[node name="TerraCube39" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 2.5)
+
+[node name="TerraCube40" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 2.5)
+
+[node name="TerraCube41" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 2.5)
+
+[node name="TerraCube42" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 2.5)
+
+[node name="TerraCube43" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 2.5)
+
+[node name="TerraCube44" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 2.5)
+
+[node name="TerraCube45" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 2.5)
+
+[node name="TerraCube46" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 2.5)
+
+[node name="TerraCube47" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 3.5)
+
+[node name="TerraCube48" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 3.5)
+
+[node name="TerraCube49" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 3.5)
+
+[node name="TerraCube50" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 3.5)
+
+[node name="TerraCube51" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 3.5)
+
+[node name="TerraCube52" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 3.5)
+
+[node name="TerraCube53" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 3.5)
+
+[node name="TerraCube54" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 3.5)
+
+[node name="TerraCube55" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 4.5)
+
+[node name="TerraCube56" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 4.5)
+
+[node name="TerraCube57" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 4.5)
+
+[node name="TerraCube58" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 4.5)
+
+[node name="TerraCube59" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 4.5)
+
+[node name="TerraCube60" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 4.5)
+
+[node name="TerraCube61" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 4.5)
+
+[node name="TerraCube62" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 4.5)
+
+[node name="TerraCube63" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 5.5)
+
+[node name="TerraCube64" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 5.5)
+
+[node name="TerraCube65" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 5.5)
+
+[node name="TerraCube66" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 5.5)
+
+[node name="TerraCube67" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 5.5)
+
+[node name="TerraCube68" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 5.5)
+
+[node name="TerraCube69" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 5.5)
+
+[node name="TerraCube70" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 5.5)
+
+[node name="TerraCube79" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, -0.5)
+
+[node name="TerraCube80" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, -1.5)
+
+[node name="TerraCube81" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 0.5)
+
+[node name="TerraCube82" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 1.5)
+
+[node name="TerraCube83" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -0.5)
+
+[node name="TerraCube84" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -1.5)
+
+[node name="TerraCube85" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 0.5)
+
+[node name="TerraCube86" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 1.5)
+
+[node name="TerraCube87" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, -0.5)
+
+[node name="TerraCube88" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, -1.5)
+
+[node name="TerraCube89" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 0.5)
+
+[node name="TerraCube90" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 1.5)
+
+[node name="TerraCube91" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, -0.5)
+
+[node name="TerraCube92" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, -1.5)
+
+[node name="TerraCube93" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 0.5)
+
+[node name="TerraCube94" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 1.5)
+
+[node name="TerraCube95" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 2.5)
+
+[node name="TerraCube96" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 2.5)
+
+[node name="TerraCube97" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 2.5)
+
+[node name="TerraCube98" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 2.5)
+
+[node name="TerraCube99" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 3.5)
+
+[node name="TerraCube100" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 3.5)
+
+[node name="TerraCube101" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 3.5)
+
+[node name="TerraCube102" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 3.5)
+
+[node name="TerraCube103" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 4.5)
+
+[node name="TerraCube104" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 4.5)
+
+[node name="TerraCube105" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 4.5)
+
+[node name="TerraCube106" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 4.5)
+
+[node name="TerraCube107" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 5.5)
+
+[node name="TerraCube108" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 5.5)
+
+[node name="TerraCube109" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 5.5)
+
+[node name="TerraCube111" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, -0.5)
+
+[node name="TerraCube112" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, -1.5)
+
+[node name="TerraCube113" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 0.5)
+
+[node name="TerraCube114" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 1.5)
+
+[node name="TerraCube115" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, -0.5)
+
+[node name="TerraCube116" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, -1.5)
+
+[node name="TerraCube117" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 0.5)
+
+[node name="TerraCube118" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 1.5)
+
+[node name="TerraCube119" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 2.5)
+
+[node name="TerraCube120" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 2.5)
+
+[node name="TerraCube121" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 3.5)
+
+[node name="TerraCube122" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 3.5)
+
+[node name="TerraCube123" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 4.5)
+
+[node name="TerraCube124" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 4.5)
+
+[node name="TerraCube125" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 5.5)
+
+[node name="TerraCube126" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 5.5)
+
+[node name="TerraCube110" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 5.5)
+
+[node name="TerraCube127" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 6.5)
+
+[node name="TerraCube128" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 6.5)
+
+[node name="TerraCube129" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 6.5)
+
+[node name="TerraCube130" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 6.5)
+
+[node name="TerraCube131" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 6.5)
+
+[node name="TerraCube132" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 6.5)
+
+[node name="TerraCube133" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 6.5)
+
+[node name="TerraCube134" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 6.5)
+
+[node name="TerraCube135" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 7.5)
+
+[node name="TerraCube136" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 7.5)
+
+[node name="TerraCube137" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 7.5)
+
+[node name="TerraCube138" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 7.5)
+
+[node name="TerraCube139" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 7.5)
+
+[node name="TerraCube140" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 7.5)
+
+[node name="TerraCube141" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 7.5)
+
+[node name="TerraCube142" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 7.5)
+
+[node name="TerraCube143" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 6.5)
+
+[node name="TerraCube144" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 6.5)
+
+[node name="TerraCube145" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 6.5)
+
+[node name="TerraCube146" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 6.5)
+
+[node name="TerraCube147" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 7.5)
+
+[node name="TerraCube148" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 7.5)
+
+[node name="TerraCube149" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 7.5)
+
+[node name="TerraCube150" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 6.5)
+
+[node name="TerraCube151" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 6.5)
+
+[node name="TerraCube152" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 7.5)
+
+[node name="TerraCube153" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 7.5)
+
+[node name="TerraCube154" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 7.5)
+
+[node name="TerraCube155" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 8.5)
+
+[node name="TerraCube156" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 8.5)
+
+[node name="TerraCube157" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 8.5)
+
+[node name="TerraCube158" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 8.5)
+
+[node name="TerraCube159" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 8.5)
+
+[node name="TerraCube160" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 8.5)
+
+[node name="TerraCube161" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 8.5)
+
+[node name="TerraCube162" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 8.5)
+
+[node name="TerraCube163" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 9.5)
+
+[node name="TerraCube164" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 9.5)
+
+[node name="TerraCube165" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 9.5)
+
+[node name="TerraCube166" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 9.5)
+
+[node name="TerraCube167" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 9.5)
+
+[node name="TerraCube168" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 9.5)
+
+[node name="TerraCube169" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 9.5)
+
+[node name="TerraCube170" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 9.5)
+
+[node name="TerraCube171" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 8.5)
+
+[node name="TerraCube172" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 8.5)
+
+[node name="TerraCube173" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 8.5)
+
+[node name="TerraCube174" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 8.5)
+
+[node name="TerraCube175" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 9.5)
+
+[node name="TerraCube176" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 9.5)
+
+[node name="TerraCube177" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 9.5)
+
+[node name="TerraCube178" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 8.5)
+
+[node name="TerraCube179" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 8.5)
+
+[node name="TerraCube180" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 9.5)
+
+[node name="TerraCube181" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 9.5)
+
+[node name="TerraCube182" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 9.5)
+
+[node name="TerraCube183" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 10.5)
+
+[node name="TerraCube184" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 10.5)
+
+[node name="TerraCube185" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 10.5)
+
+[node name="TerraCube186" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 10.5)
+
+[node name="TerraCube187" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 10.5)
+
+[node name="TerraCube188" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 10.5)
+
+[node name="TerraCube189" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 10.5)
+
+[node name="TerraCube190" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 10.5)
+
+[node name="TerraCube191" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 11.5)
+
+[node name="TerraCube192" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 11.5)
+
+[node name="TerraCube193" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 11.5)
+
+[node name="TerraCube194" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 11.5)
+
+[node name="TerraCube195" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 11.5)
+
+[node name="TerraCube196" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 11.5)
+
+[node name="TerraCube197" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 11.5)
+
+[node name="TerraCube198" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 11.5)
+
+[node name="TerraCube199" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 10.5)
+
+[node name="TerraCube200" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 10.5)
+
+[node name="TerraCube201" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 10.5)
+
+[node name="TerraCube202" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 10.5)
+
+[node name="TerraCube203" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 11.5)
+
+[node name="TerraCube204" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 11.5)
+
+[node name="TerraCube205" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 11.5)
+
+[node name="TerraCube206" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 10.5)
+
+[node name="TerraCube207" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 10.5)
+
+[node name="TerraCube208" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 11.5)
+
+[node name="TerraCube209" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 11.5)
+
+[node name="TerraCube210" parent="Level/Plat2" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 11.5)
+
+[node name="Plat4" type="Node3D" parent="Level"]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 2, 0, 22)
+
+[node name="TerraCube" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+
+[node name="TerraCube2" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -0.5)
+
+[node name="TerraCube3" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -1.5)
+
+[node name="TerraCube9" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, 1.5)
+
+[node name="TerraCube10" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, 0.5)
+
+[node name="TerraCube4" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -1.5)
+
+[node name="TerraCube5" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+
+[node name="TerraCube6" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0.5)
+
+[node name="TerraCube7" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 1.5)
+
+[node name="TerraCube8" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+
+[node name="TerraCube31" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -0.5)
+
+[node name="TerraCube32" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -1.5)
+
+[node name="TerraCube33" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0.5)
+
+[node name="TerraCube34" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 1.5)
+
+[node name="TerraCube35" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -0.5)
+
+[node name="TerraCube36" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -1.5)
+
+[node name="TerraCube37" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 0.5)
+
+[node name="TerraCube38" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 1.5)
+
+[node name="TerraCube13" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -0.5)
+
+[node name="TerraCube14" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
+
+[node name="TerraCube15" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -1.5)
+
+[node name="TerraCube16" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, 1.5)
+
+[node name="TerraCube17" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, 0.5)
+
+[node name="TerraCube71" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, -0.5)
+
+[node name="TerraCube72" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, -1.5)
+
+[node name="TerraCube73" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, -0.5)
+
+[node name="TerraCube74" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, -1.5)
+
+[node name="TerraCube75" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
+
+[node name="TerraCube76" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -1.5)
+
+[node name="TerraCube77" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
+
+[node name="TerraCube78" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -1.5)
+
+[node name="TerraCube227" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, -2.5)
+
+[node name="TerraCube228" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, -2.5)
+
+[node name="TerraCube229" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -2.5)
+
+[node name="TerraCube230" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -2.5)
+
+[node name="TerraCube211" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -0.5)
+
+[node name="TerraCube212" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -1.5)
+
+[node name="TerraCube213" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -0.5)
+
+[node name="TerraCube214" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -1.5)
+
+[node name="TerraCube215" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -2.5)
+
+[node name="TerraCube216" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -3.5)
+
+[node name="TerraCube217" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -2.5)
+
+[node name="TerraCube218" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -3.5)
+
+[node name="TerraCube219" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -4.5)
+
+[node name="TerraCube220" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -5.5)
+
+[node name="TerraCube221" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -4.5)
+
+[node name="TerraCube222" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -5.5)
+
+[node name="TerraCube223" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -6.5)
+
+[node name="TerraCube224" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -7.5)
+
+[node name="TerraCube225" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -6.5)
+
+[node name="TerraCube226" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -7.5)
+
+[node name="TerraCube231" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -3.5)
+
+[node name="TerraCube232" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -4.5)
+
+[node name="TerraCube233" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -5.5)
+
+[node name="TerraCube234" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -6.5)
+
+[node name="TerraCube235" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -7.5)
+
+[node name="TerraCube18" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -1.5)
+
+[node name="TerraCube19" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0.5)
+
+[node name="TerraCube20" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.5)
+
+[node name="TerraCube21" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 1.5)
+
+[node name="TerraCube23" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -0.5)
+
+[node name="TerraCube24" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -1.5)
+
+[node name="TerraCube25" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0.5)
+
+[node name="TerraCube26" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 1.5)
+
+[node name="TerraCube27" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -0.5)
+
+[node name="TerraCube28" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -1.5)
+
+[node name="TerraCube29" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 0.5)
+
+[node name="TerraCube30" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 1.5)
+
+[node name="TerraCube22" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 1.5)
+
+[node name="TerraCube39" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 2.5)
+
+[node name="TerraCube40" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 2.5)
+
+[node name="TerraCube41" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 2.5)
+
+[node name="TerraCube42" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 2.5)
+
+[node name="TerraCube43" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 2.5)
+
+[node name="TerraCube44" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 2.5)
+
+[node name="TerraCube45" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 2.5)
+
+[node name="TerraCube46" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 2.5)
+
+[node name="TerraCube47" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 3.5)
+
+[node name="TerraCube48" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 3.5)
+
+[node name="TerraCube49" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 3.5)
+
+[node name="TerraCube50" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 3.5)
+
+[node name="TerraCube51" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 3.5)
+
+[node name="TerraCube52" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 3.5)
+
+[node name="TerraCube53" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 3.5)
+
+[node name="TerraCube54" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 3.5)
+
+[node name="TerraCube55" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 4.5)
+
+[node name="TerraCube56" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 4.5)
+
+[node name="TerraCube57" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 4.5)
+
+[node name="TerraCube58" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 4.5)
+
+[node name="TerraCube59" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 4.5)
+
+[node name="TerraCube60" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 4.5)
+
+[node name="TerraCube61" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 4.5)
+
+[node name="TerraCube62" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 4.5)
+
+[node name="TerraCube63" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 5.5)
+
+[node name="TerraCube64" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 5.5)
+
+[node name="TerraCube65" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 5.5)
+
+[node name="TerraCube66" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 5.5)
+
+[node name="TerraCube67" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 5.5)
+
+[node name="TerraCube68" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 5.5)
+
+[node name="TerraCube69" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 5.5)
+
+[node name="TerraCube70" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 5.5)
+
+[node name="TerraCube79" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, -0.5)
+
+[node name="TerraCube80" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, -1.5)
+
+[node name="TerraCube81" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 0.5)
+
+[node name="TerraCube82" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 1.5)
+
+[node name="TerraCube83" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -0.5)
+
+[node name="TerraCube84" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -1.5)
+
+[node name="TerraCube85" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 0.5)
+
+[node name="TerraCube86" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 1.5)
+
+[node name="TerraCube87" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, -0.5)
+
+[node name="TerraCube88" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, -1.5)
+
+[node name="TerraCube89" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 0.5)
+
+[node name="TerraCube90" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 1.5)
+
+[node name="TerraCube91" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, -0.5)
+
+[node name="TerraCube92" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, -1.5)
+
+[node name="TerraCube93" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 0.5)
+
+[node name="TerraCube94" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 1.5)
+
+[node name="TerraCube95" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 2.5)
+
+[node name="TerraCube96" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 2.5)
+
+[node name="TerraCube97" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 2.5)
+
+[node name="TerraCube98" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 2.5)
+
+[node name="TerraCube99" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 3.5)
+
+[node name="TerraCube100" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 3.5)
+
+[node name="TerraCube101" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 3.5)
+
+[node name="TerraCube102" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 3.5)
+
+[node name="TerraCube103" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 4.5)
+
+[node name="TerraCube104" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 4.5)
+
+[node name="TerraCube105" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 4.5)
+
+[node name="TerraCube106" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 4.5)
+
+[node name="TerraCube107" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 5.5)
+
+[node name="TerraCube108" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 5.5)
+
+[node name="TerraCube109" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 5.5)
+
+[node name="TerraCube111" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, -0.5)
+
+[node name="TerraCube112" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, -1.5)
+
+[node name="TerraCube113" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 0.5)
+
+[node name="TerraCube114" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 1.5)
+
+[node name="TerraCube115" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, -0.5)
+
+[node name="TerraCube116" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, -1.5)
+
+[node name="TerraCube117" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 0.5)
+
+[node name="TerraCube118" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 1.5)
+
+[node name="TerraCube119" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 2.5)
+
+[node name="TerraCube120" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 2.5)
+
+[node name="TerraCube121" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 3.5)
+
+[node name="TerraCube122" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 3.5)
+
+[node name="TerraCube123" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 4.5)
+
+[node name="TerraCube124" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 4.5)
+
+[node name="TerraCube125" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 5.5)
+
+[node name="TerraCube126" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 5.5)
+
+[node name="TerraCube110" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 5.5)
+
+[node name="TerraCube127" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 6.5)
+
+[node name="TerraCube128" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 6.5)
+
+[node name="TerraCube129" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 6.5)
+
+[node name="TerraCube130" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 6.5)
+
+[node name="TerraCube131" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 6.5)
+
+[node name="TerraCube132" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 6.5)
+
+[node name="TerraCube133" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 6.5)
+
+[node name="TerraCube134" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 6.5)
+
+[node name="TerraCube135" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 7.5)
+
+[node name="TerraCube136" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 7.5)
+
+[node name="TerraCube137" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 7.5)
+
+[node name="TerraCube138" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 7.5)
+
+[node name="TerraCube139" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 7.5)
+
+[node name="TerraCube140" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 7.5)
+
+[node name="TerraCube141" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 7.5)
+
+[node name="TerraCube142" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 7.5)
+
+[node name="TerraCube143" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 6.5)
+
+[node name="TerraCube144" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 6.5)
+
+[node name="TerraCube145" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 6.5)
+
+[node name="TerraCube146" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 6.5)
+
+[node name="TerraCube147" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 7.5)
+
+[node name="TerraCube148" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 7.5)
+
+[node name="TerraCube149" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 7.5)
+
+[node name="TerraCube150" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 6.5)
+
+[node name="TerraCube151" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 6.5)
+
+[node name="TerraCube152" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 7.5)
+
+[node name="TerraCube153" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 7.5)
+
+[node name="TerraCube154" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 7.5)
+
+[node name="TerraCube155" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 8.5)
+
+[node name="TerraCube156" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 8.5)
+
+[node name="TerraCube157" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 8.5)
+
+[node name="TerraCube158" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 8.5)
+
+[node name="TerraCube159" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 8.5)
+
+[node name="TerraCube160" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 8.5)
+
+[node name="TerraCube161" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 8.5)
+
+[node name="TerraCube162" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 8.5)
+
+[node name="TerraCube163" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 9.5)
+
+[node name="TerraCube164" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 9.5)
+
+[node name="TerraCube165" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 9.5)
+
+[node name="TerraCube166" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 9.5)
+
+[node name="TerraCube167" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 9.5)
+
+[node name="TerraCube168" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 9.5)
+
+[node name="TerraCube169" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 9.5)
+
+[node name="TerraCube170" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 9.5)
+
+[node name="TerraCube171" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 8.5)
+
+[node name="TerraCube172" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 8.5)
+
+[node name="TerraCube173" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 8.5)
+
+[node name="TerraCube174" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 8.5)
+
+[node name="TerraCube175" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 9.5)
+
+[node name="TerraCube176" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 9.5)
+
+[node name="TerraCube177" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 9.5)
+
+[node name="TerraCube178" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 8.5)
+
+[node name="TerraCube179" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 8.5)
+
+[node name="TerraCube180" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 9.5)
+
+[node name="TerraCube181" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 9.5)
+
+[node name="TerraCube182" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 9.5)
+
+[node name="TerraCube183" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 10.5)
+
+[node name="TerraCube184" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 10.5)
+
+[node name="TerraCube185" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 10.5)
+
+[node name="TerraCube186" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 10.5)
+
+[node name="TerraCube187" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 10.5)
+
+[node name="TerraCube188" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 10.5)
+
+[node name="TerraCube189" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 10.5)
+
+[node name="TerraCube190" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 10.5)
+
+[node name="TerraCube191" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 11.5)
+
+[node name="TerraCube192" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 11.5)
+
+[node name="TerraCube193" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 11.5)
+
+[node name="TerraCube194" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 11.5)
+
+[node name="TerraCube195" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 11.5)
+
+[node name="TerraCube196" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 11.5)
+
+[node name="TerraCube197" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 11.5)
+
+[node name="TerraCube198" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 11.5)
+
+[node name="TerraCube199" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 10.5)
+
+[node name="TerraCube200" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 10.5)
+
+[node name="TerraCube201" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 10.5)
+
+[node name="TerraCube202" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 10.5)
+
+[node name="TerraCube203" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 11.5)
+
+[node name="TerraCube204" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 11.5)
+
+[node name="TerraCube205" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 11.5)
+
+[node name="TerraCube206" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 10.5)
+
+[node name="TerraCube207" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 10.5)
+
+[node name="TerraCube208" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 11.5)
+
+[node name="TerraCube209" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 11.5)
+
+[node name="TerraCube210" parent="Level/Plat4" instance=ExtResource("2_ms0pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 11.5)
 
 [node name="Env" type="Node3D" parent="."]
 
