@@ -104,9 +104,7 @@ func set_ui_visible(state):
 
 
 func update_pitch_indicator(value: Basis):
-	print([value.y.y, value.y.x])
 	if value.y.z <0:
-		print('+')
 		var horizon_delta = 1 - abs(value.y.y)
 
 		# Set above-horizon indicator bars
@@ -117,7 +115,6 @@ func update_pitch_indicator(value: Basis):
 		$HUD/MortarPitchIndicator/Lower/LowFill1.value = 0
 		$HUD/MortarPitchIndicator/Lower/LowFill2.value = 0
 	else:
-		print('-')
 		var horizon_delta = 1 - abs(value.y.y)
 
 		# Set above-horizon indicator bars
@@ -127,7 +124,6 @@ func update_pitch_indicator(value: Basis):
 		# Set below-horizon indicator bars
 		$HUD/MortarPitchIndicator/Lower/LowFill1.value = horizon_delta
 		$HUD/MortarPitchIndicator/Lower/LowFill2.value = horizon_delta
-		
 
 
 func _unhandled_input(event):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c0wpedxn5d6fg"]
+[gd_scene load_steps=20 format=3 uid="uid://c0wpedxn5d6fg"]
 
 [ext_resource type="Script" uid="uid://eoodsmq3plg4" path="res://player/player_tank.gd" id="1_f0njb"]
 [ext_resource type="PackedScene" uid="uid://8lbbbwe2ufow" path="res://weapons/gun_rocket.tscn" id="2_vgk1m"]
@@ -21,6 +21,12 @@ size = Vector3(1, 0.5, 2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_v5163"]
 size = Vector3(1, 0.25, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uvgxe"]
+size = Vector3(1, 0.25, 1.8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5q5ux"]
+size = Vector3(1, 0.25, 1.8)
 
 [sub_resource type="BoxMesh" id="BoxMesh_vgk1m"]
 size = Vector3(0.3, 1, 2)
@@ -91,6 +97,16 @@ skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/Do
 [node name="body2" type="MeshInstance3D" parent="ModelPivot/Body"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.875, 0)
 mesh = SubResource("BoxMesh_v5163")
+skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/PlayerTank")
+
+[node name="body3" type="MeshInstance3D" parent="ModelPivot/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.875, 0)
+mesh = SubResource("BoxMesh_uvgxe")
+skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/PlayerTank")
+
+[node name="body4" type="MeshInstance3D" parent="ModelPivot/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.875, 0)
+mesh = SubResource("BoxMesh_5q5ux")
 skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/PlayerTank")
 
 [node name="track" type="MeshInstance3D" parent="ModelPivot/Body"]
