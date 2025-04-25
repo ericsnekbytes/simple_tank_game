@@ -132,12 +132,11 @@ func sync_weapon():
 		var gun = guns[gun_id]
 		if gun_id == gun_order[active_weapon_index]:
 			gun.start_process = true
-			gun.show()
+			gun.set_gun_active(true)
 			if gun.is_in_group('gun_has_ui'):
 				gun.set_ui_visible(true)
 		else:
-			gun.stop()
-			gun.hide()
+			gun.set_gun_active(false)
 			if gun.is_in_group('gun_has_ui'):
 				gun.set_ui_visible(false)
 			gun.start_process = false

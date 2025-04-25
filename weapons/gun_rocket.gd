@@ -95,9 +95,13 @@ func set_ui_visible(state):
 		$HUD.hide()
 
 
-func stop():
-	firing = false
-	firing_timer.stop()
+func set_gun_active(state):
+	if state:
+		show()
+	else:
+		hide()
+		firing = false
+		firing_timer.stop()
 
 
 func _unhandled_input(event):

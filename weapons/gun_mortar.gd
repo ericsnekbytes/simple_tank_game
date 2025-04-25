@@ -72,9 +72,13 @@ func _on_ammo_timer_timeout():
 	ammo_count += 1
 
 
-func stop():
-	firing = false
-	firing_timer.stop()
+func set_gun_active(state):
+	if state:
+		show()
+	else:
+		hide()
+		firing = false
+		firing_timer.stop()
 
 
 #func sync_pips():

@@ -8,7 +8,7 @@ func _ready():
 	GameData.global_pivot = $SubViewportContainer/Level/GlobalPivot
 	$MarginContainer/VBoxContainer/SinglePlayerBtn.grab_focus()
 	
-	for player in [$SubViewportContainer/Level/PlayerTank, $SubViewportContainer/Level/PlayerTank2]:
+	for player in [$SubViewportContainer/Level/Node3D/Player1, $SubViewportContainer/Level/Node3D/Player2, $SubViewportContainer/Level/Node3D/Player3, $SubViewportContainer/Level/Node3D/Player4]:
 		player.hide_gui()
 
 
