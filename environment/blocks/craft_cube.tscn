@@ -8,7 +8,7 @@ roughness = 0.5
 
 [sub_resource type="BoxMesh" id="BoxMesh_r8wo4"]
 
-[node name="CraftCube" type="StaticBody3D"]
+[node name="CraftCube" type="StaticBody3D" groups=["craft_blk"]]
 collision_layer = 8
 collision_mask = 7
 
