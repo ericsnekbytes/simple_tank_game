@@ -41,7 +41,7 @@ visible = false
 mesh = SubResource("CylinderMesh_mcssg")
 
 [node name="AmmoTimer" type="Timer" parent="."]
-wait_time = 1.667
+wait_time = 6.0
 autostart = true
 
 [node name="HUD" type="Control" parent="."]
@@ -211,6 +211,46 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_j12u2")
 show_percentage = false
+
+[node name="AmmoPips" type="Control" parent="HUD"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Pip1" type="ColorRect" parent="HUD/AmmoPips"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -104.0
+offset_top = -160.0
+offset_right = -64.0
+offset_bottom = -120.0
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(1, 0, 0, 1)
+
+[node name="Pip2" type="ColorRect" parent="HUD/AmmoPips"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -176.0
+offset_top = -160.0
+offset_right = -136.0
+offset_bottom = -120.0
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(1, 0, 0, 1)
 
 [connection signal="timeout" from="FiringTimer" to="." method="fire"]
 [connection signal="timeout" from="AmmoTimer" to="." method="_on_ammo_timer_timeout"]

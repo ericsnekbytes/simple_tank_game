@@ -22,16 +22,20 @@ var fire_cooldown = 60.0 / rounds_per_min
 var enable_auto_fire = true
 # ....
 @onready var ammo_timer = $AmmoTimer
-var ammo_enabled = false
-var ammo_count = 3:
+var ammo_enabled = true
+var ammo_count = 2:
 	set(value):
 		if value < 0:
 			value = 0
 		if value > max_ammo_count:
 			value = max_ammo_count
 		ammo_count = value
-		#sync_pips()
-var max_ammo_count = 3
+		if value < max_ammo_count:
+			ammo_timer.start()
+		else:
+			ammo_timer.stop()
+		sync_pips()
+var max_ammo_count = 2
 # ....
 
 
@@ -81,23 +85,17 @@ func set_gun_active(state):
 		firing_timer.stop()
 
 
-#func sync_pips():
-	#if ammo_count == 0:
-		#$HUD/Reticule/Pip1.hide()
-		#$HUD/Reticule/Pip2.hide()
-		#$HUD/Reticule/Pip3.hide()
-	#if ammo_count == 1:
-		#$HUD/Reticule/Pip1.show()
-		#$HUD/Reticule/Pip2.hide()
-		#$HUD/Reticule/Pip3.hide()
-	#if ammo_count == 2:
-		#$HUD/Reticule/Pip1.show()
-		#$HUD/Reticule/Pip2.show()
-		#$HUD/Reticule/Pip3.hide()
-	#if ammo_count == 3:
-		#$HUD/Reticule/Pip1.show()
-		#$HUD/Reticule/Pip2.show()
-		#$HUD/Reticule/Pip3.show()
+func sync_pips():
+	print('Sync pip %s' % ammo_count)
+	if ammo_count == 0:
+		$HUD/AmmoPips/Pip1.hide()
+		$HUD/AmmoPips/Pip2.hide()
+	if ammo_count == 1:
+		$HUD/AmmoPips/Pip1.show()
+		$HUD/AmmoPips/Pip2.hide()
+	if ammo_count == 2:
+		$HUD/AmmoPips/Pip1.show()
+		$HUD/AmmoPips/Pip2.show()
 
 
 func set_ui_visible(state):
