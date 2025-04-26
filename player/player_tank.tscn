@@ -1,15 +1,22 @@
-[gd_scene load_steps=21 format=3 uid="uid://c0wpedxn5d6fg"]
+[gd_scene load_steps=29 format=3 uid="uid://c0wpedxn5d6fg"]
 
 [ext_resource type="Script" uid="uid://eoodsmq3plg4" path="res://player/player_tank.gd" id="1_f0njb"]
+[ext_resource type="PackedScene" uid="uid://bqyodcbwch4wu" path="res://art/tank_cannon.glb" id="2_s1680"]
 [ext_resource type="PackedScene" uid="uid://8lbbbwe2ufow" path="res://weapons/gun_rocket.tscn" id="2_vgk1m"]
+[ext_resource type="PackedScene" uid="uid://fgvsef8mybji" path="res://art/tank_turret.glb" id="3_7v78o"]
 [ext_resource type="PackedScene" uid="uid://cir51a4c2f32b" path="res://art/cat.glb" id="3_84av1"]
+[ext_resource type="PackedScene" uid="uid://chdt4jancerb8" path="res://art/tank_body.glb" id="3_uvgxe"]
 [ext_resource type="PackedScene" uid="uid://bflnfy31fb7gf" path="res://weapons/gun_mortar.tscn" id="3_v5163"]
 [ext_resource type="PackedScene" uid="uid://dt6b11m3vfhxj" path="res://weapons/gun_blocks.tscn" id="5_cfc1i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uvgxe"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_vgk1m"]
 top_radius = 0.2
 bottom_radius = 0.2
 height = 1.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5q5ux"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_cfc1i"]
 size = Vector3(0.5, 0.5, 0.75)
@@ -32,9 +39,18 @@ size = Vector3(1, 0.25, 1.8)
 [sub_resource type="BoxMesh" id="BoxMesh_vgk1m"]
 size = Vector3(0.3, 1, 2)
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s1680"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7v78o"]
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vgk1m"]
+height = 1.9
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lrle4"]
+height = 1.9
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f0njb"]
+size = Vector3(0.9, 1, 1)
 
 [sub_resource type="Gradient" id="Gradient_v5163"]
 colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 0)
@@ -77,51 +93,70 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 
 [node name="cannon" type="MeshInstance3D" parent="ModelPivot/CannonPivot"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.5)
+visible = false
+material_override = SubResource("StandardMaterial3D_uvgxe")
 mesh = SubResource("CylinderMesh_vgk1m")
 skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/PlayerTank/ModelPivot")
 
 [node name="block" type="MeshInstance3D" parent="ModelPivot/CannonPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.125)
+material_override = SubResource("StandardMaterial3D_5q5ux")
 mesh = SubResource("BoxMesh_cfc1i")
+
+[node name="tank_cannon" parent="ModelPivot/CannonPivot" instance=ExtResource("2_s1680")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.444845)
 
 [node name="turret" type="MeshInstance3D" parent="ModelPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+visible = false
+material_override = SubResource("StandardMaterial3D_uvgxe")
 mesh = SubResource("BoxMesh_84av1")
+
+[node name="tank_turret" parent="ModelPivot" instance=ExtResource("3_7v78o")]
 
 [node name="Body" type="Node3D" parent="ModelPivot"]
 
 [node name="body" type="MeshInstance3D" parent="ModelPivot/Body"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
 mesh = SubResource("BoxMesh_f0njb")
 skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/PlayerTank")
 
 [node name="body2" type="MeshInstance3D" parent="ModelPivot/Body"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.875, 0)
+visible = false
 mesh = SubResource("BoxMesh_v5163")
 skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/PlayerTank")
 
 [node name="body3" type="MeshInstance3D" parent="ModelPivot/Body"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.875, 0)
+visible = false
 mesh = SubResource("BoxMesh_uvgxe")
 skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/PlayerTank")
 
 [node name="body4" type="MeshInstance3D" parent="ModelPivot/Body"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.875, 0)
+visible = false
 mesh = SubResource("BoxMesh_5q5ux")
 skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/PlayerTank")
 
 [node name="track" type="MeshInstance3D" parent="ModelPivot/Body"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.5, 0)
+visible = false
 mesh = SubResource("BoxMesh_vgk1m")
 skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/PlayerTank")
 
 [node name="track2" type="MeshInstance3D" parent="ModelPivot/Body"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0.5, 0)
+visible = false
 mesh = SubResource("BoxMesh_vgk1m")
 skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/PlayerTank")
 
 [node name="cat" parent="ModelPivot/Body" instance=ExtResource("3_84av1")]
-transform = Transform3D(-0.129904, 0, 0.075, 0, 0.15, 0, -0.075, 0, -0.129904, 0.587403, 1.17926, -0.635939)
+transform = Transform3D(0.129904, 0, -0.075, 0, 0.15, 0, 0.075, 0, 0.129904, 0.587403, 1.17926, -0.635939)
+
+[node name="tank_body" parent="ModelPivot/Body" instance=ExtResource("3_uvgxe")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 0, 0, 0)
 
 [node name="WeaponPivot" type="Node3D" parent="."]
 
@@ -135,12 +170,12 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1.2
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1, 0.5)
 
 [node name="ColliderTrack" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.5, 0.5, 0)
-shape = SubResource("CapsuleShape3D_vgk1m")
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.45, 0.5, 0)
+shape = SubResource("CapsuleShape3D_s1680")
 
 [node name="ColliderTrack2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.5, 0.5, 0)
-shape = SubResource("CapsuleShape3D_vgk1m")
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.45, 0.5, 0)
+shape = SubResource("CapsuleShape3D_7v78o")
 
 [node name="ColliderTrack3" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, -2.18557e-08, 0.5, 0.5)
@@ -148,7 +183,7 @@ shape = SubResource("CapsuleShape3D_vgk1m")
 
 [node name="ColliderTrack4" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 2.18557e-08, 0.5, -0.5)
-shape = SubResource("CapsuleShape3D_vgk1m")
+shape = SubResource("CapsuleShape3D_lrle4")
 
 [node name="ColliderBody" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.5, 0)
