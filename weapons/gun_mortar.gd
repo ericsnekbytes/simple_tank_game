@@ -23,7 +23,8 @@ var enable_auto_fire = true
 # ....
 @onready var ammo_timer = $AmmoTimer
 var ammo_enabled = true
-var ammo_count = 2:
+var max_ammo_count = 2
+var ammo_count = max_ammo_count:
 	set(value):
 		if value < 0:
 			value = 0
@@ -35,7 +36,7 @@ var ammo_count = 2:
 		else:
 			ammo_timer.stop()
 		sync_pips()
-var max_ammo_count = 2
+
 # ....
 
 

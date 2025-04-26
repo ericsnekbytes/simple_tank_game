@@ -168,7 +168,13 @@ func detonate():
 				colliding_players[item] = true
 		if item.is_in_group('craft_blk'):
 			item.queue_free()
-	queue_free()
+	freeze = true
+	$MeshInstance3D.hide()
+	$DetonationFlash.hide()
+	$GPUParticles3D.global_basis = Basis()
+	$GPUParticles3D.global_position = global_position
+	$GPUParticles3D.show()
+	$GPUParticles3D.emitting = true
 
 
 func _on_body_entered(body: Node) -> void:
@@ -176,3 +182,7 @@ func _on_body_entered(body: Node) -> void:
 		print('Bomb collide %s' % body)
 		in_motion = false
 		detonate()
+
+
+func _on_gpu_particles_3d_finished() -> void:
+	queue_free()
