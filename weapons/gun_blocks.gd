@@ -68,6 +68,35 @@ func _exit_tree():
 			#cursor_node.hide()
 
 
+func alt_fire():
+	print('DELETE cube')
+	var test_position = $Cursor.global_position #+ Vector3(.5, .5, .5)
+	#test_position.x = roundf(test_position.x)
+	#test_position.y = roundf(test_position.y)
+	#test_position.z = roundf(test_position.z)
+
+	$Cursor/Eraser.global_position = test_position
+
+	#var ENV_LAYER = 1
+	var CRAFT_BLK_LAYER = 8
+	var params = PhysicsShapeQueryParameters3D.new()
+	params.shape = $Cursor/Eraser.shape
+	params.collision_mask = CRAFT_BLK_LAYER
+	#params.transform = $Cursor/Eraser.global_transform
+	params.transform.origin = test_position
+	var nearby_items = get_world_3d().direct_space_state.intersect_shape(params)
+	#print('Nearby %s' % [nearby_items])
+	var tracked_items = {}
+	for info in nearby_items:
+		var item = info['collider']
+		print('Found nearby item %s' % info)
+		if item.is_in_group('craft_blk'):
+			print('take hit %s' % item)
+			if item not in tracked_items:
+				item.queue_free()
+			tracked_items[item] = true
+
+
 func fire():
 	var current_time = Time.get_ticks_msec()
 
@@ -135,6 +164,10 @@ func _unhandled_input(event):
 				firing = false
 
 				firing_timer.stop()
+
+			if event.is_pressed() and event.is_action('shoot_alt'):
+				if not firing:
+					alt_fire()
 
 
 func update_preview():
