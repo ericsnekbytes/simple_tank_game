@@ -149,11 +149,12 @@ func impact():
 func detonate():
 	#var ENV_LAYER = 1
 	var PLAYER_LAYER = 2
+	var CRAFT_LAYER = 8
 	var params = PhysicsShapeQueryParameters3D.new()
 	params.shape = $ExplosionChecker/CollisionShape3D.shape
-	params.collision_mask = PLAYER_LAYER
+	params.collision_mask = PLAYER_LAYER | CRAFT_LAYER
 	params.transform = $ExplosionChecker/CollisionShape3D.global_transform
-	var nearby_items = get_world_3d().direct_space_state.intersect_shape(params)
+	var nearby_items = get_world_3d().direct_space_state.intersect_shape(params, 128)
 	#print('Nearby %s' % [nearby_items])
 	var colliding_players = {}
 	for info in nearby_items:
@@ -165,6 +166,8 @@ func detonate():
 				if item not in colliding_players:
 					item.take_hit(damage)
 				colliding_players[item] = true
+		if item.is_in_group('craft_blk'):
+			item.queue_free()
 	queue_free()
 
 
