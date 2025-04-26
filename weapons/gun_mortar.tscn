@@ -44,7 +44,7 @@ mesh = SubResource("CylinderMesh_mcssg")
 wait_time = 3.0
 autostart = true
 
-[node name="HUD" type="Control" parent="."]
+[node name="Hud" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -52,7 +52,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MortarPitchIndicator" type="Control" parent="HUD"]
+[node name="MortarPitchIndicator" type="Control" parent="Hud"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -63,7 +63,7 @@ grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.000920953
 
-[node name="TopFill1" type="ProgressBar" parent="HUD/MortarPitchIndicator"]
+[node name="TopFill1" type="ProgressBar" parent="Hud/MortarPitchIndicator"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -83,7 +83,7 @@ max_value = 1.0
 value = 0.5
 show_percentage = false
 
-[node name="Scale" type="ProgressBar" parent="HUD/MortarPitchIndicator/TopFill1"]
+[node name="Scale" type="ProgressBar" parent="Hud/MortarPitchIndicator/TopFill1"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -97,7 +97,7 @@ grow_vertical = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_j12u2")
 show_percentage = false
 
-[node name="TopFill2" type="ProgressBar" parent="HUD/MortarPitchIndicator"]
+[node name="TopFill2" type="ProgressBar" parent="Hud/MortarPitchIndicator"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -117,7 +117,7 @@ max_value = 1.0
 value = 0.5
 show_percentage = false
 
-[node name="Scale" type="ProgressBar" parent="HUD/MortarPitchIndicator/TopFill2"]
+[node name="Scale" type="ProgressBar" parent="Hud/MortarPitchIndicator/TopFill2"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -132,7 +132,7 @@ grow_vertical = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_j12u2")
 show_percentage = false
 
-[node name="Lower" type="Control" parent="HUD/MortarPitchIndicator"]
+[node name="Lower" type="Control" parent="Hud/MortarPitchIndicator"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -143,7 +143,7 @@ grow_horizontal = 2
 grow_vertical = 2
 rotation = -3.14159
 
-[node name="LowFill1" type="ProgressBar" parent="HUD/MortarPitchIndicator/Lower"]
+[node name="LowFill1" type="ProgressBar" parent="Hud/MortarPitchIndicator/Lower"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -163,7 +163,7 @@ max_value = 1.0
 value = 0.5
 show_percentage = false
 
-[node name="Scale" type="ProgressBar" parent="HUD/MortarPitchIndicator/Lower/LowFill1"]
+[node name="Scale" type="ProgressBar" parent="Hud/MortarPitchIndicator/Lower/LowFill1"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -177,7 +177,7 @@ grow_vertical = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_j12u2")
 show_percentage = false
 
-[node name="LowFill2" type="ProgressBar" parent="HUD/MortarPitchIndicator/Lower"]
+[node name="LowFill2" type="ProgressBar" parent="Hud/MortarPitchIndicator/Lower"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -197,7 +197,7 @@ max_value = 1.0
 value = 0.5
 show_percentage = false
 
-[node name="Scale" type="ProgressBar" parent="HUD/MortarPitchIndicator/Lower/LowFill2"]
+[node name="Scale" type="ProgressBar" parent="Hud/MortarPitchIndicator/Lower/LowFill2"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -212,7 +212,7 @@ grow_vertical = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_j12u2")
 show_percentage = false
 
-[node name="AmmoPips" type="Control" parent="HUD"]
+[node name="AmmoPips" type="Control" parent="Hud"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -222,7 +222,7 @@ anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="Pip1" type="ColorRect" parent="HUD/AmmoPips"]
+[node name="Pip1" type="ColorRect" parent="Hud/AmmoPips"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -237,7 +237,7 @@ grow_horizontal = 0
 grow_vertical = 0
 color = Color(0, 1, 0.0273438, 1)
 
-[node name="Pip2" type="ColorRect" parent="HUD/AmmoPips"]
+[node name="Pip2" type="ColorRect" parent="Hud/AmmoPips"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0

@@ -36,8 +36,14 @@ var ammo_count = max_ammo_count:
 		else:
 			ammo_timer.stop()
 		sync_pips()
-
 # ....
+@onready var hud = $Hud
+@onready var pip1 = $Hud/AmmoPips/Pip1
+@onready var pip2 = $Hud/AmmoPips/Pip2
+@onready var topfill1 = $Hud/MortarPitchIndicator/TopFill1
+@onready var topfill2 = $Hud/MortarPitchIndicator/TopFill2
+@onready var lowfill1 = $Hud/MortarPitchIndicator/Lower/LowFill1
+@onready var lowfill2 = $Hud/MortarPitchIndicator/Lower/LowFill2
 
 
 # Called when the node enters the scene tree for the first time.
@@ -89,21 +95,29 @@ func set_gun_active(state):
 func sync_pips():
 	print('Sync pip %s' % ammo_count)
 	if ammo_count == 0:
-		$HUD/AmmoPips/Pip1.hide()
-		$HUD/AmmoPips/Pip2.hide()
+		pip1.hide()
+		pip2.hide()
 	if ammo_count == 1:
-		$HUD/AmmoPips/Pip1.show()
-		$HUD/AmmoPips/Pip2.hide()
+		pip1.show()
+		pip2.hide()
 	if ammo_count == 2:
-		$HUD/AmmoPips/Pip1.show()
-		$HUD/AmmoPips/Pip2.show()
+		pip1.show()
+		pip2.show()
 
 
 func set_ui_visible(state):
 	if state:
-		$HUD.show()
+		hud.show()
 	else:
-		$HUD.hide()
+		hud.hide()
+
+
+func get_ui_pips():
+	return $Hud/AmmoPips
+
+
+func get_ui():
+	return $Hud
 
 
 func update_pitch_indicator(value: Basis):
@@ -111,22 +125,22 @@ func update_pitch_indicator(value: Basis):
 		var horizon_delta = 1 - abs(value.y.y)
 
 		# Set above-horizon indicator bars
-		$HUD/MortarPitchIndicator/TopFill1.value = horizon_delta
-		$HUD/MortarPitchIndicator/TopFill2.value = horizon_delta
+		topfill1.value = horizon_delta
+		topfill2.value = horizon_delta
 
 		# Set below-horizon indicator bars
-		$HUD/MortarPitchIndicator/Lower/LowFill1.value = 0
-		$HUD/MortarPitchIndicator/Lower/LowFill2.value = 0
+		lowfill1.value = 0
+		lowfill2.value = 0
 	else:
 		var horizon_delta = 1 - abs(value.y.y)
 
 		# Set above-horizon indicator bars
-		$HUD/MortarPitchIndicator/TopFill1.value = 0
-		$HUD/MortarPitchIndicator/TopFill2.value = 0
+		topfill1.value = 0
+		topfill2.value = 0
 
 		# Set below-horizon indicator bars
-		$HUD/MortarPitchIndicator/Lower/LowFill1.value = horizon_delta
-		$HUD/MortarPitchIndicator/Lower/LowFill2.value = horizon_delta
+		lowfill1.value = horizon_delta
+		lowfill2.value = horizon_delta
 
 
 func _unhandled_input(event):

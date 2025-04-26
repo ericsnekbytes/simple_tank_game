@@ -82,6 +82,7 @@ func _ready() -> void:
 	# Configure guns
 	gun_rocket.owning_player = self
 	gun_mortar.owning_player = self
+	add_gui(gun_mortar.get_ui_pips())
 	gun_blocks.owning_player = self
 	cannon_pitch_changed.connect(gun_mortar.update_pitch_indicator)
 	sync_weapon()
@@ -167,6 +168,11 @@ func take_hit(damage: float):
 
 func hide_gui():
 	$Hud.hide()
+
+
+func add_gui(node):
+	if node:
+		node.reparent($Hud)
 
 
 func reset_body():
