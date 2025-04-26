@@ -105,7 +105,7 @@ shape = SubResource("BoxShape3D_5wilt")
 [node name="Node3D" type="Node3D" parent="SubViewportContainer/Level"]
 
 [node name="Player1" parent="SubViewportContainer/Level/Node3D" instance=ExtResource("5_guapg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, -11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, -10)
 
 [node name="Player2" parent="SubViewportContainer/Level/Node3D" instance=ExtResource("5_guapg")]
 transform = Transform3D(-1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, -6.90874, 1, -3.01094)
