@@ -19,7 +19,7 @@ height = 1.5
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5q5ux"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_cfc1i"]
-size = Vector3(0.5, 0.5, 0.75)
+size = Vector3(0.5, 0.5, 0.55)
 
 [sub_resource type="BoxMesh" id="BoxMesh_84av1"]
 size = Vector3(1, 0.5, 1)
@@ -99,7 +99,7 @@ mesh = SubResource("CylinderMesh_vgk1m")
 skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/PlayerTank/ModelPivot")
 
 [node name="block" type="MeshInstance3D" parent="ModelPivot/CannonPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.125)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.225)
 material_override = SubResource("StandardMaterial3D_5q5ux")
 mesh = SubResource("BoxMesh_cfc1i")
 
