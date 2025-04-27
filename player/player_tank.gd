@@ -46,8 +46,15 @@ var health: float = 100.0:
 			dead = true
 			#death_count += 1
 			died.emit(self)
-		
 		#print("Set health " + str(new_value))
+# ....
+@onready var player_cam = $CameraPivot/Camera3D
+@onready var cam_pivot = $CameraPivot
+@onready var cam_position_vector = $CameraPivot/Camera3D.position - cam_pivot.position
+@onready var cam_zoom_val = [1, 2, 3]
+var cam_zoom_index = 0
+var last_cam_zoom_timestamp= -1
+var cam_zoom_cooldown = 200
 # ....
 @onready var effect_timer = $Hud/EffectIndicator/EffectTimer
 @export var effect_curve: Curve
@@ -189,6 +196,11 @@ func _unhandled_input(event: InputEvent) -> void:
 				print('foobar %s' % self)
 		if event.is_pressed() and event.is_action('swap_gun'):
 			active_weapon_index += 1
+		if event.is_action('cam_action'):
+			if current_time - last_cam_zoom_timestamp > cam_zoom_cooldown:
+				cam_zoom_index = (cam_zoom_index + 1) % cam_zoom_val.size()
+				player_cam.position = cam_zoom_val[cam_zoom_index] * cam_position_vector
+				last_cam_zoom_timestamp = current_time
 
 
 func _physics_process(delta: float) -> void:
