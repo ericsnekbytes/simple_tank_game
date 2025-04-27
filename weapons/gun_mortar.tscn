@@ -52,6 +52,46 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="AmmoPipsExtra" type="Control" parent="Hud"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Pip1B" type="ColorRect" parent="Hud/AmmoPipsExtra"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -359.72
+offset_top = -192.65
+offset_right = -319.72
+offset_bottom = -152.65
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 1, 0.0273438, 1)
+
+[node name="Pip2B" type="ColorRect" parent="Hud/AmmoPipsExtra"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -359.72
+offset_top = -124.37
+offset_right = -319.72
+offset_bottom = -84.37
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 1, 0.0273438, 1)
+
 [node name="MortarPitchIndicator" type="Control" parent="Hud"]
 layout_mode = 1
 anchors_preset = 8

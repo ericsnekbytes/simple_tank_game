@@ -40,6 +40,8 @@ var ammo_count = max_ammo_count:
 @onready var hud = $Hud
 @onready var pip1 = $Hud/AmmoPips/Pip1
 @onready var pip2 = $Hud/AmmoPips/Pip2
+@onready var pip1b = $Hud/AmmoPipsExtra/Pip1B
+@onready var pip2b = $Hud/AmmoPipsExtra/Pip2B
 @onready var topfill1 = $Hud/MortarPitchIndicator/TopFill1
 @onready var topfill2 = $Hud/MortarPitchIndicator/TopFill2
 @onready var lowfill1 = $Hud/MortarPitchIndicator/Lower/LowFill1
@@ -96,13 +98,19 @@ func sync_pips():
 	print('Sync pip %s' % ammo_count)
 	if ammo_count == 0:
 		pip1.hide()
+		pip1b.hide()
 		pip2.hide()
+		pip2b.hide()
 	if ammo_count == 1:
 		pip1.show()
+		pip1b.show()
 		pip2.hide()
+		pip2b.hide()
 	if ammo_count == 2:
 		pip1.show()
+		pip1b.show()
 		pip2.show()
+		pip2b.show()
 
 
 func set_ui_visible(state):
