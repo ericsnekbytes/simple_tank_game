@@ -53,7 +53,7 @@ size = Vector2i(958, 538)
 render_target_update_mode = 4
 
 [node name="Player1" parent="SplitScreenContainer/TopRow/SvpCont1/SubViewport" instance=ExtResource("4_www3a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, -11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, -10.5)
 
 [node name="SvpCont2" type="SubViewportContainer" parent="SplitScreenContainer/TopRow"]
 layout_mode = 2
@@ -66,7 +66,7 @@ size = Vector2i(958, 538)
 render_target_update_mode = 4
 
 [node name="Player2" parent="SplitScreenContainer/TopRow/SvpCont2/SubViewport" instance=ExtResource("4_www3a")]
-transform = Transform3D(-1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, -10, 1, 11)
+transform = Transform3D(-1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, -10, 1, 10.5)
 
 [node name="BottomRow" type="HBoxContainer" parent="SplitScreenContainer"]
 layout_mode = 2
