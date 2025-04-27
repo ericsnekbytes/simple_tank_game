@@ -35,6 +35,16 @@ var max_ammo_count = 3
 # ....
 var preview_enabled = false
 @onready var preview_block = $CraftCubePreview
+# ....
+# craft_position moves the crafting block up or down
+var craft_position = [Vector3(0, -1, 0), Vector3.ZERO, Vector3(0, 1, 0)]
+var active_craft_position_index = 1:
+	set(value):
+		if value >= craft_position.size():
+			value = craft_position.size() - 1
+		if value < 0:
+			value = 0
+		active_craft_position_index = value
 
 
 # Called when the node enters the scene tree for the first time.
@@ -70,7 +80,7 @@ func _exit_tree():
 
 func alt_fire():
 	print('DELETE cube')
-	var test_position = $Cursor.global_position #+ Vector3(.5, .5, .5)
+	var test_position = $Cursor.global_position + craft_position[active_craft_position_index]#+ Vector3(.5, .5, .5) 
 	#test_position.x = roundf(test_position.x)
 	#test_position.y = roundf(test_position.y)
 	#test_position.z = roundf(test_position.z)
@@ -102,7 +112,7 @@ func fire():
 
 	var block = block_scn.instantiate()
 	GameData.global_pivot.add_child(block)
-	block.global_position = $Cursor.global_position + Vector3(-.5, 0, -.5)
+	block.global_position = $Cursor.global_position + Vector3(-.5, 0, -.5) + craft_position[active_craft_position_index]
 	block.global_position.x = roundf(block.global_position.x)
 	block.global_position.y = roundf(block.global_position.y)
 	block.global_position.z = roundf(block.global_position.z)
@@ -169,13 +179,23 @@ func _unhandled_input(event):
 				if not firing:
 					alt_fire()
 
+			if event.is_pressed() and event.is_action('craft_up'):
+				print('aaa')
+				active_craft_position_index += 1
+
+			if event.is_pressed() and event.is_action('craft_down'):
+				print('bbb')
+				active_craft_position_index -= 1
+
+
 
 func update_preview():
-	preview_block.global_basis = Basis()
-	preview_block.global_position = $Cursor.global_position + Vector3(-.5, 0, -.5)
-	preview_block.global_position.x = roundf(preview_block.global_position.x)
-	preview_block.global_position.y = roundf(preview_block.global_position.y)
-	preview_block.global_position.z = roundf(preview_block.global_position.z)
+	if start_process:
+		preview_block.global_basis = Basis()
+		preview_block.global_position = $Cursor.global_position + Vector3(-.5, 0, -.5) + craft_position[active_craft_position_index]
+		preview_block.global_position.x = roundf(preview_block.global_position.x)
+		preview_block.global_position.y = roundf(preview_block.global_position.y)
+		preview_block.global_position.z = roundf(preview_block.global_position.z)
 
 
 func _physics_process(delta: float) -> void:
