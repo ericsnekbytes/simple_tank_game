@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://kntmmr41egxf"]
+
+[ext_resource type="Script" uid="uid://d1uide04s1xxu" path="res://entity/soccer_ball.gd" id="1_v7b27"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2fnb4"]
+radius = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_v7b27"]
+radius = 1.0
+height = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_igqmr"]
+albedo_color = Color(1, 0, 0, 1)
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vtj14"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ep0km"]
+top_radius = 0.1
+bottom_radius = 0.1
+
+[node name="SoccerBall" type="RigidBody3D" groups=["soccer_ball"]]
+collision_layer = 16
+collision_mask = 11
+mass = 5.0
+contact_monitor = true
+max_contacts_reported = 5
+script = ExtResource("1_v7b27")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_2fnb4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_v7b27")
+surface_material_override/0 = SubResource("StandardMaterial3D_igqmr")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_vtj14")
+mesh = SubResource("CylinderMesh_ep0km")
+surface_material_override/0 = SubResource("StandardMaterial3D_igqmr")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_vtj14")
+mesh = SubResource("CylinderMesh_ep0km")
+surface_material_override/0 = SubResource("StandardMaterial3D_igqmr")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_vtj14")
+mesh = SubResource("CylinderMesh_ep0km")
+surface_material_override/0 = SubResource("StandardMaterial3D_igqmr")
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

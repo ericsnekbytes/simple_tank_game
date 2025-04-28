@@ -32,3 +32,7 @@ func _input(event):
 
 func _on_exit_btn_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_soccer_btn_pressed() -> void:
+	request_scene.emit('SOCCER', 3)

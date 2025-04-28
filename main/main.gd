@@ -8,6 +8,7 @@ var start_process = false
 var scenes = {
 	'MAIN_MENU': preload("res://main/main_menu.tscn"),
 	'FREE_FOR_ALL': preload("res://worlds/free_for_all/free_for_all.tscn"),
+	'SOCCER': preload('res://worlds/free_for_all/soccer.tscn')
 }
 
 
@@ -36,7 +37,7 @@ func _unhandled_input(event):
 		if $ScenePivot.get_child_count() > 0:
 			var current_scene = $ScenePivot.get_child(0)
 			current_scene.process_mode = Node.PROCESS_MODE_DISABLED
-			GameData.clear_game_state()
+			GameData.clear_scene_state()
 			current_scene.request_scene.emit('MAIN_MENU')
 
 

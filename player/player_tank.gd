@@ -5,8 +5,10 @@ extends CharacterBody3D
 signal died(node)
 signal health_changed(value: float)
 signal cannon_pitch_changed(value: float)
+signal score_changed(value)
 
 var player_id := -1
+@export var team_id = -1
 var start_process := false
 #@onready var player_cam = $CameraPivot/Camera3D
 @onready var cannon = $ModelPivot/CannonPivot
@@ -47,6 +49,11 @@ var health: float = 100.0:
 			#death_count += 1
 			died.emit(self)
 		#print("Set health " + str(new_value))
+# ....
+var score := 0:
+	set(value):
+		score = value
+		score_changed.emit(value)
 # ....
 @onready var player_cam = $CameraPivot/Camera3D
 @onready var cam_pivot = $CameraPivot
@@ -178,8 +185,10 @@ func hide_gui():
 
 
 func add_gui(node):
-	if node:
+	if node.get_parent():
 		node.reparent($Hud)
+	else:
+		$Hud.add_child(node)
 
 
 func reset_body():
@@ -284,6 +293,20 @@ func _physics_process(delta: float) -> void:
 		velocity = motion_vector
 
 		move_and_slide()
+		
+		#var collision_info = move_and_collide(velocity)
+		#if collision_info:
+			#var collider = collision_info.get_collider()
+			##print(collider)
+			#var collide_norm = collision_info.get_normal()
+			##var collide_pt = collision_info.get_position()
+#
+			#if collider.is_in_group('soccer_ball'):
+				#print('TOUCH BALL %s' % team_id)
+				#collider.last_touched_by = team_id
+			#velocity = velocity.slide(collide_norm)
+			#move_and_slide()
+		
 		#player_cam.global_position = global_position + Vector3(0, 1.65, 0)
 
 		update_hud()

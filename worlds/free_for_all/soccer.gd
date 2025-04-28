@@ -2,7 +2,6 @@ extends Node3D
 
 signal request_scene(scene_id)
 
-
 @onready var players = [
 	$SplitScreenContainer/TopRow/SvpCont1/SubViewport/Player1,
 	$SplitScreenContainer/TopRow/SvpCont2/SubViewport/Player2,
@@ -11,17 +10,23 @@ signal request_scene(scene_id)
 ]
 var player_count := 4
 # ....
+var score_gui_scn = preload('res://ui/point_display.tscn')
 
 
 func _ready() -> void:
 	GameData.global_pivot = $GlobalPivot
 
-	for player: PlayerTank in players:
+	for player in players:
 		player.start_process = true
 		GameData.initialize_player(player)
 		player.spawn_position = player.global_position
 		player.spawn_basis = player.global_basis
 		player.died.connect(handle_player_death)
+
+		var score_gui := score_gui_scn.instantiate()
+		player.add_gui(score_gui)
+		player.score_changed.connect(score_gui.set_value)
+		player.score_changed.emit(player.score)
 
 
 #func get_spawn_info_from_id(player_id):
@@ -96,3 +101,26 @@ func _physics_process(delta: float) -> void:
 func _on_killbox_body_entered(body: Node3D) -> void:
 	if body.is_in_group('player'):
 		body.take_hit(105)
+	if body.is_in_group('soccer_ball'):
+		body.transform = Transform3D()
+		body.transform.origin = Vector3(0, 6, 0)
+		body.linear_velocity = Vector3.ZERO
+		body.angular_velocity = Vector3.ZERO
+
+
+func _on_goal_body_entered(body: Node3D) -> void:
+	if body.is_in_group('soccer_ball'):
+		print('Goal enter by %s' % body)
+		if body.last_touched_by != -1:
+			#print('TOUCH %s %s' % [body.last_touched_by])
+			print('xx')
+			for player in players:
+				if player.team_id == body.last_touched_by:
+					player.score += 1
+					print('aaa1')
+		else:
+			print('yy')
+			for player in players:
+				if player.player_id == body.last_touched_by:
+					player.score += 1
+					print('bbb1')
