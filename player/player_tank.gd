@@ -273,6 +273,9 @@ func _physics_process(delta: float) -> void:
 		# Do cannon rotation if needed (for mortar shells)
 		if gun_order[active_weapon_index] == gun_mortar.weapon_id:  # TODO finish arcing mortar gun
 			var planned_pitch = cannon_pivot.basis.rotated(cannon.basis.x * -1, look_pitch * delta)
+			# Check for valid pitch angles by inspecting the y/up vector.
+			# The up vector has a y component that is very close to zero when
+			# the pitch angle is all the way up or down (1 degree from horizontal is used here).
 			if planned_pitch.y.y > sin(PI / 90): # planned_pitch.basis.z.y <= 0 and 
 				cannon_pivot.basis = planned_pitch
 			cannon_pitch_changed.emit(cannon_pivot.basis)

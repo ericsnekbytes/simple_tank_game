@@ -130,7 +130,7 @@ func get_ui():
 
 func update_pitch_indicator(value: Basis):
 	if value.y.z <0:
-		var horizon_delta = 1 - abs(value.y.y)
+		var horizon_delta = abs(value.z.y)
 
 		# Set above-horizon indicator bars
 		topfill1.value = horizon_delta
@@ -140,7 +140,7 @@ func update_pitch_indicator(value: Basis):
 		lowfill1.value = 0
 		lowfill2.value = 0
 	else:
-		var horizon_delta = 1 - abs(value.y.y)
+		var horizon_delta = abs(value.z.y)
 
 		# Set above-horizon indicator bars
 		topfill1.value = 0
