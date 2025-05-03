@@ -10,6 +10,7 @@ signal score_changed(value)
 var player_id := -1
 @export var team_id = -1
 var start_process := false
+var _lock_inputs = false
 #@onready var player_cam = $CameraPivot/Camera3D
 @onready var cannon = $ModelPivot/CannonPivot
 @onready var cannon_pivot = $ModelPivot/CannonPivot
@@ -106,6 +107,17 @@ func _ready() -> void:
 	health_changed.emit(health)
 
 
+func set_lock_inputs(state):
+	if state:
+		_lock_inputs = true
+		var gun = guns[gun_order[active_weapon_index]]
+		gun.start_process = false
+	else:
+		_lock_inputs = false
+		var gun = guns[gun_order[active_weapon_index]]
+		gun.start_process = true
+
+
 func update_hud():
 	if not effect_timer.is_stopped():
 		effect_indicator.show()
@@ -198,18 +210,19 @@ func reset_body():
 func _unhandled_input(event: InputEvent) -> void:
 	var current_time = Time.get_ticks_msec()
 
-	var pdev = InputHandler.get_player_device(player_id)
-	if event.device == pdev:
-		#if event.is_action('shoot'):
-			#if Input.is_action_just_pressed('shoot'):
-				#print('foobar %s' % self)
-		if event.is_pressed() and event.is_action('swap_gun'):
-			active_weapon_index += 1
-		if event.is_action('cam_action'):
-			if current_time - last_cam_zoom_timestamp > cam_zoom_cooldown:
-				cam_zoom_index = (cam_zoom_index + 1) % cam_zoom_val.size()
-				player_cam.position = cam_zoom_val[cam_zoom_index] * cam_position_vector
-				last_cam_zoom_timestamp = current_time
+	if not _lock_inputs:
+		var pdev = InputHandler.get_player_device(player_id)
+		if event.device == pdev:
+			#if event.is_action('shoot'):
+				#if Input.is_action_just_pressed('shoot'):
+					#print('foobar %s' % self)
+			if event.is_pressed() and event.is_action('swap_gun'):
+				active_weapon_index += 1
+			if event.is_action('cam_action'):
+				if current_time - last_cam_zoom_timestamp > cam_zoom_cooldown:
+					cam_zoom_index = (cam_zoom_index + 1) % cam_zoom_val.size()
+					player_cam.position = cam_zoom_val[cam_zoom_index] * cam_position_vector
+					last_cam_zoom_timestamp = current_time
 
 
 func _physics_process(delta: float) -> void:

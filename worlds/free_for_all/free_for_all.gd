@@ -21,6 +21,7 @@ func _ready() -> void:
 		player.spawn_position = player.global_position
 		player.spawn_basis = player.global_basis
 		player.died.connect(handle_player_death)
+		player.set_lock_inputs(true)
 
 	start_pregame_sequence()
 
@@ -83,6 +84,7 @@ func start_pregame_sequence():
 func begin_play():
 	for player in players:
 		player.start_process = true
+		player.set_lock_inputs(false)
 
 
 func _on_intro_card_end_sequence():
