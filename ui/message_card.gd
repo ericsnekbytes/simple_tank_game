@@ -32,7 +32,7 @@ func _ready():
 
 	# Make velocity relative to screen width
 	fade_in_velocity = get_viewport_rect().size.x / 4.0
-	hover_velocity = get_viewport_rect().size.x / 48.0
+	hover_velocity = get_viewport_rect().size.x / 32
 	move_offscreen_velocity = get_viewport_rect().size.x / .5
 
 	# Start hidden, then reposition and animate

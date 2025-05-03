@@ -7,6 +7,7 @@ var start_process = false
 
 var scenes = {
 	'MAIN_MENU': preload("res://main/main_menu.tscn"),
+	'FREE_FOR_ALL_PREGAME': preload("res://worlds/free_for_all/ffa_pregame_menu.tscn"),
 	'FREE_FOR_ALL': preload("res://worlds/free_for_all/free_for_all.tscn"),
 	'SOCCER': preload('res://worlds/soccer/soccer.tscn')
 }
