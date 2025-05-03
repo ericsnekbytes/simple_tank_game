@@ -27,4 +27,4 @@ func _on_exit_btn_pressed() -> void:
 
 
 func _on_soccer_btn_pressed() -> void:
-	request_scene.emit('SOCCER', 2)
+	request_scene.emit('SOCCER_PREGAME', null)

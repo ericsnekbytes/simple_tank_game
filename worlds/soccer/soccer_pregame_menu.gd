@@ -29,7 +29,7 @@ func _on_add_player_count_pressed():
 
 
 func _on_start_game_pressed():
-	request_scene.emit('FREE_FOR_ALL', player_count)
+	request_scene.emit('SOCCER', player_count)
 
 
 func _on_input_timer_timeout():
