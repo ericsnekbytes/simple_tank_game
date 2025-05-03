@@ -86,7 +86,6 @@ func begin_play():
 
 
 func _on_intro_card_end_sequence():
-	print('SUCKYDUCKY')
 	begin_play()
 
 

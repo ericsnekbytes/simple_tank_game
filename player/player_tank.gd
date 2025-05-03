@@ -44,7 +44,7 @@ var health: float = 100.0:
 				health_regen_wait.stop()
 		health_changed.emit(new_value)
 		if new_value <= 0:
-			print('pHEALTH at 0 %s' % self)
+			#print('pHEALTH at 0 %s' % self)
 			dead = true
 			#death_count += 1
 			died.emit(self)
@@ -115,7 +115,7 @@ func update_hud():
 
 
 func show_effect_indicator(color_string=null):
-	print('Show effect %s' % Time.get_ticks_msec())
+	#print('Show effect %s' % Time.get_ticks_msec())
 	effect_timer.start()
 	if color_string != null:
 		var color = Color(color_string)
@@ -171,7 +171,7 @@ func _on_health_regen_wait_timeout() -> void:
 
 func take_hit(damage: float):
 	health -= damage
-	print('%s take hit %s' % [self, damage])
+	#print('%s take hit %s' % [self, damage])
 	show_effect_indicator()
 	#var hit_direction = 1.0 * transform.basis.y.signed_angle_to(hit_position - $Pivot/Camera3D.global_position, transform.basis.z)
 	#indicate_damaged.emit(hit_direction)
@@ -200,9 +200,9 @@ func _unhandled_input(event: InputEvent) -> void:
 
 	var pdev = InputHandler.get_player_device(player_id)
 	if event.device == pdev:
-		if event.is_action('shoot'):
-			if Input.is_action_just_pressed('shoot'):
-				print('foobar %s' % self)
+		#if event.is_action('shoot'):
+			#if Input.is_action_just_pressed('shoot'):
+				#print('foobar %s' % self)
 		if event.is_pressed() and event.is_action('swap_gun'):
 			active_weapon_index += 1
 		if event.is_action('cam_action'):

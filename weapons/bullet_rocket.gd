@@ -66,10 +66,10 @@ func _physics_process(delta):
 		if in_motion:
 			var collision_info = move_and_collide(velocity * delta)
 			if collision_info:
-				print('REG Rocket hit')
+				#print('REG Rocket hit')
 				var collider = collision_info.get_collider()
 				if collider:
-					print('Rnd collide %s' % collider)
+					#print('Rnd collide %s' % collider)
 					if collider.is_in_group('player'):
 						collider.take_hit(damage)
 					if collider.is_in_group('craft_blk'):

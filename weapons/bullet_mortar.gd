@@ -159,10 +159,10 @@ func detonate():
 	var colliding_players = {}
 	for info in nearby_items:
 		var item = info['collider']
-		print('Found nearby item %s' % info)
+		#print('Found nearby item %s' % info)
 		if item.is_in_group('player') and item != owning_player:
 			if not item.dead:
-				print('take hit %s' % item)
+				#print('take hit %s' % item)
 				if item not in colliding_players:
 					item.take_hit(damage)
 				colliding_players[item] = true
@@ -179,7 +179,7 @@ func detonate():
 
 func _on_body_entered(body: Node) -> void:
 	if in_motion:
-		print('Bomb collide %s' % body)
+		#print('Bomb collide %s' % body)
 		in_motion = false
 		detonate()
 
