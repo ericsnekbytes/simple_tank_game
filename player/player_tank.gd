@@ -142,7 +142,7 @@ func prepare_weapon_change():
 
 
 func sync_weapon():
-	print('Active weapon swap %s / %s' % [active_weapon_index, guns[gun_order[active_weapon_index]]])
+	#print('Active weapon swap %s / %s' % [active_weapon_index, guns[gun_order[active_weapon_index]]])
 	for gun_id in guns:
 		var gun = guns[gun_id]
 		if gun_id == gun_order[active_weapon_index]:

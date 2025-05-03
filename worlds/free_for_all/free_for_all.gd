@@ -17,11 +17,12 @@ func _ready() -> void:
 	GameData.global_pivot = $GlobalPivot
 
 	for player: PlayerTank in players:
-		player.start_process = true
 		GameData.initialize_player(player)
 		player.spawn_position = player.global_position
 		player.spawn_basis = player.global_basis
 		player.died.connect(handle_player_death)
+
+	start_pregame_sequence()
 
 
 #func get_spawn_info_from_id(player_id):
@@ -75,6 +76,20 @@ func set_player_count(count: int):
 	prepare_split_screen()
 
 
+func start_pregame_sequence():
+	$IntroCard.start()
+
+
+func begin_play():
+	for player in players:
+		player.start_process = true
+
+
+func _on_intro_card_end_sequence():
+	print('SUCKYDUCKY')
+	begin_play()
+
+
 func handle_player_death(pnode: PlayerTank):
 	pnode.global_position = pnode.spawn_position + Vector3(0, 3, 0)
 	pnode.global_basis = pnode.spawn_basis
@@ -88,11 +103,11 @@ func end_game():
 	GameData.clear_scene_state()
 	request_scene.emit('MAIN_MENU', null)
 
-
-func _physics_process(delta: float) -> void:
-	InputHandler.poll_for_devices()
-
-
+ 
 func _on_killbox_body_entered(body: Node3D) -> void:
 	if body.is_in_group('player'):
 		body.take_hit(105)
+
+
+func _physics_process(delta: float) -> void:
+	InputHandler.poll_for_devices()

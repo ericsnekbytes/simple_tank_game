@@ -16,7 +16,7 @@ var firing = false:  # There's no device-specific is_action_just_pressed, so we 
 	set(value):
 		if value != firing:
 			firing = value
-			print('Firing %s' % value)
+			#print('Firing %s' % value)
 var rounds_per_min = 150
 var last_fire_timestamp = 0
 var fire_cooldown = 60.0 / rounds_per_min
@@ -51,7 +51,7 @@ var active_craft_position_index = 1:
 func _ready():
 	#enable_auto_fire = false
 	firing_timer.wait_time = 60.0 / rounds_per_min
-	print('Bgun %s / %s' % [firing_timer.wait_time, rounds_per_min])
+	#print('Bgun %s / %s' % [firing_timer.wait_time, rounds_per_min])
 
 
 func _exit_tree():
@@ -79,7 +79,7 @@ func _exit_tree():
 
 
 func alt_fire():
-	print('DELETE cube')
+	#print('DELETE cube')
 	var test_position = $Cursor.global_position + craft_position[active_craft_position_index]#+ Vector3(.5, .5, .5) 
 	#test_position.x = roundf(test_position.x)
 	#test_position.y = roundf(test_position.y)
@@ -99,9 +99,9 @@ func alt_fire():
 	var tracked_items = {}
 	for info in nearby_items:
 		var item = info['collider']
-		print('Found nearby item %s' % info)
+		#print('Found nearby item %s' % info)
 		if item.is_in_group('craft_blk'):
-			print('take hit %s' % item)
+			#print('take hit %s' % item)
 			if item not in tracked_items:
 				item.queue_free()
 			tracked_items[item] = true

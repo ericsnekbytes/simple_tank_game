@@ -15,7 +15,7 @@ var firing = false:  # There's no device-specific is_action_just_pressed, so we 
 	set(value):
 		if value != firing:
 			firing = value
-			print('Firing %s' % value)
+			#print('Firing %s' % value)
 var rounds_per_min = 150
 var last_fire_timestamp = 0
 var fire_cooldown = 60.0 / rounds_per_min
@@ -40,7 +40,7 @@ var max_ammo_count = 3
 func _ready():
 	#enable_auto_fire = false
 	firing_timer.wait_time = 60.0 / rounds_per_min
-	print('Bgun %s / %s' % [firing_timer.wait_time, rounds_per_min])
+	#print('Bgun %s / %s' % [firing_timer.wait_time, rounds_per_min])
 
 
 func _exit_tree():
@@ -48,7 +48,7 @@ func _exit_tree():
 
 
 func fire():
-	print('Fire %s' % owning_player)
+	#print('Fire %s' % owning_player)
 	var current_time = Time.get_ticks_msec()
 	if current_time - last_fire_timestamp >= fire_cooldown:
 		if not ammo_enabled or (ammo_enabled and ammo_count > 0):

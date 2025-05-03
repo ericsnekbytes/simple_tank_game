@@ -78,7 +78,8 @@ func _physics_process(delta):
 	if interaction_started:
 		if not finished:
 
-			if (title_text.global_position.x + title_text.size.x) < 0:
+			# Check if title has moved offscreen (which ends the sequence)
+			if (title_text.global_position.x) > get_viewport_rect().size.y:
 				finished = true
 				end_sequence.emit()
 				hide()
