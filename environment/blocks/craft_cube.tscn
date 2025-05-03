@@ -6,7 +6,7 @@
 albedo_color = Color(0.988281, 0.566042, 0.0231628, 1)
 roughness = 0.5
 
-[sub_resource type="BoxMesh" id="BoxMesh_r8wo4"]
+[sub_resource type="BoxMesh" id="BoxMesh_paor2"]
 
 [node name="CraftCube" type="StaticBody3D" groups=["craft_blk"]]
 collision_layer = 8
@@ -17,10 +17,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0.5)
 shape = SubResource("BoxShape3D_58aol")
 
 [node name="ModelPivot" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ModelPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="ModelPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0.5)
 material_override = SubResource("StandardMaterial3D_paor2")
-mesh = SubResource("BoxMesh_r8wo4")
-skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/TerraCube")
+mesh = SubResource("BoxMesh_paor2")

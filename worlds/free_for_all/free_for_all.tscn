@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3gglys48pxon"]
+[gd_scene load_steps=10 format=3 uid="uid://b3gglys48pxon"]
 
 [ext_resource type="Script" uid="uid://djjkocurjo8dk" path="res://worlds/free_for_all/free_for_all.gd" id="1_cw6gg"]
 [ext_resource type="PackedScene" uid="uid://ch53jvswgclw3" path="res://environment/blocks/terra_cube.tscn" id="2_ms0pe"]
 [ext_resource type="PackedScene" uid="uid://civcotkfpxj10" path="res://environment/blocks/terra_wedge.tscn" id="3_gkx6j"]
+[ext_resource type="PackedScene" uid="uid://c7d4wa7rofyk8" path="res://ui/message_card.tscn" id="3_t5o5e"]
 [ext_resource type="PackedScene" uid="uid://c0wpedxn5d6fg" path="res://player/player_tank.tscn" id="4_www3a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_www3a"]
@@ -97,6 +98,8 @@ render_target_update_mode = 4
 
 [node name="Player4" parent="SplitScreenContainer/BottomRow/SvpCont4/SubViewport" instance=ExtResource("4_www3a")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 2, -11)
+
+[node name="IntroCard" parent="." instance=ExtResource("3_t5o5e")]
 
 [node name="GlobalPivot" type="Node3D" parent="."]
 

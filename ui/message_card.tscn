@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7d4wa7rofyk8"]
+
+[ext_resource type="Script" uid="uid://dr1sjrfs64oi2" path="res://ui/message_card.gd" id="1_j6b5t"]
+[ext_resource type="FontFile" uid="uid://c2f72s2s2idlj" path="res://art/open_sans/static/OpenSans-ExtraBold.ttf" id="2_76c4f"]
+[ext_resource type="FontFile" uid="uid://b6d2w4lj243dh" path="res://art/open_sans/static/OpenSans-Light.ttf" id="3_pctue"]
+
+[sub_resource type="FontVariation" id="FontVariation_l5ca3"]
+base_font = ExtResource("2_76c4f")
+spacing_glyph = 3
+
+[node name="MessageCard" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_j6b5t")
+title_string = "▲ SAMPLE TEXT ▲"
+subtext_string = "▽ MORE EXAMPLE TEXT ▽"
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -168.5
+offset_right = 960.0
+offset_bottom = -71.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0.423529, 0.917647, 1)
+theme_override_fonts/font = SubResource("FontVariation_l5ca3")
+theme_override_font_sizes/font_size = 70
+text = "▲ SAMPLE TEXT ▲"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Subtext" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -100.915
+offset_right = 960.0
+offset_bottom = -17.915
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_pctue")
+theme_override_font_sizes/font_size = 60
+text = "▽ ADDITIONAL SAMPLE TEXT ▽"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FadeInTimer" type="Timer" parent="."]
+one_shot = true

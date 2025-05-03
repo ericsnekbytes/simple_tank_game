@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://djbpvsqogl38b"]
 
-[ext_resource type="Script" uid="uid://xx4siys720fx" path="res://worlds/free_for_all/soccer.gd" id="1_w5ky8"]
+[ext_resource type="Script" uid="uid://xx4siys720fx" path="res://worlds/soccer/soccer.gd" id="1_w5ky8"]
 [ext_resource type="PackedScene" uid="uid://c0wpedxn5d6fg" path="res://player/player_tank.tscn" id="2_w5ky8"]
 [ext_resource type="PackedScene" uid="uid://civcotkfpxj10" path="res://environment/blocks/terra_wedge.tscn" id="3_6q2lj"]
 [ext_resource type="PackedScene" uid="uid://ch53jvswgclw3" path="res://environment/blocks/terra_cube.tscn" id="4_eeg1q"]
