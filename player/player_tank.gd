@@ -61,7 +61,8 @@ var score := 0:
 @onready var player_cam = $CameraPivot/Camera3D
 @onready var cam_pivot = $CameraPivot
 @onready var cam_position_vector = $CameraPivot/Camera3D.position - cam_pivot.position
-@onready var cam_zoom_val = [1, 2, 3]
+@onready var cam_spawn_basis = $CameraPivot/Camera3D.basis
+@onready var cam_zoom_val = [1, 2, 3, 4]
 var cam_zoom_index = 0
 var last_cam_zoom_timestamp= -1
 var cam_zoom_cooldown = 200
@@ -228,7 +229,14 @@ func _unhandled_input(event: InputEvent) -> void:
 			if event.is_action('cam_action'):
 				if current_time - last_cam_zoom_timestamp > cam_zoom_cooldown:
 					cam_zoom_index = (cam_zoom_index + 1) % cam_zoom_val.size()
-					player_cam.position = cam_zoom_val[cam_zoom_index] * cam_position_vector
+
+					if cam_zoom_val[cam_zoom_index] == 4:
+						player_cam.basis = $CameraPivot/FpvPivot.basis
+						player_cam.position = $CameraPivot/FpvPivot.position
+						cam_zoom_index = cam_zoom_index % cam_zoom_val.size()
+					else:
+						player_cam.basis = cam_spawn_basis
+						player_cam.position = cam_zoom_val[cam_zoom_index] * cam_position_vector
 					last_cam_zoom_timestamp = current_time
 			if event.is_action('user_select') and event.is_pressed():
 				user_select.emit()
