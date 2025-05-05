@@ -46,7 +46,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-size_flags_stretch_ratio = 2.0
+size_flags_stretch_ratio = 8.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_1sr2k")
 
 [node name="Table" type="VBoxContainer" parent="MarginContainer/HBoxContainer/TableArea"]
