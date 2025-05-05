@@ -11,6 +11,9 @@ signal request_scene(scene_id)
 var player_count := 4
 # ....
 var score_gui_scn = preload('res://ui/point_display.tscn')
+var scoreboard_scn = preload("res://ui/game_stats.tscn")
+# ....
+var endgame_stats = null
 
 
 func _ready() -> void:
@@ -27,6 +30,36 @@ func _ready() -> void:
 		player.add_gui(score_gui)
 		player.score_changed.connect(score_gui.set_value)
 		player.score_changed.emit(player.score)
+
+		var scoreboard_gui := scoreboard_scn.instantiate()
+		scoreboard_gui.fetch_game_stats_func = get_game_stats
+		player.add_gui(scoreboard_gui)
+		player.user_select.connect(scoreboard_gui.toggle_game_stats)
+
+
+func get_game_stats():
+	if endgame_stats:
+		# When game ends, scores/stats are frozen
+		return endgame_stats
+
+	var player_data = {
+		# Looks like
+		# player_idnum1: [2, 1, 3],
+		# player_idnum2: [5, 4, 8],
+	}
+	var game_stats = {
+		'headers': ['Player', 'Score', 'Deaths'],
+		'player_data': player_data
+	}
+	for player in players:
+		var pid = player.player_id
+		var pname = player.name
+		var score = player.score
+		var deaths = player.death_count
+		var player_stats = [pname, score, deaths]
+
+		player_data[player.player_id] = player_stats
+	return game_stats
 
 
 #func get_spawn_info_from_id(player_id):
@@ -92,6 +125,7 @@ func end_game():
 	print('ENDGAME')
 	GameData.clear_scene_state()
 	request_scene.emit('MAIN_MENU', null)
+	# TODO clean up scoreboard cyclical reference
 
 
 func _physics_process(delta: float) -> void:

@@ -50,7 +50,7 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SplitScreenContainer/TopRow/SvpCont1"]
 handle_input_locally = false
-size = Vector2i(958, 538)
+size = Vector2i(2, 2)
 render_target_update_mode = 4
 
 [node name="Player1" parent="SplitScreenContainer/TopRow/SvpCont1/SubViewport" instance=ExtResource("4_www3a")]
@@ -63,7 +63,7 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SplitScreenContainer/TopRow/SvpCont2"]
 handle_input_locally = false
-size = Vector2i(958, 538)
+size = Vector2i(2, 2)
 render_target_update_mode = 4
 
 [node name="Player2" parent="SplitScreenContainer/TopRow/SvpCont2/SubViewport" instance=ExtResource("4_www3a")]
@@ -80,7 +80,7 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SplitScreenContainer/BottomRow/SvpCont3"]
 handle_input_locally = false
-size = Vector2i(958, 538)
+size = Vector2i(2, 2)
 render_target_update_mode = 4
 
 [node name="Player3" parent="SplitScreenContainer/BottomRow/SvpCont3/SubViewport" instance=ExtResource("4_www3a")]
@@ -93,7 +93,7 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SplitScreenContainer/BottomRow/SvpCont4"]
 handle_input_locally = false
-size = Vector2i(958, 538)
+size = Vector2i(2, 2)
 render_target_update_mode = 4
 
 [node name="Player4" parent="SplitScreenContainer/BottomRow/SvpCont4/SubViewport" instance=ExtResource("4_www3a")]

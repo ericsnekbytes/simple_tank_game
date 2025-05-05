@@ -1,0 +1,94 @@
+[gd_scene load_steps=5 format=3 uid="uid://xmqyw61f6git"]
+
+[ext_resource type="FontFile" uid="uid://c0etogfs31a3a" path="res://art/open_sans/static/OpenSans-Bold.ttf" id="1_53twn"]
+[ext_resource type="Script" uid="uid://c0tkpqvrfdehn" path="res://ui/game_stats.gd" id="1_g054b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1sr2k"]
+bg_color = Color(1, 1, 1, 0)
+border_width_top = 3
+border_width_bottom = 3
+border_color = Color(0, 1, 0.682353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_erygm"]
+content_margin_left = 15.0
+bg_color = Color(0, 1, 0.682353, 1)
+border_width_left = 3
+border_width_right = 3
+border_color = Color(0, 1, 0.682353, 1)
+
+[node name="GameStats" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g054b")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 120
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TableArea" type="PanelContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+size_flags_stretch_ratio = 2.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1sr2k")
+
+[node name="Table" type="VBoxContainer" parent="MarginContainer/HBoxContainer/TableArea"]
+layout_mode = 2
+
+[node name="HeaderRow" type="HBoxContainer" parent="MarginContainer/HBoxContainer/TableArea/Table"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Cell" type="PanelContainer" parent="MarginContainer/HBoxContainer/TableArea/Table/HeaderRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_erygm")
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/TableArea/Table/HeaderRow/Cell"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.262745, 0.262745, 0.262745, 1)
+theme_override_fonts/font = ExtResource("1_53twn")
+text = "Game Stats"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InfoRow" type="HBoxContainer" parent="MarginContainer/HBoxContainer/TableArea/Table"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Cell" type="PanelContainer" parent="MarginContainer/HBoxContainer/TableArea/Table/InfoRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_erygm")
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/TableArea/Table/InfoRow/Cell"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.262745, 0.262745, 0.262745, 1)
+theme_override_fonts/font = ExtResource("1_53twn")
+text = "Player X"
+vertical_alignment = 1
+
+[node name="Spacer2" type="Control" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3

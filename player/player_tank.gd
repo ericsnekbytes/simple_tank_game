@@ -6,6 +6,7 @@ signal died(node)
 signal health_changed(value: float)
 signal cannon_pitch_changed(value: float)
 signal score_changed(value)
+signal user_select()
 
 var player_id := -1
 @export var team_id = -1
@@ -25,7 +26,8 @@ var health_regen_increment = 5
 #var health_regen_period = 500  # Time between health upticks
 var last_regen_timestamp = 0
 var dead = false
-var health: float = 100.0:
+var death_count = 0
+var health = 100.0:
 	get:
 		return health
 	set(value):
@@ -47,7 +49,7 @@ var health: float = 100.0:
 		if new_value <= 0:
 			#print('pHEALTH at 0 %s' % self)
 			dead = true
-			#death_count += 1
+			death_count += 1
 			died.emit(self)
 		#print("Set health " + str(new_value))
 # ....
@@ -91,6 +93,8 @@ var active_weapon_index = 0:
 # ....
 var spawn_position := Vector3.ZERO
 var spawn_basis := Basis()
+# ....
+@export var hide_gui_on_ready = false
 
 
 func _ready() -> void:
@@ -105,6 +109,9 @@ func _ready() -> void:
 	# Health UI
 	health_changed.connect(update_health_label)
 	health_changed.emit(health)
+	
+	if hide_gui_on_ready:
+		hide_gui()
 
 
 func set_lock_inputs(state):
@@ -223,6 +230,8 @@ func _unhandled_input(event: InputEvent) -> void:
 					cam_zoom_index = (cam_zoom_index + 1) % cam_zoom_val.size()
 					player_cam.position = cam_zoom_val[cam_zoom_index] * cam_position_vector
 					last_cam_zoom_timestamp = current_time
+			if event.is_action('user_select') and event.is_pressed():
+				user_select.emit()
 
 
 func _physics_process(delta: float) -> void:
