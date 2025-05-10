@@ -71,7 +71,7 @@ func _physics_process(delta):
 				if collider:
 					#print('Rnd collide %s' % collider)
 					if collider.is_in_group('player'):
-						collider.take_hit(damage)
+						collider.take_hit(damage, owning_player)
 					if collider.is_in_group('craft_blk'):
 						collider.queue_free()
 					

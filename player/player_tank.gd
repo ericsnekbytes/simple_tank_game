@@ -27,6 +27,9 @@ var health_regen_increment = 5
 var last_regen_timestamp = 0
 var dead = false
 var death_count = 0
+var last_hit_by = null:
+	set(value):
+		last_hit_by = value
 var health = 100.0:
 	get:
 		return health
@@ -187,11 +190,14 @@ func _on_health_regen_uptick_timeout() -> void:
 
 func _on_health_regen_wait_timeout() -> void:
 	health_regen_uptick.start()
+	last_hit_by = null
 
 
-func take_hit(damage: float):
+func take_hit(damage: float, aggressor=null):
+	#print('TAKEHIT %s / %s' % [damage, aggressor])
 	health -= damage
-	#print('%s take hit %s' % [self, damage])
+	if aggressor:
+		last_hit_by = aggressor
 	show_effect_indicator()
 	#var hit_direction = 1.0 * transform.basis.y.signed_angle_to(hit_position - $Pivot/Camera3D.global_position, transform.basis.z)
 	#indicate_damaged.emit(hit_direction)
@@ -213,6 +219,7 @@ func add_gui(node):
 
 func reset_body():
 	$ModelPivot/Body.basis = Basis()
+	last_hit_by = null
 
 
 func _unhandled_input(event: InputEvent) -> void:

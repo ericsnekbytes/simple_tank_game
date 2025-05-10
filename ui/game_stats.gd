@@ -25,6 +25,17 @@ func fetch_and_show_stats():
 	show()
 
 
+func init_player(node):
+	node.died.connect(sync_stats)
+	node.score_changed.connect(sync_stats)
+	
+
+
+func sync_stats():
+	if is_visible():
+		fetch_and_show_stats()
+
+
 func populate_game_stats(stat_data):
 	var headers = stat_data['headers']
 	var player_data = stat_data['player_data']
@@ -43,6 +54,7 @@ func populate_game_stats(stat_data):
 
 	# Remove all but header and top row
 	for i in range(max(0, table.get_child_count() - 2)):
+		table.get_child(2).hide()
 		table.remove_child(table.get_child(2))
 
 	# Populate headers

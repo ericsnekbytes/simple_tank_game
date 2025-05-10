@@ -1,7 +1,7 @@
 extends Node3D
 
 signal request_scene(scene_id)
-
+signal stats_changed()
 
 @onready var players = [
 	$SplitScreenContainer/TopRow/SvpCont1/SubViewport/Player1,
@@ -11,6 +11,9 @@ signal request_scene(scene_id)
 ]
 var player_count := 4
 # ....
+var scoreboard_scn = preload("res://ui/game_stats.tscn")
+# ....
+var endgame_stats = null
 
 
 func _ready() -> void:
@@ -23,6 +26,14 @@ func _ready() -> void:
 		player.died.connect(handle_player_death)
 		player.set_lock_inputs(true)
 
+		var scoreboard_gui := scoreboard_scn.instantiate()
+		scoreboard_gui.fetch_game_stats_func = get_game_stats
+		stats_changed.connect(scoreboard_gui.sync_stats)
+		player.died.connect(handle_stat_change)
+		player.score_changed.connect(handle_stat_change)
+		player.add_gui(scoreboard_gui)
+		player.user_select.connect(scoreboard_gui.toggle_game_stats)
+
 	start_pregame_sequence()
 
 
@@ -33,6 +44,35 @@ func _ready() -> void:
 	#spawn_node = points[player_id % points.size()]
 #
 	#return spawn_node
+
+
+func handle_stat_change(_value):
+	stats_changed.emit()
+
+
+func get_game_stats():
+	if endgame_stats:
+		# When game ends, scores/stats are frozen
+		return endgame_stats
+
+	var player_data = {
+		# Looks like
+		# player_idnum1: [2, 1, 3],
+		# player_idnum2: [5, 4, 8],
+	}
+	var game_stats = {
+		'headers': ['Player', 'Score', 'Deaths'],
+		'player_data': player_data
+	}
+	for player in players:
+		var pid = player.player_id
+		var pname = player.name
+		var score = player.score
+		var deaths = player.death_count
+		var player_stats = [pname, score, deaths]
+
+		player_data[player.player_id] = player_stats
+	return game_stats
 
 
 func prepare_split_screen():
@@ -92,6 +132,9 @@ func _on_intro_card_end_sequence():
 
 
 func handle_player_death(pnode: PlayerTank):
+	print('PDEATH %s / %s' % [pnode, pnode.last_hit_by])
+	if pnode.last_hit_by:
+		pnode.last_hit_by.score += 1
 	pnode.global_position = pnode.spawn_position + Vector3(0, 3, 0)
 	pnode.global_basis = pnode.spawn_basis
 	pnode.health = 100

@@ -1,6 +1,7 @@
 extends Node3D
 
 signal request_scene(scene_id)
+signal stats_changed()
 
 @onready var players = [
 	$SplitScreenContainer/TopRow/SvpCont1/SubViewport/Player1,
@@ -33,8 +34,15 @@ func _ready() -> void:
 
 		var scoreboard_gui := scoreboard_scn.instantiate()
 		scoreboard_gui.fetch_game_stats_func = get_game_stats
+		stats_changed.connect(scoreboard_gui.sync_stats)
+		player.died.connect(handle_stat_change)
+		player.score_changed.connect(handle_stat_change)
 		player.add_gui(scoreboard_gui)
 		player.user_select.connect(scoreboard_gui.toggle_game_stats)
+
+
+func handle_stat_change(_value):
+	stats_changed.emit()
 
 
 func get_game_stats():

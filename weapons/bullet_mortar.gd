@@ -164,7 +164,7 @@ func detonate():
 			if not item.dead:
 				#print('take hit %s' % item)
 				if item not in colliding_players:
-					item.take_hit(damage)
+					item.take_hit(damage, owning_player)
 				colliding_players[item] = true
 		if item.is_in_group('craft_blk'):
 			item.queue_free()
