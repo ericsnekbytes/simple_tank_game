@@ -31,9 +31,9 @@ func _ready():
 	sub_text.set_text(subtext_string)
 
 	# Make velocity relative to screen width
-	fade_in_velocity = get_viewport_rect().size.x / 4.0
-	hover_velocity = get_viewport_rect().size.x / 32
-	move_offscreen_velocity = get_viewport_rect().size.x / .5
+	fade_in_velocity = get_viewport_rect().size.x / 2.0
+	hover_velocity = get_viewport_rect().size.x / 32.0
+	move_offscreen_velocity = get_viewport_rect().size.x / .3
 
 	# Start hidden, then reposition and animate
 	title_text.hide()
