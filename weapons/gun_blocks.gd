@@ -12,12 +12,14 @@ var block_scn = preload('res://environment/blocks/craft_cube.tscn')
 var block_preview_scn = preload('res://environment/blocks/craft_cube_preview.tscn')
 # ....
 @onready var firing_timer = $FiringTimer
+@onready var alt_firing_timer = $AltFiringTimer
 var firing = false:  # There's no device-specific is_action_just_pressed, so we use this
 	set(value):
 		if value != firing:
 			firing = value
 			#print('Firing %s' % value)
-var rounds_per_min = 150
+var alt_firing = false
+var rounds_per_min = 900
 var last_fire_timestamp = 0
 var fire_cooldown = 60.0 / rounds_per_min
 var enable_auto_fire = true
@@ -45,12 +47,15 @@ var active_craft_position_index = 1:
 		if value < 0:
 			value = 0
 		active_craft_position_index = value
+@onready var cursor = $Cursor
+@onready var test_volume = $Cursor/TestVolume
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#enable_auto_fire = false
 	firing_timer.wait_time = 60.0 / rounds_per_min
+	alt_firing_timer.wait_time = 60.0 / rounds_per_min
 	#print('Bgun %s / %s' % [firing_timer.wait_time, rounds_per_min])
 
 
@@ -85,37 +90,73 @@ func alt_fire():
 	#test_position.y = roundf(test_position.y)
 	#test_position.z = roundf(test_position.z)
 
-	$Cursor/Eraser.global_position = test_position
-
+	$Cursor/TestVolume.global_position = test_position
 	#var ENV_LAYER = 1
 	var CRAFT_BLK_LAYER = 8
 	var params = PhysicsShapeQueryParameters3D.new()
-	params.shape = $Cursor/Eraser.shape
+	params.shape = $Cursor/TestVolume.shape
 	params.collision_mask = CRAFT_BLK_LAYER
-	#params.transform = $Cursor/Eraser.global_transform
+	#params.transform = $Cursor/TestVolume.global_transform
 	params.transform.origin = test_position
 	var nearby_items = get_world_3d().direct_space_state.intersect_shape(params)
 	#print('Nearby %s' % [nearby_items])
 	var tracked_items = {}
+	var closest = null
 	for info in nearby_items:
 		var item = info['collider']
 		#print('Found nearby item %s' % info)
 		if item.is_in_group('craft_blk'):
 			#print('take hit %s' % item)
-			if item not in tracked_items:
-				item.queue_free()
+			if closest:
+				var cur_distance = (item.global_position + Vector3(.5, .5, .5)) - test_position
+				if cur_distance.length() > ((closest.global_position + Vector3(.5, .5, .5)) - test_position).length():
+					closest = item
+			else:
+				closest = item
 			tracked_items[item] = true
+	if closest:
+		closest.queue_free()
 
 
 func fire():
 	var current_time = Time.get_ticks_msec()
 
-	var block = block_scn.instantiate()
-	GameData.global_pivot.add_child(block)
-	block.global_position = $Cursor.global_position + Vector3(-.5, 0, -.5) + craft_position[active_craft_position_index]
-	block.global_position.x = roundf(block.global_position.x)
-	block.global_position.y = roundf(block.global_position.y)
-	block.global_position.z = roundf(block.global_position.z)
+	var grid_aligned_pos = $Cursor.global_position + Vector3(-.5, 0, -.5) + craft_position[active_craft_position_index]
+	grid_aligned_pos.x = roundf(grid_aligned_pos.x)
+	grid_aligned_pos.y = roundf(grid_aligned_pos.y)
+	grid_aligned_pos.z = roundf(grid_aligned_pos.z)
+
+	#var ENV_LAYER = 1
+	var CRAFT_BLK_LAYER = 8
+	var params = PhysicsShapeQueryParameters3D.new()
+	params.shape = $Cursor/TestVolume.shape
+	params.collision_mask = CRAFT_BLK_LAYER
+	#params.transform = $Cursor/TestVolume.global_transform
+	params.transform.origin = cursor.global_position
+	var nearby_items = get_world_3d().direct_space_state.intersect_shape(params)
+	#print('Nearby %s' % [nearby_items])
+	var closest = null
+	for info in nearby_items:
+		var item = info['collider']
+		#print('Found nearby item %s' % info)
+		if item.is_in_group('craft_blk'):
+			#print('take hit %s' % item)
+			var prev_block_center = (grid_aligned_pos + Vector3(.5, .5, .5))
+			if closest:
+				var cur_distance = (item.global_position + Vector3(.5, .5, .5)) - prev_block_center
+				if cur_distance.length() < (closest.global_position + Vector3(.5, .5, .5) - prev_block_center).length():
+					closest = item
+			else:
+				closest = item
+	if not closest:
+		# No block in this space already, place one
+		var block = block_scn.instantiate()
+		GameData.global_pivot.add_child(block)
+		block.global_position = grid_aligned_pos
+	else:
+		# Block here already, WIP
+		pass  # TODO upgrade block?
+
 
 	#return block
 	
@@ -176,8 +217,17 @@ func _unhandled_input(event):
 				firing_timer.stop()
 
 			if event.is_pressed() and event.is_action('shoot_alt'):
-				if not firing:
+				if not alt_firing:
 					alt_fire()
+
+				alt_firing = true
+				if enable_auto_fire:
+					alt_firing_timer.start()
+
+			if not event.is_pressed() and event.is_action('shoot_alt'):
+				alt_firing = false
+
+				alt_firing_timer.stop()
 
 			if event.is_pressed() and event.is_action('craft_up'):
 				print('aaa')
@@ -186,7 +236,6 @@ func _unhandled_input(event):
 			if event.is_pressed() and event.is_action('craft_down'):
 				print('bbb')
 				active_craft_position_index -= 1
-
 
 
 func update_preview():

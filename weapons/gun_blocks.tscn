@@ -54,6 +54,8 @@ grow_vertical = 2
 
 [node name="FiringTimer" type="Timer" parent="."]
 
+[node name="AltFiringTimer" type="Timer" parent="."]
+
 [node name="AmmoTimer" type="Timer" parent="."]
 wait_time = 1.667
 autostart = true
@@ -63,11 +65,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, -1, 0)
 material_override = SubResource("StandardMaterial3D_jp12w")
 mesh = SubResource("SphereMesh_jp12w")
 
-[node name="Eraser" type="CollisionShape3D" parent="Cursor"]
+[node name="TestVolume" type="CollisionShape3D" parent="Cursor"]
 shape = SubResource("SphereShape3D_te6j1")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Cursor/Eraser"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cursor/TestVolume"]
+visible = false
 material_override = SubResource("StandardMaterial3D_te6j1")
 mesh = SubResource("SphereMesh_t6o48")
 
 [node name="CraftCubePreview" parent="." instance=ExtResource("2_te6j1")]
+
+[connection signal="timeout" from="FiringTimer" to="." method="fire"]
+[connection signal="timeout" from="AltFiringTimer" to="." method="alt_fire"]
