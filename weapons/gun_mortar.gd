@@ -16,13 +16,15 @@ var firing = false:  # There's no device-specific is_action_just_pressed, so we 
 		if value != firing:
 			firing = value
 			#print('Firing %s' % value)
+var expended_flag = false
+@onready var range_timer = $RangeTimer
 var rounds_per_min = 150
 var last_fire_timestamp = 0
 var fire_cooldown = 60.0 / rounds_per_min
 var enable_auto_fire = true
 # ....
 @onready var ammo_timer = $AmmoTimer
-var ammo_enabled = true
+var ammo_enabled = false
 var max_ammo_count = 2
 var ammo_count = max_ammo_count:
 	set(value):
@@ -46,6 +48,8 @@ var ammo_count = max_ammo_count:
 @onready var topfill2 = $Hud/MortarPitchIndicator/TopFill2
 @onready var lowfill1 = $Hud/MortarPitchIndicator/Lower/LowFill1
 @onready var lowfill2 = $Hud/MortarPitchIndicator/Lower/LowFill2
+@onready var range_meter1 = $Hud/RangeIndicator/RangeMeter
+@onready var range_meter2 = $Hud/RangeIndicator/RangeMeter2
 
 
 # Called when the node enters the scene tree for the first time.
@@ -59,8 +63,8 @@ func _exit_tree():
 	owning_player = null
 
 
-func fire():
-	#print('Fire %s' % owning_player)
+func fire(range_fraction: float):
+	print('Fire %s' % range_fraction)
 	var current_time = Time.get_ticks_msec()
 	if current_time - last_fire_timestamp >= fire_cooldown:
 		if not ammo_enabled or (ammo_enabled and ammo_count > 0):
@@ -76,7 +80,7 @@ func fire():
 				bullet.global_position = firing_data['global_pos'] + (bullet.basis.z * 3)
 			#bullet.global_basis = bullet_basis
 			#bullet.global_position = Vector3(0, -.5, 0) + global_position + bullet_basis.z#.rotated(global_basis.y.normalized(), PI) * 3
-			bullet.linear_velocity = bullet.basis.z*bullet.MAX_SPEED#.rotated(global_basis.y.normalized(), PI) * bullet.MAX_SPEED
+			bullet.linear_velocity = bullet.basis.z * bullet.MAX_SPEED * range_fraction
 			ammo_count -= 1
 			ammo_timer.start()
 
@@ -156,13 +160,30 @@ func _unhandled_input(event):
 		#print('SH %s // %s // %s // %s' % [owning_player, player_device, event.device, event.is_action('rtrigger')])
 		if owning_player != null and player_device != null and event.device == player_device:
 			if event.is_pressed() and event.is_action('shoot'):
+
 				if not firing:
-					fire()
+					if range_timer.is_stopped():
+						range_timer.start()
+				else:
+					var range_fraction = (range_timer.wait_time - range_timer.time_left) / range_timer.wait_time
+					if not expended_flag:
+						expended_flag = true
+						fire(1.0)
 
 				firing = true
-				if enable_auto_fire:
-					firing_timer.start()
-			if not event.is_pressed() and event.is_action('shoot'):
-				firing = false
+			if (not event.is_pressed()) and event.is_action('shoot'):
+				if firing:
+					fire((range_timer.wait_time - range_timer.time_left) / range_timer.wait_time)
 
-				firing_timer.stop()
+				range_meter1.value = 0
+				range_meter2.value = 0
+				firing = false
+				expended_flag = false
+
+
+func _physics_process(delta):
+	if start_process:
+		if firing:
+			var range_fraction = (range_timer.wait_time - range_timer.time_left) / range_timer.wait_time
+			range_meter1.value = range_fraction
+			range_meter2.value = range_fraction

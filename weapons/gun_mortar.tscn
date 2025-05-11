@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bflnfy31fb7gf"]
+[gd_scene load_steps=10 format=3 uid="uid://bflnfy31fb7gf"]
 
 [ext_resource type="Script" uid="uid://cg4mbvbm3ymuv" path="res://weapons/gun_mortar.gd" id="1_0kv2k"]
 
@@ -25,10 +25,27 @@ content_margin_bottom = 0.0
 bg_color = Color(1, 0, 0, 1)
 corner_detail = 1
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dvn3b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n1mph"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqv77"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 1, 1, 1)
+corner_detail = 1
+
 [node name="GunMortar" type="Node3D" groups=["gun_has_ui"]]
 script = ExtResource("1_0kv2k")
 
 [node name="FiringTimer" type="Timer" parent="."]
+
+[node name="RangeTimer" type="Timer" parent="."]
+wait_time = 0.35
+one_shot = true
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.0434325, 0, 0)
@@ -291,6 +308,87 @@ offset_bottom = -120.0
 grow_horizontal = 0
 grow_vertical = 0
 color = Color(0, 1, 0.0273438, 1)
+
+[node name="RangeIndicator" type="Control" parent="Hud"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RangeMeter" type="ProgressBar" parent="Hud/RangeIndicator"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -243.035
+offset_top = 191.0
+offset_right = 142.965
+offset_bottom = 209.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.57079
+theme_override_styles/background = SubResource("StyleBoxEmpty_dvn3b")
+theme_override_styles/fill = SubResource("StyleBoxFlat_n1mph")
+max_value = 1.0
+show_percentage = false
+
+[node name="Scale" type="ProgressBar" parent="Hud/RangeIndicator/RangeMeter"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -386.0
+offset_top = -4.0
+offset_right = -6.10352e-05
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_mqv77")
+max_value = 1.0
+show_percentage = false
+
+[node name="RangeMeter2" type="ProgressBar" parent="Hud/RangeIndicator"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 225.035
+offset_top = 191.0
+offset_right = 611.035
+offset_bottom = 209.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.57079
+theme_override_styles/background = SubResource("StyleBoxEmpty_dvn3b")
+theme_override_styles/fill = SubResource("StyleBoxFlat_n1mph")
+max_value = 1.0
+show_percentage = false
+
+[node name="Scale" type="ProgressBar" parent="Hud/RangeIndicator/RangeMeter2"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -386.0
+offset_top = -18.0
+offset_right = -6.10352e-05
+offset_bottom = -14.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_mqv77")
+max_value = 1.0
+show_percentage = false
 
 [connection signal="timeout" from="FiringTimer" to="." method="fire"]
 [connection signal="timeout" from="AmmoTimer" to="." method="_on_ammo_timer_timeout"]
