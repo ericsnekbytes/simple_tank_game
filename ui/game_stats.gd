@@ -28,7 +28,6 @@ func fetch_and_show_stats():
 func init_player(node):
 	node.died.connect(sync_stats)
 	node.score_changed.connect(sync_stats)
-	
 
 
 func sync_stats():

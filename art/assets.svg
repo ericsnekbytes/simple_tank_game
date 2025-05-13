@@ -7,7 +7,7 @@
    viewBox="0 0 507.99999 285.75001"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.2 (b8e25be8, 2022-02-05)"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
    sodipodi:docname="assets.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -30,28 +30,23 @@
      inkscape:snap-bbox-edge-midpoints="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     inkscape:zoom="0.35355339"
-     inkscape:cx="806.10173"
-     inkscape:cy="847.11393"
+     inkscape:zoom="1.0298264"
+     inkscape:cx="574.36862"
+     inkscape:cy="223.3386"
      inkscape:window-width="1701"
      inkscape:window-height="1031"
      inkscape:window-x="0"
      inkscape:window-y="38"
      inkscape:window-maximized="0"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="layer1"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1" />
   <defs
      id="defs2" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <rect
-       style="fill:#666666;fill-opacity:1;stroke:none;stroke-width:1.5875;stroke-opacity:0.74902"
-       id="rect1912"
-       width="508"
-       height="285.75"
-       x="4.1423036e-07"
-       y="-5.419937e-07" />
     <path
        id="path909"
        style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.5875;stroke-opacity:0.74902"
@@ -71,5 +66,22 @@
        inkscape:export-filename="/Users/egentry/workspace_ana/gdwork/simpletankgame/art/triangle.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
+    <circle
+       style="font-variation-settings:normal;opacity:1;fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1.71979168;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+       id="path2"
+       cx="136.23769"
+       cy="-60.213348"
+       r="12.7"
+       transform="scale(1,-1)"
+       inkscape:export-filename="images\menu_cursor.png"
+       inkscape:export-xdpi="105.88235"
+       inkscape:export-ydpi="105.88235" />
+    <path
+       id="path2-1"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stop-color:#000000"
+       d="m 137.09758,60.213343 a 0.85987359,0.85987359 0 0 0 -0.85987,-0.859869 0.85987359,0.85987359 0 0 0 -0.85992,0.859869 0.85987359,0.85987359 0 0 0 0.85992,0.859876 0.85987359,0.85987359 0 0 0 0.85987,-0.859876 z"
+       inkscape:export-filename="images\menu_cursor.png"
+       inkscape:export-xdpi="105.88235"
+       inkscape:export-ydpi="105.88235" />
   </g>
 </svg>

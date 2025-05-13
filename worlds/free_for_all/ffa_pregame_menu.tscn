@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://cddfqrv2jwgo8"]
+[gd_scene load_steps=15 format=3 uid="uid://cddfqrv2jwgo8"]
 
 [ext_resource type="Script" uid="uid://gdss8bwekgbq" path="res://worlds/free_for_all/ffa_pregame_menu.gd" id="1_4rr4b"]
 [ext_resource type="FontFile" uid="uid://c2f72s2s2idlj" path="res://art/open_sans/static/OpenSans-ExtraBold.ttf" id="1_i85rw"]
 [ext_resource type="FontFile" uid="uid://c0etogfs31a3a" path="res://art/open_sans/static/OpenSans-Bold.ttf" id="1_ldet6"]
 [ext_resource type="PackedScene" uid="uid://c0wpedxn5d6fg" path="res://player/player_tank.tscn" id="2_x18rp"]
 [ext_resource type="PackedScene" uid="uid://ch53jvswgclw3" path="res://environment/blocks/terra_cube.tscn" id="3_h1kcm"]
+[ext_resource type="PackedScene" uid="uid://dros5vd5m6ufl" path="res://player/menu_cursor.tscn" id="4_h1kcm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x18rp"]
 sky_top_color = Color(0.225905, 0.458421, 1, 1)
@@ -114,12 +115,15 @@ shape = SubResource("BoxShape3D_vv4hb")
 
 [node name="Player3" parent="SubViewportContainer/Level/Node3D" instance=ExtResource("2_x18rp")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 7.46216, 1, 1.146)
+hide_gui_on_ready = true
 
 [node name="Player4" parent="SubViewportContainer/Level/Node3D" instance=ExtResource("2_x18rp")]
 transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 6.96216, 1, -2.354)
+hide_gui_on_ready = true
 
 [node name="Player5" parent="SubViewportContainer/Level/Node3D" instance=ExtResource("2_x18rp")]
 transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 8.93209, 1, 3.90561)
+hide_gui_on_ready = true
 
 [node name="TerraCube57" parent="SubViewportContainer/Level/Node3D" instance=ExtResource("3_h1kcm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, -8.5)
@@ -1345,7 +1349,7 @@ text = "0"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="SubtPlayerCount" type="Button" parent="MarginContainer/VBoxContainer/PlayerCountSettings/HBoxContainer"]
+[node name="SubtPlayerCount" type="Button" parent="MarginContainer/VBoxContainer/PlayerCountSettings/HBoxContainer" groups=["menu_control"]]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 focus_neighbor_right = NodePath("../AddPlayerCount")
@@ -1356,7 +1360,7 @@ theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_uv4rg")
 text = "<"
 
-[node name="AddPlayerCount" type="Button" parent="MarginContainer/VBoxContainer/PlayerCountSettings/HBoxContainer"]
+[node name="AddPlayerCount" type="Button" parent="MarginContainer/VBoxContainer/PlayerCountSettings/HBoxContainer" groups=["menu_control"]]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 focus_neighbor_left = NodePath("../SubtPlayerCount")
@@ -1371,7 +1375,7 @@ text = ">"
 custom_minimum_size = Vector2(0, 256)
 layout_mode = 2
 
-[node name="StartGame" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="StartGame" type="Button" parent="MarginContainer/VBoxContainer" groups=["menu_control"]]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.258824, 0.258824, 0.258824, 1)
@@ -1384,6 +1388,11 @@ text = "Start Game"
 wait_time = 0.5
 one_shot = true
 autostart = true
+
+[node name="MenuCursor" parent="." instance=ExtResource("4_h1kcm")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+anchors_preset = 0
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/PlayerCountSettings/HBoxContainer/SubtPlayerCount" to="." method="_on_subt_player_count_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/PlayerCountSettings/HBoxContainer/AddPlayerCount" to="." method="_on_add_player_count_pressed"]
