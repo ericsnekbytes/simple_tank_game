@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://l8d7yo4k7svc"]
+[gd_scene load_steps=16 format=3 uid="uid://l8d7yo4k7svc"]
 
 [ext_resource type="Script" uid="uid://cak1yt1u6a33u" path="res://worlds/soccer/soccer_pregame_menu.gd" id="1_mg5yu"]
 [ext_resource type="PackedScene" uid="uid://c0wpedxn5d6fg" path="res://player/player_tank.tscn" id="2_3jq80"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://c2f72s2s2idlj" path="res://art/open_sans/static/OpenSans-ExtraBold.ttf" id="4_1obgl"]
 [ext_resource type="PackedScene" uid="uid://kntmmr41egxf" path="res://entity/SoccerBall.tscn" id="4_ofkra"]
 [ext_resource type="FontFile" uid="uid://c0etogfs31a3a" path="res://art/open_sans/static/OpenSans-Bold.ttf" id="5_ilnyg"]
+[ext_resource type="PackedScene" uid="uid://dros5vd5m6ufl" path="res://player/menu_cursor.tscn" id="7_avemw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x18rp"]
 sky_top_color = Color(0.225905, 0.458421, 1, 1)
@@ -1356,7 +1357,7 @@ text = "0"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="SubtPlayerCount" type="Button" parent="MarginContainer/VBoxContainer/PlayerCountSettings/HBoxContainer"]
+[node name="SubtPlayerCount" type="Button" parent="MarginContainer/VBoxContainer/PlayerCountSettings/HBoxContainer" groups=["menu_control"]]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 focus_neighbor_right = NodePath("../AddPlayerCount")
@@ -1367,7 +1368,7 @@ theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_uv4rg")
 text = "<"
 
-[node name="AddPlayerCount" type="Button" parent="MarginContainer/VBoxContainer/PlayerCountSettings/HBoxContainer"]
+[node name="AddPlayerCount" type="Button" parent="MarginContainer/VBoxContainer/PlayerCountSettings/HBoxContainer" groups=["menu_control"]]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 focus_neighbor_left = NodePath("../SubtPlayerCount")
@@ -1382,7 +1383,7 @@ text = ">"
 custom_minimum_size = Vector2(0, 256)
 layout_mode = 2
 
-[node name="StartGame" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="StartGame" type="Button" parent="MarginContainer/VBoxContainer" groups=["menu_control"]]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.258824, 0.258824, 0.258824, 1)
@@ -1395,6 +1396,21 @@ text = "Start Game"
 wait_time = 0.5
 one_shot = true
 autostart = true
+
+[node name="MenuCursor" parent="." instance=ExtResource("7_avemw")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 77.0
+offset_bottom = 77.0
+grow_horizontal = 1
+grow_vertical = 1
+colorize = Color(0.78125, 0, 1, 1)
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/PlayerCountSettings/HBoxContainer/SubtPlayerCount" to="." method="_on_subt_player_count_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/PlayerCountSettings/HBoxContainer/AddPlayerCount" to="." method="_on_add_player_count_pressed"]

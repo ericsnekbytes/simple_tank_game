@@ -1392,7 +1392,7 @@ autostart = true
 [node name="MenuCursor" parent="." instance=ExtResource("4_h1kcm")]
 layout_mode = 2
 anchors_preset = 0
-colorize = Color(1, 0, 0, 1)
+colorize = Color(0.78125, 0, 1, 1)
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/PlayerCountSettings/HBoxContainer/SubtPlayerCount" to="." method="_on_subt_player_count_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/PlayerCountSettings/HBoxContainer/AddPlayerCount" to="." method="_on_add_player_count_pressed"]

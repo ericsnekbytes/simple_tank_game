@@ -13,6 +13,7 @@ var player_count = 2:
 @onready var pcount_disp = $MarginContainer/VBoxContainer/PlayerCountSettings/HBoxContainer/ColorRect/VBoxContainer/MarginContainer/HBoxContainer/PlayerCountValue
 @onready var start_game_btn = $MarginContainer/VBoxContainer/StartGame
 @onready var input_timer = $InputTimer
+# ....
 @onready var menu_cursor := $MenuCursor
 @onready var focus_begin = $MarginContainer/VBoxContainer/StartGame
 
@@ -21,6 +22,7 @@ func _ready():
 	player_count = player_count
 	start_game_btn.grab_focus()
 	menu_cursor.start_process = true
+	menu_cursor.global_position = get_viewport_rect().size / 4.0
 	menu_cursor.cursor_moved.connect(handle_cursor_moved)
 	menu_cursor.navigate_request.connect(handle_navigate_request)
 	menu_cursor.cursor_accept.connect(handle_cursor_accept)
