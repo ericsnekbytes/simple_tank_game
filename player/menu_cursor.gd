@@ -8,6 +8,14 @@ var player_id = -1
 var start_process = false
 # ....
 var MAX_THRUST = 600
+var last_cursor_accept_timestamp = 0
+var cursor_accept_cooldown = 500
+@export var colorize: Color
+
+
+func _ready():
+	self_modulate = colorize
+	$ColorRect.self_modulate = colorize
 
 
 func set_label(value):
@@ -16,10 +24,12 @@ func set_label(value):
 
 func _unhandled_input(event):
 	if start_process:
-		if (event.is_action('ui_down') or event.is_action('ui_up')) and not get_viewport().gui_get_focus_owner():
+		var current_time := Time.get_ticks_msec()
+		if event.is_pressed() and (event.is_action('ui_down') or event.is_action('ui_up')) and not get_viewport().gui_get_focus_owner():
 			navigate_request.emit()
-		if event.is_action('ui_accept') and not get_viewport().gui_get_focus_owner():
-			cursor_accept.emit(global_position + (get_rect().size / 2.0))
+		if event.is_pressed() and event.is_action('ui_accept') and not get_viewport().gui_get_focus_owner():
+			if current_time - last_cursor_accept_timestamp >= cursor_accept_cooldown:
+				cursor_accept.emit(global_position + (get_rect().size / 2.0))
 
 
 func _physics_process(delta):

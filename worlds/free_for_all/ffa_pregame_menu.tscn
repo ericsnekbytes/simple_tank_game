@@ -1385,14 +1385,14 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_4rr4b")
 text = "Start Game"
 
 [node name="InputTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.25
 one_shot = true
 autostart = true
 
 [node name="MenuCursor" parent="." instance=ExtResource("4_h1kcm")]
-modulate = Color(1, 1, 1, 1)
 layout_mode = 2
 anchors_preset = 0
+colorize = Color(1, 0, 0, 1)
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/PlayerCountSettings/HBoxContainer/SubtPlayerCount" to="." method="_on_subt_player_count_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/PlayerCountSettings/HBoxContainer/AddPlayerCount" to="." method="_on_add_player_count_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bgdm1ro7wvspx"]
+[gd_scene load_steps=14 format=3 uid="uid://bgdm1ro7wvspx"]
 
 [ext_resource type="FontFile" uid="uid://c2f72s2s2idlj" path="res://art/open_sans/static/OpenSans-ExtraBold.ttf" id="1_6ydpk"]
 [ext_resource type="Script" uid="uid://dt6bj610h0low" path="res://main/main_menu.gd" id="1_wid5n"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://civcotkfpxj10" path="res://environment/blocks/terra_wedge.tscn" id="3_csgli"]
 [ext_resource type="FontFile" uid="uid://b6d2w4lj243dh" path="res://art/open_sans/static/OpenSans-Light.ttf" id="3_escpi"]
 [ext_resource type="PackedScene" uid="uid://c0wpedxn5d6fg" path="res://player/player_tank.tscn" id="5_guapg"]
+[ext_resource type="PackedScene" uid="uid://dros5vd5m6ufl" path="res://player/menu_cursor.tscn" id="7_go4yo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6b45o"]
 sky_top_color = Color(0.225905, 0.458421, 1, 1)
@@ -3035,7 +3036,7 @@ size_flags_horizontal = 4
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="FreeForAllBtn" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="FreeForAllBtn" type="Button" parent="MarginContainer/VBoxContainer" groups=["menu_control"]]
 custom_minimum_size = Vector2(400, 80)
 layout_mode = 2
 focus_neighbor_top = NodePath("../ExitBtn")
@@ -3045,7 +3046,7 @@ theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_1raui")
 text = "Free For All"
 
-[node name="SoccerBtn" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="SoccerBtn" type="Button" parent="MarginContainer/VBoxContainer" groups=["menu_control"]]
 custom_minimum_size = Vector2(400, 80)
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../ExitBtn")
@@ -3059,7 +3060,7 @@ text = "Soccer"
 custom_minimum_size = Vector2(0, 192)
 layout_mode = 2
 
-[node name="ExitBtn" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="ExitBtn" type="Button" parent="MarginContainer/VBoxContainer" groups=["menu_control"]]
 custom_minimum_size = Vector2(400, 80)
 layout_mode = 2
 focus_neighbor_top = NodePath("../SoccerBtn")
@@ -3107,6 +3108,21 @@ vertical_alignment = 2
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="MenuCursor" parent="." instance=ExtResource("7_go4yo")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 77.0
+offset_bottom = 77.0
+grow_horizontal = 1
+grow_vertical = 1
+colorize = Color(1, 0, 0, 1)
 
 [connection signal="body_entered" from="SubViewportContainer/Level/KillBox" to="." method="_on_kill_box_body_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/FreeForAllBtn" to="." method="_on_free_for_all_btn_pressed"]
