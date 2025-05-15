@@ -25,6 +25,7 @@ func _ready():
 	load_scene('MAIN_MENU', null)
 
 
+
 func load_scene(scene_id, args=null):
 	if scene_id in scenes:
 		print('LOAD SCN %s' % scene_id)

@@ -1,13 +1,11 @@
-[gd_scene load_steps=29 format=3 uid="uid://c0wpedxn5d6fg"]
+[gd_scene load_steps=27 format=3 uid="uid://c0wpedxn5d6fg"]
 
 [ext_resource type="Script" uid="uid://eoodsmq3plg4" path="res://player/player_tank.gd" id="1_f0njb"]
 [ext_resource type="PackedScene" uid="uid://bqyodcbwch4wu" path="res://art/tank_cannon.glb" id="2_s1680"]
-[ext_resource type="PackedScene" uid="uid://8lbbbwe2ufow" path="res://weapons/gun_rocket.tscn" id="2_vgk1m"]
 [ext_resource type="PackedScene" uid="uid://fgvsef8mybji" path="res://art/tank_turret.glb" id="3_7v78o"]
 [ext_resource type="PackedScene" uid="uid://cir51a4c2f32b" path="res://art/cat.glb" id="3_84av1"]
 [ext_resource type="PackedScene" uid="uid://chdt4jancerb8" path="res://art/tank_body.glb" id="3_uvgxe"]
-[ext_resource type="PackedScene" uid="uid://bflnfy31fb7gf" path="res://weapons/gun_mortar.tscn" id="3_v5163"]
-[ext_resource type="PackedScene" uid="uid://dt6b11m3vfhxj" path="res://weapons/gun_blocks.tscn" id="5_cfc1i"]
+[ext_resource type="PackedScene" uid="uid://xwiu8d717kj4" path="res://player/gun_handler.tscn" id="6_uvgxe"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uvgxe"]
 
@@ -156,14 +154,7 @@ transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 0, 0, 0)
 
 [node name="WeaponPivot" type="Node3D" parent="."]
 
-[node name="GunRocket" parent="WeaponPivot" instance=ExtResource("2_vgk1m")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1.26318, 0.790138)
-
-[node name="GunMortar" parent="WeaponPivot" instance=ExtResource("3_v5163")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1.26318, 0.790138)
-
-[node name="GunBlocks" parent="WeaponPivot" instance=ExtResource("5_cfc1i")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1, 0.5)
+[node name="GunHandler" parent="WeaponPivot" instance=ExtResource("6_uvgxe")]
 
 [node name="ColliderTrack" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.45, 0.5, 0)

@@ -56,6 +56,8 @@ var health = 100.0:
 			died.emit(self)
 		#print("Set health " + str(new_value))
 # ....
+@onready var gun_handler = $WeaponPivot/GunHandler
+# ....
 var score := 0:
 	set(value):
 		score = value
@@ -80,21 +82,6 @@ var MAX_SPEED := 10
 var MAX_SPIN := PI
 var MAX_PITCH := PI
 # ....
-@onready var gun_rocket = $WeaponPivot/GunRocket
-@onready var gun_mortar = $WeaponPivot/GunMortar
-@onready var gun_blocks = $WeaponPivot/GunBlocks
-@onready var gun_order = [gun_rocket.weapon_id, gun_mortar.weapon_id, gun_blocks.weapon_id]
-@onready var guns = {
-	gun_rocket.weapon_id: gun_rocket,
-	gun_mortar.weapon_id: gun_mortar,
-	gun_blocks.weapon_id: gun_blocks,
-}
-var active_weapon_index = 0:
-	set(value):
-		prepare_weapon_change()
-		active_weapon_index = value % gun_order.size()
-		sync_weapon()
-# ....
 var spawn_position := Vector3.ZERO
 var spawn_basis := Basis()
 # ....
@@ -102,13 +89,12 @@ var spawn_basis := Basis()
 
 
 func _ready() -> void:
-	# Configure guns
-	gun_rocket.owning_player = self
-	gun_mortar.owning_player = self
-	add_gui(gun_mortar.get_ui_pips())
-	gun_blocks.owning_player = self
-	cannon_pitch_changed.connect(gun_mortar.update_pitch_indicator)
-	sync_weapon()
+	# Set up guns
+	gun_handler.owning_player = self
+	gun_handler.request_gun_ui_attach.connect(add_gui)
+	gun_handler.preparing_weapon_change.connect(handle_preparing_weapon_change)
+	cannon_pitch_changed.connect(gun_handler.handle_cannon_pitch_changed)
+	gun_handler.initialize()
 
 	# Health UI
 	health_changed.connect(update_health_label)
@@ -119,14 +105,14 @@ func _ready() -> void:
 
 
 func set_lock_inputs(state):
-	if state:
-		_lock_inputs = true
-		var gun = guns[gun_order[active_weapon_index]]
-		gun.start_process = false
-	else:
-		_lock_inputs = false
-		var gun = guns[gun_order[active_weapon_index]]
-		gun.start_process = true
+	gun_handler.set_lock_inputs(state)
+
+
+func handle_preparing_weapon_change():
+	if gun_handler.gun_order[gun_handler.active_weapon_index] == gun_handler.gun_mortar.weapon_id:
+		#cannon_pivot.global_position = cannon_spawn_pos
+		cannon_pivot.basis = cannon_spawn_basis
+		#gun_mortar.visible = true
 
 
 func update_hud():
@@ -153,31 +139,7 @@ func update_health_label(value: float) -> void:
 
 
 func set_weapon_order(order):
-	gun_order = order
-	sync_weapon()
-
-
-func prepare_weapon_change():
-	if gun_order[active_weapon_index] == gun_mortar.weapon_id:
-		#cannon_pivot.global_position = cannon_spawn_pos
-		cannon_pivot.basis = cannon_spawn_basis
-		#gun_mortar.visible = true
-
-
-func sync_weapon():
-	#print('Active weapon swap %s / %s' % [active_weapon_index, guns[gun_order[active_weapon_index]]])
-	for gun_id in guns:
-		var gun = guns[gun_id]
-		if gun_id == gun_order[active_weapon_index]:
-			gun.start_process = true
-			gun.set_gun_active(true)
-			if gun.is_in_group('gun_has_ui'):
-				gun.set_ui_visible(true)
-		else:
-			gun.set_gun_active(false)
-			if gun.is_in_group('gun_has_ui'):
-				gun.set_ui_visible(false)
-			gun.start_process = false
+	gun_handler.set_weapon_order(order)
 
 
 func get_cannon_firing_data():
@@ -232,7 +194,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				#if Input.is_action_just_pressed('shoot'):
 					#print('foobar %s' % self)
 			if event.is_pressed() and event.is_action('swap_gun'):
-				active_weapon_index += 1
+				gun_handler.active_weapon_index += 1
 			if event.is_action('cam_action'):
 				if current_time - last_cam_zoom_timestamp > cam_zoom_cooldown:
 					cam_zoom_index = (cam_zoom_index + 1) % cam_zoom_val.size()
@@ -308,7 +270,7 @@ func _physics_process(delta: float) -> void:
 		# Do rotations, check for and clamp overrotations
 		transform = transform.orthonormalized()
 		# Do cannon rotation if needed (for mortar shells)
-		if gun_order[active_weapon_index] == gun_mortar.weapon_id:  # TODO finish arcing mortar gun
+		if gun_handler.gun_order[gun_handler.active_weapon_index] == gun_handler.gun_mortar.weapon_id:  # TODO finish arcing mortar gun
 			var planned_pitch = cannon_pivot.basis.rotated(cannon.basis.x * -1, look_pitch * delta)
 			# Check for valid pitch angles by inspecting the y/up vector.
 			# The up vector has a y component that is very close to zero when
