@@ -17,6 +17,9 @@ var scenes = {
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	start_process = true
+
+	GameData.initialize_config()
+
 	if GameData.debug_on:
 		fps_label.show()
 	load_scene('MAIN_MENU', null)
