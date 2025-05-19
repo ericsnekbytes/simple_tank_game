@@ -4,8 +4,12 @@
 [ext_resource type="FontFile" uid="uid://c2f72s2s2idlj" path="res://art/open_sans/static/OpenSans-ExtraBold.ttf" id="1_i85rw"]
 [ext_resource type="FontFile" uid="uid://c0etogfs31a3a" path="res://art/open_sans/static/OpenSans-Bold.ttf" id="1_ldet6"]
 [ext_resource type="PackedScene" uid="uid://c0wpedxn5d6fg" path="res://player/player_tank.tscn" id="2_x18rp"]
-[ext_resource type="PackedScene" uid="uid://ch53jvswgclw3" path="res://environment/blocks/terra_cube.tscn" id="3_h1kcm"]
+[ext_resource type="ArrayMesh" uid="uid://bxftdiq8idtoj" path="res://art/sweep_Sweep.res" id="3_h1kcm"]
 [ext_resource type="PackedScene" uid="uid://dros5vd5m6ufl" path="res://player/menu_cursor.tscn" id="4_h1kcm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wutr7"]
+albedo_color = Color(1, 0.351563, 0, 1)
+roughness = 0.5
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x18rp"]
 sky_top_color = Color(0.225905, 0.458421, 1, 1)
@@ -20,9 +24,6 @@ sky = SubResource("Sky_csgli")
 ambient_light_color = Color(1, 1, 1, 1)
 tonemap_mode = 2
 ssao_enabled = true
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_vv4hb"]
-size = Vector3(100, 10, 100)
 
 [sub_resource type="FontVariation" id="FontVariation_4rr4b"]
 base_font = ExtResource("1_i85rw")
@@ -51,24 +52,126 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4rr4b")
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.507813, 0.507813, 0.507813, 1)
+
+[node name="SplitScreenContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopRow" type="HBoxContainer" parent="SplitScreenContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SvpCont1" type="SubViewportContainer" parent="SplitScreenContainer/TopRow"]
+layout_mode = 2
+size_flags_horizontal = 3
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="SplitScreenContainer/TopRow/SvpCont1"]
 handle_input_locally = false
-size = Vector2i(1920, 1080)
+size = Vector2i(958, 538)
 render_target_update_mode = 4
 
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.475593, 0.451717, -0.754826, 0, 0.858084, 0.51351, 0.879665, -0.244222, 0.408099, 2.55871, 4.88292, 4.12952)
+[node name="Camera3D" type="Camera3D" parent="SplitScreenContainer/TopRow/SvpCont1/SubViewport"]
+transform = Transform3D(0.811574, 0.326708, -0.484365, 0, 0.829038, 0.559193, 0.58425, -0.453826, 0.672825, 7.51113, 4.42345, -7.0582)
 current = true
-fov = 36.0
+fov = 39.0
+
+[node name="Player1" parent="SplitScreenContainer/TopRow/SvpCont1/SubViewport" instance=ExtResource("2_x18rp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, -10.5)
+hide_gui_on_ready = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SplitScreenContainer/TopRow/SvpCont1/SubViewport/Player1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.12798, 0, 9.69475)
+material_override = SubResource("StandardMaterial3D_wutr7")
+mesh = ExtResource("3_h1kcm")
+
+[node name="SvpCont2" type="SubViewportContainer" parent="SplitScreenContainer/TopRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SplitScreenContainer/TopRow/SvpCont2"]
+handle_input_locally = false
+size = Vector2i(958, 538)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SplitScreenContainer/TopRow/SvpCont2/SubViewport"]
+transform = Transform3D(-0.811574, -0.326708, 0.484365, 0, 0.829038, 0.559193, -0.58425, 0.453826, -0.672825, -7.51113, 4.42345, 7.0582)
+current = true
+fov = 39.0
+
+[node name="Player2" parent="SplitScreenContainer/TopRow/SvpCont2/SubViewport" instance=ExtResource("2_x18rp")]
+transform = Transform3D(-1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, -10, 1, 10.5)
+hide_gui_on_ready = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SplitScreenContainer/TopRow/SvpCont2/SubViewport/Player2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.12798, 0, 9.69475)
+material_override = SubResource("StandardMaterial3D_wutr7")
+mesh = ExtResource("3_h1kcm")
+
+[node name="BottomRow" type="HBoxContainer" parent="SplitScreenContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SvpCont3" type="SubViewportContainer" parent="SplitScreenContainer/BottomRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SplitScreenContainer/BottomRow/SvpCont3"]
+handle_input_locally = false
+size = Vector2i(958, 538)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SplitScreenContainer/BottomRow/SvpCont3/SubViewport"]
+transform = Transform3D(-0.58425, 0.453826, -0.672825, 0, 0.829038, 0.559193, 0.811574, 0.326708, -0.484365, 10.5582, 5.42345, 7.51113)
+current = true
+fov = 39.0
+
+[node name="Player3" parent="SplitScreenContainer/BottomRow/SvpCont3/SubViewport" instance=ExtResource("2_x18rp")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 14, 2, 10)
+hide_gui_on_ready = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SplitScreenContainer/BottomRow/SvpCont3/SubViewport/Player3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.12798, 0, 9.69475)
+material_override = SubResource("StandardMaterial3D_wutr7")
+mesh = ExtResource("3_h1kcm")
+
+[node name="SvpCont4" type="SubViewportContainer" parent="SplitScreenContainer/BottomRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SplitScreenContainer/BottomRow/SvpCont4"]
+handle_input_locally = false
+size = Vector2i(958, 538)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SplitScreenContainer/BottomRow/SvpCont4/SubViewport"]
+transform = Transform3D(0.58425, -0.453826, 0.672825, 0, 0.829038, 0.559193, -0.811574, -0.326708, 0.484365, -10.5582, 5.42345, -8.51113)
+current = true
+fov = 39.0
+
+[node name="Player4" parent="SplitScreenContainer/BottomRow/SvpCont4/SubViewport" instance=ExtResource("2_x18rp")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 2, -11)
+hide_gui_on_ready = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SplitScreenContainer/BottomRow/SvpCont4/SubViewport/Player4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.12798, 0, 9.69475)
+material_override = SubResource("StandardMaterial3D_wutr7")
+mesh = ExtResource("3_h1kcm")
 
 [node name="Env" type="Node3D" parent="."]
 
@@ -76,1192 +179,12 @@ fov = 36.0
 environment = SubResource("Environment_h1kcm")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Env"]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+transform = Transform3D(0.989631, -0.0858755, 0.115131, -3.32875e-08, 0.801577, 0.597891, -0.143631, -0.591692, 0.793266, 0, 12, 0)
 shadow_enabled = true
 
 [node name="Level" type="Node3D" parent="."]
 
 [node name="GlobalPivot" type="Node3D" parent="Level"]
-
-[node name="KillBox" type="Area3D" parent="Level"]
-collision_mask = 8
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/KillBox"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -36, 0)
-shape = SubResource("BoxShape3D_vv4hb")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Level/KillBox"]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 55, 9, 0)
-shape = SubResource("BoxShape3D_vv4hb")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Level/KillBox"]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -55, 9, 0)
-shape = SubResource("BoxShape3D_vv4hb")
-
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="Level/KillBox"]
-transform = Transform3D(-4.37114e-08, -8.74228e-08, -1, 0, -1, 8.74228e-08, -1, 3.82137e-15, 4.37114e-08, 2.62268e-06, 54, -1.14641e-13)
-shape = SubResource("BoxShape3D_vv4hb")
-
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="Level/KillBox"]
-transform = Transform3D(8.74228e-08, -4.37114e-08, -1, 1, 4.37114e-08, 8.74228e-08, 4.37114e-08, -1, 4.37114e-08, -3.71547e-06, 9, -55)
-shape = SubResource("BoxShape3D_vv4hb")
-
-[node name="CollisionShape3D6" type="CollisionShape3D" parent="Level/KillBox"]
-transform = Transform3D(8.74228e-08, -4.37114e-08, -1, 1, 4.37114e-08, 8.74228e-08, 4.37114e-08, -1, 4.37114e-08, 1.09278e-06, 9, 55)
-shape = SubResource("BoxShape3D_vv4hb")
-
-[node name="Platform" type="Node3D" parent="Level"]
-
-[node name="Node3D" type="Node3D" parent="Level"]
-
-[node name="Player3" parent="Level/Node3D" instance=ExtResource("2_x18rp")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 7.46216, 1, 1.146)
-hide_gui_on_ready = true
-
-[node name="Player4" parent="Level/Node3D" instance=ExtResource("2_x18rp")]
-transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 6.96216, 1, -2.354)
-hide_gui_on_ready = true
-
-[node name="Player5" parent="Level/Node3D" instance=ExtResource("2_x18rp")]
-transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 8.93209, 1, 3.90561)
-hide_gui_on_ready = true
-
-[node name="TerraCube57" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, -8.5)
-
-[node name="TerraCube58" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, -8.5)
-
-[node name="TerraCube59" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -8.5)
-
-[node name="TerraCube60" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -8.5)
-
-[node name="TerraCube61" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, -8.5)
-
-[node name="TerraCube62" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, -8.5)
-
-[node name="TerraCube63" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, -8.5)
-
-[node name="TerraCube64" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0, -8.5)
-
-[node name="TerraCube65" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, -7.5)
-
-[node name="TerraCube66" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, -7.5)
-
-[node name="TerraCube67" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -7.5)
-
-[node name="TerraCube68" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -7.5)
-
-[node name="TerraCube69" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, -7.5)
-
-[node name="TerraCube70" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, -7.5)
-
-[node name="TerraCube79" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, -7.5)
-
-[node name="TerraCube80" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0, -7.5)
-
-[node name="TerraCube81" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, -6.5)
-
-[node name="TerraCube82" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, -6.5)
-
-[node name="TerraCube83" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -6.5)
-
-[node name="TerraCube84" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -6.5)
-
-[node name="TerraCube85" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, -6.5)
-
-[node name="TerraCube86" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, -6.5)
-
-[node name="TerraCube87" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, -6.5)
-
-[node name="TerraCube88" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0, -6.5)
-
-[node name="TerraCube109" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -8.5)
-
-[node name="TerraCube110" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -8.5)
-
-[node name="TerraCube111" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -8.5)
-
-[node name="TerraCube112" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -8.5)
-
-[node name="TerraCube113" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -7.5)
-
-[node name="TerraCube114" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -7.5)
-
-[node name="TerraCube115" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -7.5)
-
-[node name="TerraCube116" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -7.5)
-
-[node name="TerraCube117" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -6.5)
-
-[node name="TerraCube118" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -6.5)
-
-[node name="TerraCube119" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -6.5)
-
-[node name="TerraCube130" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -8.5)
-
-[node name="TerraCube131" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -8.5)
-
-[node name="TerraCube132" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -7.5)
-
-[node name="TerraCube133" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -7.5)
-
-[node name="TerraCube134" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -6.5)
-
-[node name="TerraCube135" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -6.5)
-
-[node name="TerraCube136" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -6.5)
-
-[node name="TerraCube137" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, -5.5)
-
-[node name="TerraCube138" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, -5.5)
-
-[node name="TerraCube139" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -5.5)
-
-[node name="TerraCube140" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -5.5)
-
-[node name="TerraCube141" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, -5.5)
-
-[node name="TerraCube142" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, -5.5)
-
-[node name="TerraCube143" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, -5.5)
-
-[node name="TerraCube144" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0, -5.5)
-
-[node name="TerraCube145" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, -4.5)
-
-[node name="TerraCube146" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, -4.5)
-
-[node name="TerraCube147" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -4.5)
-
-[node name="TerraCube148" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -4.5)
-
-[node name="TerraCube149" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, -4.5)
-
-[node name="TerraCube150" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, -4.5)
-
-[node name="TerraCube151" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, -4.5)
-
-[node name="TerraCube152" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0, -4.5)
-
-[node name="TerraCube153" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -5.5)
-
-[node name="TerraCube154" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -5.5)
-
-[node name="TerraCube155" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -5.5)
-
-[node name="TerraCube156" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -5.5)
-
-[node name="TerraCube157" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -4.5)
-
-[node name="TerraCube158" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -4.5)
-
-[node name="TerraCube159" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -4.5)
-
-[node name="TerraCube160" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -5.5)
-
-[node name="TerraCube161" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -5.5)
-
-[node name="TerraCube162" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -4.5)
-
-[node name="TerraCube163" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -4.5)
-
-[node name="TerraCube164" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -4.5)
-
-[node name="TerraCube165" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, -3.5)
-
-[node name="TerraCube166" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, -3.5)
-
-[node name="TerraCube167" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -3.5)
-
-[node name="TerraCube168" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -3.5)
-
-[node name="TerraCube169" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, -3.5)
-
-[node name="TerraCube170" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, -3.5)
-
-[node name="TerraCube171" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, -3.5)
-
-[node name="TerraCube172" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0, -3.5)
-
-[node name="TerraCube173" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, -2.5)
-
-[node name="TerraCube174" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, -2.5)
-
-[node name="TerraCube175" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -2.5)
-
-[node name="TerraCube176" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -2.5)
-
-[node name="TerraCube177" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, -2.5)
-
-[node name="TerraCube178" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, -2.5)
-
-[node name="TerraCube179" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, -2.5)
-
-[node name="TerraCube180" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0, -2.5)
-
-[node name="TerraCube181" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -3.5)
-
-[node name="TerraCube182" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -3.5)
-
-[node name="TerraCube183" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -3.5)
-
-[node name="TerraCube184" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -3.5)
-
-[node name="TerraCube185" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -2.5)
-
-[node name="TerraCube186" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -2.5)
-
-[node name="TerraCube187" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -2.5)
-
-[node name="TerraCube188" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -3.5)
-
-[node name="TerraCube189" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -3.5)
-
-[node name="TerraCube190" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -2.5)
-
-[node name="TerraCube191" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -2.5)
-
-[node name="TerraCube192" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -2.5)
-
-[node name="TerraCube193" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, -1.5)
-
-[node name="TerraCube194" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, -1.5)
-
-[node name="TerraCube195" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -1.5)
-
-[node name="TerraCube196" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -1.5)
-
-[node name="TerraCube197" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, -1.5)
-
-[node name="TerraCube198" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, -1.5)
-
-[node name="TerraCube199" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, -1.5)
-
-[node name="TerraCube200" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0, -1.5)
-
-[node name="TerraCube201" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, -0.5)
-
-[node name="TerraCube202" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, -0.5)
-
-[node name="TerraCube203" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -0.5)
-
-[node name="TerraCube204" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -0.5)
-
-[node name="TerraCube205" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, -0.5)
-
-[node name="TerraCube206" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, -0.5)
-
-[node name="TerraCube207" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, -0.5)
-
-[node name="TerraCube208" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0, -0.5)
-
-[node name="TerraCube209" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -1.5)
-
-[node name="TerraCube210" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -1.5)
-
-[node name="TerraCube236" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -1.5)
-
-[node name="TerraCube237" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -1.5)
-
-[node name="TerraCube238" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -0.5)
-
-[node name="TerraCube239" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -0.5)
-
-[node name="TerraCube240" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -0.5)
-
-[node name="TerraCube241" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -1.5)
-
-[node name="TerraCube242" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -1.5)
-
-[node name="TerraCube243" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -0.5)
-
-[node name="TerraCube244" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
-
-[node name="TerraCube969" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
-
-[node name="TerraCube245" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -0.5)
-
-[node name="TerraCube334" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.5, 0, -6.5)
-
-[node name="TerraCube342" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.5, 0, -6.5)
-
-[node name="TerraCube371" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.5, 0, -4.5)
-
-[node name="TerraCube374" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.5, 0, -5.5)
-
-[node name="TerraCube375" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.5, 0, -4.5)
-
-[node name="TerraCube376" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.5, 0, -3.5)
-
-[node name="TerraCube377" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.5, 0, -2.5)
-
-[node name="TerraCube392" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.5, 0, -1.5)
-
-[node name="TerraCube393" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.5, 0, -0.5)
-
-[node name="TerraCube394" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.5, 0, -5.5)
-
-[node name="TerraCube398" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.5, 0, -6.5)
-
-[node name="TerraCube406" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.5, 0, -6.5)
-
-[node name="TerraCube411" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.5, 0, -4.5)
-
-[node name="TerraCube412" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.5, 0, -3.5)
-
-[node name="TerraCube413" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.5, 0, -2.5)
-
-[node name="TerraCube414" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.5, 0, -5.5)
-
-[node name="TerraCube415" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.5, 0, -4.5)
-
-[node name="TerraCube416" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.5, 0, -3.5)
-
-[node name="TerraCube417" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.5, 0, -2.5)
-
-[node name="TerraCube418" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.5, 0, -1.5)
-
-[node name="TerraCube419" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.5, 0, -0.5)
-
-[node name="TerraCube420" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.5, 0, -1.5)
-
-[node name="TerraCube421" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.5, 0, -0.5)
-
-[node name="TerraCube422" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.5, 0, -5.5)
-
-[node name="TerraCube426" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.5, 0, -6.5)
-
-[node name="TerraCube434" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.5, 0, -6.5)
-
-[node name="TerraCube439" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.5, 0, -4.5)
-
-[node name="TerraCube440" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.5, 0, -3.5)
-
-[node name="TerraCube441" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.5, 0, -2.5)
-
-[node name="TerraCube442" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.5, 0, -5.5)
-
-[node name="TerraCube443" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.5, 0, -4.5)
-
-[node name="TerraCube444" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.5, 0, -3.5)
-
-[node name="TerraCube445" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.5, 0, -2.5)
-
-[node name="TerraCube446" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.5, 0, -1.5)
-
-[node name="TerraCube447" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.5, 0, -0.5)
-
-[node name="TerraCube448" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.5, 0, -1.5)
-
-[node name="TerraCube449" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.5, 0, -0.5)
-
-[node name="TerraCube450" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.5, 0, -5.5)
-
-[node name="TerraCube454" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.5, 0, -6.5)
-
-[node name="TerraCube462" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.5, 0, -6.5)
-
-[node name="TerraCube467" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.5, 0, -4.5)
-
-[node name="TerraCube468" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.5, 0, -3.5)
-
-[node name="TerraCube469" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.5, 0, -2.5)
-
-[node name="TerraCube470" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.5, 0, -5.5)
-
-[node name="TerraCube471" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.5, 0, -4.5)
-
-[node name="TerraCube472" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.5, 0, -3.5)
-
-[node name="TerraCube473" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.5, 0, -2.5)
-
-[node name="TerraCube474" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.5, 0, -1.5)
-
-[node name="TerraCube475" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.5, 0, -0.5)
-
-[node name="TerraCube476" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.5, 0, -1.5)
-
-[node name="TerraCube477" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.5, 0, -0.500001)
-
-[node name="TerraCube478" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.5, 0, -5.5)
-
-[node name="TerraCube502" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.5, 1, 2)
-
-[node name="TerraCube503" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.5, 1, 3)
-
-[node name="TerraCube504" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.5, 1, 3)
-
-[node name="TerraCube505" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.5, 1, 4)
-
-[node name="TerraCube506" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.5, 1, 5)
-
-[node name="TerraCube507" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.5, 1, 4)
-
-[node name="TerraCube508" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.5, 1, 5)
-
-[node name="TerraCube509" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.5, 1, 6)
-
-[node name="TerraCube510" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.5, 1, 7)
-
-[node name="TerraCube511" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.5, 1, 6)
-
-[node name="TerraCube512" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.5, 1, 7)
-
-[node name="TerraCube513" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.5, 1, 8)
-
-[node name="TerraCube514" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.5, 1, 8)
-
-[node name="TerraCube517" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.499998, 1, -7)
-
-[node name="TerraCube518" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.499998, 1, -6)
-
-[node name="TerraCube519" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.500002, 1, -7)
-
-[node name="TerraCube520" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.500002, 1, -6)
-
-[node name="TerraCube521" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.499998, 1, -5)
-
-[node name="TerraCube522" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.499998, 1, -4)
-
-[node name="TerraCube523" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.500002, 1, -5)
-
-[node name="TerraCube524" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.500002, 1, -4)
-
-[node name="TerraCube525" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.500002, 1, -3)
-
-[node name="TerraCube211" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 0, -3.5)
-
-[node name="TerraCube212" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 0, -3.5)
-
-[node name="TerraCube213" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 0, -2.5)
-
-[node name="TerraCube214" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 0, -2.5)
-
-[node name="TerraCube215" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 0, -1.5)
-
-[node name="TerraCube216" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 0, -0.5)
-
-[node name="TerraCube217" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 0, 0.5)
-
-[node name="TerraCube435" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.5, 0, -1.5)
-
-[node name="TerraCube451" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.5, 0, 1.5)
-
-[node name="TerraCube452" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.5, 0, 2.5)
-
-[node name="TerraCube453" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.5, 0, 0.5)
-
-[node name="TerraCube455" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.5, 0, 1.5)
-
-[node name="TerraCube456" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.5, 0, 2.5)
-
-[node name="TerraCube457" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.5, 0, -0.5)
-
-[node name="TerraCube458" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.5, 0, -1.5)
-
-[node name="TerraCube463" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.5, 0, -1.5)
-
-[node name="TerraCube479" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.5, 0, 0.5)
-
-[node name="TerraCube480" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.5, 0, 1.5)
-
-[node name="TerraCube481" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.5, 0, 2.5)
-
-[node name="TerraCube482" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.5, 0, -0.5)
-
-[node name="TerraCube483" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.5, 0, 0.5)
-
-[node name="TerraCube484" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.5, 0, 1.5)
-
-[node name="TerraCube485" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.5, 0, 2.5)
-
-[node name="TerraCube486" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.5, 0, 3.5)
-
-[node name="TerraCube487" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.5, 0, 3.5)
-
-[node name="TerraCube488" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.5, 0, -0.5)
-
-[node name="TerraCube526" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 17.5, 1, -2)
-
-[node name="TerraCube527" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 17.5, 1, -1)
-
-[node name="TerraCube528" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 16.5, 1, -2)
-
-[node name="TerraCube529" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 16.5, 1, -1)
-
-[node name="TerraCube530" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 17.5, 1, 0)
-
-[node name="TerraCube531" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 17.5, 1, 1)
-
-[node name="TerraCube532" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 16.5, 1, 0)
-
-[node name="TerraCube533" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 16.5, 1, 1)
-
-[node name="TerraCube534" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 16.5, 1, 2)
-
-[node name="TerraCube624" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.5, 0, 8.5)
-
-[node name="TerraCube627" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.5, 0, 8.5)
-
-[node name="TerraCube628" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.5, 0, 7.5)
-
-[node name="TerraCube629" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.5, 0, 7.5)
-
-[node name="TerraCube630" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.5, 0, 7.5)
-
-[node name="TerraCube631" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.5, 0, 7.5)
-
-[node name="TerraCube632" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.5, 0, 6.5)
-
-[node name="TerraCube633" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.5, 0, 6.5)
-
-[node name="TerraCube634" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.5, 0, 6.5)
-
-[node name="TerraCube647" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0, 7.5)
-
-[node name="TerraCube648" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.5, 0, 7.5)
-
-[node name="TerraCube649" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0, 6.5)
-
-[node name="TerraCube650" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.5, 0, 6.5)
-
-[node name="TerraCube651" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.5, 0, 6.5)
-
-[node name="TerraCube668" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.5, 0, 5.5)
-
-[node name="TerraCube669" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.5, 0, 5.5)
-
-[node name="TerraCube670" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.5, 0, 5.5)
-
-[node name="TerraCube671" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.5, 0, 5.5)
-
-[node name="TerraCube672" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.5, 0, 4.5)
-
-[node name="TerraCube673" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.5, 0, 4.5)
-
-[node name="TerraCube674" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.5, 0, 4.5)
-
-[node name="TerraCube675" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0, 5.5)
-
-[node name="TerraCube676" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.5, 0, 5.5)
-
-[node name="TerraCube677" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0, 4.5)
-
-[node name="TerraCube678" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.5, 0, 4.5)
-
-[node name="TerraCube679" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.5, 0, 4.5)
-
-[node name="TerraCube696" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.5, 0, 3.5)
-
-[node name="TerraCube697" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.5, 0, 3.5)
-
-[node name="TerraCube698" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.5, 0, 3.5)
-
-[node name="TerraCube699" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.5, 0, 3.5)
-
-[node name="TerraCube700" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.5, 0, 2.5)
-
-[node name="TerraCube701" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.5, 0, 2.5)
-
-[node name="TerraCube702" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.5, 0, 2.5)
-
-[node name="TerraCube703" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0, 3.5)
-
-[node name="TerraCube704" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.5, 0, 3.5)
-
-[node name="TerraCube705" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0, 2.5)
-
-[node name="TerraCube706" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.5, 0, 2.5)
-
-[node name="TerraCube707" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.5, 0, 2.5)
-
-[node name="TerraCube724" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.5, 0, 1.5)
-
-[node name="TerraCube725" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.5, 0, 1.5)
-
-[node name="TerraCube726" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.5, 0, 1.5)
-
-[node name="TerraCube727" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.5, 0, 1.5)
-
-[node name="TerraCube728" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.5, 0, 0.5)
-
-[node name="TerraCube729" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.5, 0, 0.499998)
-
-[node name="TerraCube730" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.5, 0, 0.499998)
-
-[node name="TerraCube731" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0, 1.5)
-
-[node name="TerraCube732" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.5, 0, 1.5)
-
-[node name="TerraCube733" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0, 0.499998)
-
-[node name="TerraCube734" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.500002, 0, 0.499998)
-
-[node name="TerraCube735" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.5, 0, 0.5)
-
-[node name="TerraCube816" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 8.5, 0, 6.5)
-
-[node name="TerraCube824" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 7.5, 0, 6.5)
-
-[node name="TerraCube832" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 6.5, 0, 6.5)
-
-[node name="TerraCube837" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 12.5, 0, 4.5)
-
-[node name="TerraCube838" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 13.5, 0, 4.5)
-
-[node name="TerraCube839" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 11.5, 0, 4.5)
-
-[node name="TerraCube840" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 10.5, 0, 4.5)
-
-[node name="TerraCube841" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 12.5, 0, 3.5)
-
-[node name="TerraCube842" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 13.5, 0, 3.5)
-
-[node name="TerraCube843" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 11.5, 0, 3.5)
-
-[node name="TerraCube844" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 10.5, 0, 3.5)
-
-[node name="TerraCube845" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 12.5, 0, 2.5)
-
-[node name="TerraCube846" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 13.5, 0, 2.5)
-
-[node name="TerraCube847" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 11.5, 0, 2.5)
-
-[node name="TerraCube848" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 10.5, 0, 2.5)
-
-[node name="TerraCube849" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 12.5, 0, 5.5)
-
-[node name="TerraCube850" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 13.5, 0, 5.5)
-
-[node name="TerraCube851" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 11.5, 0, 5.5)
-
-[node name="TerraCube852" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 10.5, 0, 5.5)
-
-[node name="TerraCube853" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 9.5, 0, 4.5)
-
-[node name="TerraCube854" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 9.5, 0, 3.5)
-
-[node name="TerraCube855" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 9.5, 0, 2.5)
-
-[node name="TerraCube856" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 9.5, 0, 5.5)
-
-[node name="TerraCube857" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 8.5, 0, 4.5)
-
-[node name="TerraCube858" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 8.5, 0, 3.5)
-
-[node name="TerraCube859" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 8.5, 0, 2.5)
-
-[node name="TerraCube860" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 8.5, 0, 5.5)
-
-[node name="TerraCube861" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 7.5, 0, 4.5)
-
-[node name="TerraCube862" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 7.5, 0, 3.5)
-
-[node name="TerraCube863" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 7.5, 0, 2.5)
-
-[node name="TerraCube864" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 7.5, 0, 5.5)
-
-[node name="TerraCube865" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 6.5, 0, 4.5)
-
-[node name="TerraCube866" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 6.5, 0, 3.5)
-
-[node name="TerraCube867" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 6.5, 0, 2.5)
-
-[node name="TerraCube868" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 12.5, 0, 1.5)
-
-[node name="TerraCube869" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 13.5, 0, 1.5)
-
-[node name="TerraCube870" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 11.5, 0, 1.5)
-
-[node name="TerraCube871" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 10.5, 0, 1.5)
-
-[node name="TerraCube872" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 12.5, 0, 0.5)
-
-[node name="TerraCube873" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 13.5, 0, 0.5)
-
-[node name="TerraCube874" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 11.5, 0, 0.5)
-
-[node name="TerraCube875" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 10.5, 0, 0.5)
-
-[node name="TerraCube876" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 9.5, 0, 1.5)
-
-[node name="TerraCube877" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 9.5, 0, 0.5)
-
-[node name="TerraCube878" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 8.5, 0, 1.5)
-
-[node name="TerraCube879" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 8.5, 0, 0.500004)
-
-[node name="TerraCube880" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 7.5, 0, 1.5)
-
-[node name="TerraCube881" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 7.5, 0, 0.500004)
-
-[node name="TerraCube882" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 6.5, 0, 1.5)
-
-[node name="TerraCube883" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 6.5, 0, 0.500002)
-
-[node name="TerraCube884" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 6.5, 0, 5.5)
-
-[node name="TerraCube888" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 5.5, 0, 6.5)
-
-[node name="TerraCube896" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 4.5, 0, 6.5)
-
-[node name="TerraCube901" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 5.5, 0, 4.5)
-
-[node name="TerraCube902" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 5.5, 0, 3.5)
-
-[node name="TerraCube903" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 5.5, 0, 2.5)
-
-[node name="TerraCube904" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 5.5, 0, 5.5)
-
-[node name="TerraCube905" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 4.5, 0, 4.5)
-
-[node name="TerraCube906" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 4.5, 0, 3.5)
-
-[node name="TerraCube907" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 4.5, 0, 2.5)
-
-[node name="TerraCube908" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 5.5, 0, 1.5)
-
-[node name="TerraCube909" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 5.5, 0, 0.500002)
-
-[node name="TerraCube910" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 4.5, 0, 1.5)
-
-[node name="TerraCube911" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 4.5, 0, 0.500002)
-
-[node name="TerraCube912" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 4.5, 0, 5.5)
-
-[node name="TerraCube916" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 3.5, 0, 6.5)
-
-[node name="TerraCube924" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 2.5, 0, 6.5)
-
-[node name="TerraCube929" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 3.5, 0, 4.5)
-
-[node name="TerraCube930" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 3.5, 0, 3.5)
-
-[node name="TerraCube931" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 3.5, 0, 2.5)
-
-[node name="TerraCube932" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 3.5, 0, 5.5)
-
-[node name="TerraCube933" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 2.5, 0, 4.5)
-
-[node name="TerraCube934" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 2.5, 0, 3.5)
-
-[node name="TerraCube935" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 2.5, 0, 2.5)
-
-[node name="TerraCube936" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 3.5, 0, 1.5)
-
-[node name="TerraCube937" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 3.5, 0, 0.500002)
-
-[node name="TerraCube938" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 2.5, 0, 1.5)
-
-[node name="TerraCube939" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 2.5, 0, 0.500002)
-
-[node name="TerraCube940" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 2.5, 0, 5.5)
-
-[node name="TerraCube944" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 1.5, 0, 6.5)
-
-[node name="TerraCube952" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 0.5, 0, 6.5)
-
-[node name="TerraCube957" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 1.5, 0, 4.5)
-
-[node name="TerraCube958" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 1.5, 0, 3.5)
-
-[node name="TerraCube959" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 1.5, 0, 2.5)
-
-[node name="TerraCube960" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 1.5, 0, 5.5)
-
-[node name="TerraCube961" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 0.499999, 0, 4.5)
-
-[node name="TerraCube962" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 0.499999, 0, 3.5)
-
-[node name="TerraCube963" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 0.499999, 0, 2.5)
-
-[node name="TerraCube964" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 1.5, 0, 1.5)
-
-[node name="TerraCube965" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 1.5, 0, 0.500002)
-
-[node name="TerraCube966" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 0.499999, 0, 1.5)
-
-[node name="TerraCube967" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 0.499999, 0, 0.500002)
-
-[node name="TerraCube968" parent="Level/Node3D" instance=ExtResource("3_h1kcm")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 0.499999, 0, 5.5)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 process_mode = 4
