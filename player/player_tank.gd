@@ -99,9 +99,9 @@ func _ready() -> void:
 	# Health UI
 	health_changed.connect(update_health_label)
 	health_changed.emit(health)
-	
-	if hide_gui_on_ready:
-		hide_gui()
+
+	if not hide_gui_on_ready:
+		$Hud.show()
 
 
 func set_lock_inputs(state):
