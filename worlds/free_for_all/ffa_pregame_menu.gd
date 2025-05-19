@@ -9,24 +9,35 @@ var player_count = 2:
 		if value < 1:
 			value = 1
 		player_count = value
+		handle_player_count_changed()
 		pcount_disp.set_text('%d' % player_count)
 @onready var pcount_disp = $MarginContainer/VBoxContainer/PlayerCountSettings/HBoxContainer/ColorRect/VBoxContainer/MarginContainer/HBoxContainer/PlayerCountValue
 @onready var start_game_btn = $MarginContainer/VBoxContainer/StartGame
 @onready var input_timer = $InputTimer
 # ....
 @onready var menu_cursor := $MenuCursor
+@onready var menu_cursor2 := $MenuCursor2
+@onready var menu_cursor3 := $MenuCursor3
+@onready var menu_cursor4 := $MenuCursor4
+@onready var menu_cursors = [
+	menu_cursor,
+	menu_cursor2,
+	menu_cursor3,
+	menu_cursor4
+]
 @onready var focus_begin = $MarginContainer/VBoxContainer/StartGame
 
 
 func _ready():
 	player_count = player_count
 	start_game_btn.grab_focus()
-	menu_cursor.start_process = true
-	menu_cursor.global_position = get_viewport_rect().size / 4.0
-	menu_cursor.cursor_moved.connect(handle_cursor_moved)
-	menu_cursor.navigate_request.connect(handle_navigate_request)
-	menu_cursor.cursor_accept.connect(handle_cursor_accept)
-	InputHandler.add_player(menu_cursor.player_id)
+
+	for menu_cursor in menu_cursors:
+		menu_cursor.start_process = true
+		menu_cursor.cursor_moved.connect(handle_cursor_moved)
+		menu_cursor.navigate_request.connect(handle_navigate_request)
+		menu_cursor.cursor_accept.connect(handle_cursor_accept)
+		GameData.initialize_player(menu_cursor)
 
 
 func end_game():
@@ -38,6 +49,20 @@ func get_control_at_coords(coords):
 		if node.get_global_rect().has_point(coords):
 			return node
 	return null
+
+
+func handle_player_count_changed():
+	for i in range(menu_cursors.size()):
+		var cursor: TextureRect = menu_cursors[i]
+		if i < player_count:
+			cursor.show()
+			if not cursor.get_parent():
+				add_child(cursor)
+				cursor.reset_position()
+		else:
+			cursor.hide()
+			if cursor.get_parent():
+				remove_child(cursor)
 
 
 func handle_cursor_accept(coords):

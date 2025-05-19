@@ -4,22 +4,32 @@ signal cursor_moved()
 signal navigate_request()
 signal cursor_accept(coords)
 
-var player_id = -1
+@export var player_id = -1
 var start_process = false
 # ....
 var MAX_THRUST = 600
 var last_cursor_accept_timestamp = 0
 var cursor_accept_cooldown = 500
+# ....
 @export var colorize: Color
+@export var label_text: String
+# ....
+@onready var spawn_position = global_position
 
 
 func _ready():
 	self_modulate = colorize
 	$ColorRect.self_modulate = colorize
+	if label_text:
+		$ColorRect/Label.set_text(label_text)
 
 
 func set_label(value):
 	$ColorRect/Label.set_text(value)
+
+
+func reset_position():
+	global_position = spawn_position
 
 
 func _unhandled_input(event):

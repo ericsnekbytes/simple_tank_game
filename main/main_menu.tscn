@@ -3126,7 +3126,7 @@ offset_right = 77.0
 offset_bottom = 77.0
 grow_horizontal = 1
 grow_vertical = 1
-colorize = Color(0.78125, 0, 1, 1)
+colorize = Color(1, 0, 0.304688, 1)
 
 [connection signal="body_entered" from="SubViewportContainer/Level/KillBox" to="." method="_on_kill_box_body_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/FreeForAllBtn" to="." method="_on_free_for_all_btn_pressed"]
