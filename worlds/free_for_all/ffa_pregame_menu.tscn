@@ -88,14 +88,14 @@ transform = Transform3D(0.811574, 0.326708, -0.484365, 0, 0.829038, 0.559193, 0.
 current = true
 fov = 39.0
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SplitScreenContainer/TopRow/SvpCont1/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.128, 1, -0.80525)
+material_override = SubResource("StandardMaterial3D_wutr7")
+mesh = ExtResource("3_h1kcm")
+
 [node name="Player1" parent="SplitScreenContainer/TopRow/SvpCont1/SubViewport" instance=ExtResource("2_x18rp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, -10.5)
 hide_gui_on_ready = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SplitScreenContainer/TopRow/SvpCont1/SubViewport/Player1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.12798, 0, 9.69475)
-material_override = SubResource("StandardMaterial3D_wutr7")
-mesh = ExtResource("3_h1kcm")
 
 [node name="SvpCont2" type="SubViewportContainer" parent="SplitScreenContainer/TopRow"]
 layout_mode = 2
@@ -112,14 +112,14 @@ transform = Transform3D(-0.811574, -0.326708, 0.484365, 0, 0.829038, 0.559193, -
 current = true
 fov = 39.0
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SplitScreenContainer/TopRow/SvpCont2/SubViewport"]
+transform = Transform3D(-1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, -19.128, 1, 0.805253)
+material_override = SubResource("StandardMaterial3D_wutr7")
+mesh = ExtResource("3_h1kcm")
+
 [node name="Player2" parent="SplitScreenContainer/TopRow/SvpCont2/SubViewport" instance=ExtResource("2_x18rp")]
 transform = Transform3D(-1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, -10, 1, 10.5)
 hide_gui_on_ready = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SplitScreenContainer/TopRow/SvpCont2/SubViewport/Player2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.12798, 0, 9.69475)
-material_override = SubResource("StandardMaterial3D_wutr7")
-mesh = ExtResource("3_h1kcm")
 
 [node name="BottomRow" type="HBoxContainer" parent="SplitScreenContainer"]
 layout_mode = 2
@@ -140,14 +140,14 @@ transform = Transform3D(-0.58425, 0.453826, -0.672825, 0, 0.829038, 0.559193, 0.
 current = true
 fov = 39.0
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SplitScreenContainer/BottomRow/SvpCont3/SubViewport"]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 4.30525, 2, 19.128)
+material_override = SubResource("StandardMaterial3D_wutr7")
+mesh = ExtResource("3_h1kcm")
+
 [node name="Player3" parent="SplitScreenContainer/BottomRow/SvpCont3/SubViewport" instance=ExtResource("2_x18rp")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 14, 2, 10)
 hide_gui_on_ready = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SplitScreenContainer/BottomRow/SvpCont3/SubViewport/Player3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.12798, 0, 9.69475)
-material_override = SubResource("StandardMaterial3D_wutr7")
-mesh = ExtResource("3_h1kcm")
 
 [node name="SvpCont4" type="SubViewportContainer" parent="SplitScreenContainer/BottomRow"]
 layout_mode = 2
@@ -164,14 +164,14 @@ transform = Transform3D(0.58425, -0.453826, 0.672825, 0, 0.829038, 0.559193, -0.
 current = true
 fov = 39.0
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SplitScreenContainer/BottomRow/SvpCont4/SubViewport"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.30525, 2, -20.128)
+material_override = SubResource("StandardMaterial3D_wutr7")
+mesh = ExtResource("3_h1kcm")
+
 [node name="Player4" parent="SplitScreenContainer/BottomRow/SvpCont4/SubViewport" instance=ExtResource("2_x18rp")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 2, -11)
 hide_gui_on_ready = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SplitScreenContainer/BottomRow/SvpCont4/SubViewport/Player4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.12798, 0, 9.69475)
-material_override = SubResource("StandardMaterial3D_wutr7")
-mesh = ExtResource("3_h1kcm")
 
 [node name="Env" type="Node3D" parent="."]
 
