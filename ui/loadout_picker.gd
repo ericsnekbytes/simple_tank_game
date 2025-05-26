@@ -67,7 +67,7 @@ func get_loadout_data():
 
 
 func handle_slot_assign(weapon_id):
-	print('Assign to slot %s' % weapon_id)
+	#print('Assign to slot %s' % weapon_id)
 	if weapon_id in guns:
 		slots[current_slot].set_text(guns[weapon_id].display_name)
 		var existing_position = weapon_order.find(weapon_id)
@@ -75,6 +75,7 @@ func handle_slot_assign(weapon_id):
 			slots[existing_position].set_text('Empty')
 			weapon_order[existing_position] = null
 		weapon_order[current_slot] = weapon_id
+	sync_slot_display()
 	set_show_weapon_picker(false)
 
 
