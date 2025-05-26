@@ -9,7 +9,11 @@ signal stats_changed()
 	$SplitScreenContainer/BottomRow/SvpCont3/SubViewport/Player3,
 	$SplitScreenContainer/BottomRow/SvpCont4/SubViewport/Player4,
 ]
-var player_count := 4
+var player_count := 4:
+	set(value):
+		player_count = value
+# ....
+var game_options = {}
 # ....
 var scoreboard_scn = preload("res://ui/game_stats.tscn")
 # ....
@@ -34,6 +38,7 @@ func _ready() -> void:
 		player.add_gui(scoreboard_gui)
 		player.user_select.connect(scoreboard_gui.toggle_game_stats)
 
+	set_game_options(game_options)
 	start_pregame_sequence()
 
 
@@ -73,6 +78,16 @@ func get_game_stats():
 
 		player_data[player.player_id] = player_stats
 	return game_stats
+
+
+func set_game_options(options):
+	if 'player_count' in options:
+		set_player_count(options['player_count'])
+	if 'player_loadouts' in options:
+		var loadouts = options['player_loadouts']
+		for i in range(players.size()):
+			if i < player_count:
+				players[i].set_weapon_order(loadouts[i])
 
 
 func prepare_split_screen():

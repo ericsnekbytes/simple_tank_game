@@ -11,7 +11,7 @@ signal user_select()
 var player_id := -1
 @export var team_id = -1
 var start_process := false
-@export var _lock_inputs = false
+var _lock_inputs := false
 #@onready var player_cam = $CameraPivot/Camera3D
 @onready var cannon = $ModelPivot/CannonPivot
 @onready var cannon_pivot = $ModelPivot/CannonPivot

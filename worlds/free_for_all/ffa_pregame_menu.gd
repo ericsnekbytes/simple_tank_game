@@ -16,13 +16,14 @@ var player_count = 2:
 @onready var input_timer = $InputTimer
 # ....
 @onready var svp_cont1 = $MarginContainer2/Splitter/SplitScreenContainer/TopRow/P1Cont
-@onready var loadout1 = $MarginContainer2/Splitter/SplitScreenContainer/TopRow/P1Cont/Container/LoadoutPicker1
 @onready var svp_cont2 = $MarginContainer2/Splitter/SplitScreenContainer/TopRow/P2Cont
-@onready var loadout2 = $MarginContainer2/Splitter/SplitScreenContainer/TopRow/P2Cont/Container/LoadoutPicker2
 @onready var svp_cont3 = $MarginContainer2/Splitter/SplitScreenContainer/BottomRow/P3Cont
-@onready var loadout3 = $MarginContainer2/Splitter/SplitScreenContainer/BottomRow/P3Cont/Container/LoadoutPicker3
 @onready var svp_cont4 = $MarginContainer2/Splitter/SplitScreenContainer/BottomRow/P4Cont
+@onready var loadout1 = $MarginContainer2/Splitter/SplitScreenContainer/TopRow/P1Cont/Container/LoadoutPicker1
+@onready var loadout2 = $MarginContainer2/Splitter/SplitScreenContainer/TopRow/P2Cont/Container/LoadoutPicker2
+@onready var loadout3 = $MarginContainer2/Splitter/SplitScreenContainer/BottomRow/P3Cont/Container/LoadoutPicker3
 @onready var loadout4 = $MarginContainer2/Splitter/SplitScreenContainer/BottomRow/P4Cont/Container/LoadoutPicker4
+@onready var loadouts = [loadout1, loadout2, loadout3, loadout4]
 @onready var left_pad = $MarginContainer2/Splitter/SplitScreenContainer/BottomRow/LeftPad
 @onready var right_pad = $MarginContainer2/Splitter/SplitScreenContainer/BottomRow/RightPad
 @onready var svp_containers = [
@@ -190,9 +191,21 @@ func _on_add_player_count_pressed():
 	player_count += 1
 
 
+func get_game_options():
+	var game_options = {
+		'player_count': player_count,
+		'player_loadouts': []
+	}
+	for i in range(loadouts.size()):
+		var loadout = loadouts[i]
+		if i < player_count:
+			game_options['player_loadouts'].append(loadout.get_loadout_data()['weapon_order'])
+	return game_options
+
+
 func _on_start_game_pressed():
 	end_game()
-	request_scene.emit('FREE_FOR_ALL', player_count)
+	request_scene.emit('FREE_FOR_ALL', get_game_options())
 
 
 func _on_input_timer_timeout():

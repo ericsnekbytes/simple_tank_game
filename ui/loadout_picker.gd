@@ -7,7 +7,7 @@ extends Control
 		for node in get_tree().get_nodes_in_group("menu_control"):
 			if is_ancestor_of(node):
 				node.set_meta('owning_player_id', owning_player.player_id)
-var weapon_order = [null, null, null, null]
+var weapon_order = [GunRocket.weapon_id, GunMortar.weapon_id, GunBlocks.weapon_id, null]
 var current_slot = 0
 @onready var slots = [
 	$MarginContainer/EquippedWeapons/Container/ControlsSlot1/Slot1,
@@ -43,7 +43,27 @@ func _ready():
 		selector.set_gun_text(gun.display_name)
 		selector.assign_slot.connect(handle_slot_assign)
 
+	sync_slot_display()
 	$MarginContainer/WeaponPicker.process_mode = Node.PROCESS_MODE_DISABLED
+
+
+func sync_slot_display():
+	for i in range(slots.size()):
+		if weapon_order[i] == null:
+			slots[i].set_text('Empty')
+			continue
+		var gun = guns[weapon_order[i]]
+		slots[i].set_text(gun.display_name)
+
+
+func get_loadout_data():
+	var data = {
+		'weapon_order': []
+	}
+	for gun in weapon_order:
+		if gun:
+			data['weapon_order'].append(gun)
+	return data
 
 
 func handle_slot_assign(weapon_id):
