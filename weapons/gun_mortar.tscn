@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bflnfy31fb7gf"]
+[gd_scene load_steps=11 format=3 uid="uid://bflnfy31fb7gf"]
 
 [ext_resource type="Script" uid="uid://cg4mbvbm3ymuv" path="res://weapons/gun_mortar.gd" id="1_0kv2k"]
+[ext_resource type="Texture2D" uid="uid://dibwmiwpkpvp4" path="res://art/images/gun_mortar_icon.png" id="2_dvn3b"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_dkscp"]
 top_radius = 0.11
@@ -390,6 +391,21 @@ grow_vertical = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_mqv77")
 max_value = 1.0
 show_percentage = false
+
+[node name="WeaponIcon" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_dvn3b")
 
 [connection signal="timeout" from="FiringTimer" to="." method="fire"]
 [connection signal="timeout" from="AmmoTimer" to="." method="_on_ammo_timer_timeout"]

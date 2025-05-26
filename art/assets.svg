@@ -9,6 +9,9 @@
    id="svg5"
    inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
    sodipodi:docname="assets.svg"
+   inkscape:export-filename="images\gun_rocket_icon.png"
+   inkscape:export-xdpi="105.88235"
+   inkscape:export-ydpi="105.88235"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -31,8 +34,8 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
      inkscape:zoom="1.0298264"
-     inkscape:cx="574.36862"
-     inkscape:cy="223.3386"
+     inkscape:cx="2382.9259"
+     inkscape:cy="407.35021"
      inkscape:window-width="1701"
      inkscape:window-height="1031"
      inkscape:window-x="0"
@@ -47,6 +50,14 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
+    <rect
+       style="fill:#808080;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round"
+       id="rect1"
+       width="508"
+       height="285.75"
+       x="0"
+       y="0"
+       sodipodi:insensitive="true" />
     <path
        id="path909"
        style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.5875;stroke-opacity:0.74902"
@@ -76,6 +87,36 @@
        inkscape:export-filename="images\menu_cursor.png"
        inkscape:export-xdpi="105.88235"
        inkscape:export-ydpi="105.88235" />
+    <circle
+       style="font-variation-settings:normal;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:4.01602;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+       id="path2-8"
+       cx="555.5957"
+       cy="-49.404228"
+       r="29.656742"
+       transform="scale(1,-1)"
+       inkscape:export-filename="images\gun_mortar_icon.png"
+       inkscape:export-xdpi="105.88235"
+       inkscape:export-ydpi="105.88235" />
+    <circle
+       style="font-variation-settings:normal;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:3.48391;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+       id="path2-8-4"
+       cx="618.57721"
+       cy="-142.53226"
+       r="25.72731"
+       transform="scale(1,-1)"
+       inkscape:export-filename="images\gun_rocket_icon.png"
+       inkscape:export-xdpi="105.88235"
+       inkscape:export-ydpi="105.88235" />
+    <circle
+       style="font-variation-settings:normal;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.05876;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+       id="path2-8-5"
+       cx="585.25244"
+       cy="-17.73238"
+       r="7.8185143"
+       transform="scale(1,-1)"
+       inkscape:export-filename="images\menu_cursor.png"
+       inkscape:export-xdpi="105.88235"
+       inkscape:export-ydpi="105.88235" />
     <path
        id="path2-1"
        style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stop-color:#000000"
@@ -83,5 +124,32 @@
        inkscape:export-filename="images\menu_cursor.png"
        inkscape:export-xdpi="105.88235"
        inkscape:export-ydpi="105.88235" />
+    <path
+       id="rect2"
+       style="font-variation-settings:normal;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke-width:0.404971;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000"
+       d="m 588.85245,116.80495 h 29.72473 v 51.45462 h -29.72473 z"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       id="rect2-8"
+       style="font-variation-settings:normal;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke-width:0.190033;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000"
+       d="m 579.09845,116.80495 h 6.54529 v 51.45462 h -6.54529 z"
+       sodipodi:nodetypes="ccccc" />
+    <rect
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none"
+       id="rect3"
+       width="48.814861"
+       height="48.814861"
+       x="661.56982"
+       y="84.012947" />
+    <path
+       id="rect3-97"
+       style="vector-effect:none;fill:#ffffff;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round"
+       d="m 714.49542,82.954613 21.32439,-13.873698 v 48.814855 l -21.32439,13.8737 z"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       id="rect3-9"
+       style="vector-effect:none;fill:#ffffff;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round"
+       d="m 686.91296,64.976332 h 48.81486 l -23.12283,15.672139 h -48.81486 z"
+       sodipodi:nodetypes="ccccc" />
   </g>
 </svg>

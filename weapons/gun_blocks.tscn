@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dt6b11m3vfhxj"]
+[gd_scene load_steps=11 format=3 uid="uid://dt6b11m3vfhxj"]
 
 [ext_resource type="Script" uid="uid://dgr1sby22xiod" path="res://weapons/gun_blocks.gd" id="1_jp12w"]
+[ext_resource type="Texture2D" uid="uid://b1rtcv38hixdd" path="res://art/images/gun_blocks_icon.png" id="2_t6o48"]
 [ext_resource type="PackedScene" uid="uid://cyh8jhhk241ar" path="res://environment/blocks/craft_cube_preview.tscn" id="2_te6j1"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_dkscp"]
@@ -74,6 +75,21 @@ material_override = SubResource("StandardMaterial3D_te6j1")
 mesh = SubResource("SphereMesh_t6o48")
 
 [node name="CraftCubePreview" parent="." instance=ExtResource("2_te6j1")]
+
+[node name="WeaponIcon" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -155.0
+offset_top = -141.5
+offset_right = 155.0
+offset_bottom = 141.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_t6o48")
 
 [connection signal="timeout" from="FiringTimer" to="." method="fire"]
 [connection signal="timeout" from="AltFiringTimer" to="." method="alt_fire"]

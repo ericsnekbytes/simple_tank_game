@@ -7,6 +7,8 @@ signal fired(bullet)
 var start_process = false
 var owning_player = null
 static var weapon_id = 'GUN_BLOCKS'
+static var display_name = 'Assembler'
+@onready var weapon_icon = $WeaponIcon
 # ....
 var block_scn = preload('res://environment/blocks/craft_cube.tscn')
 var block_preview_scn = preload('res://environment/blocks/craft_cube_preview.tscn')
@@ -61,6 +63,10 @@ func _ready():
 
 func _exit_tree():
 	owning_player = null
+
+
+func get_icon():
+	return weapon_icon.texture.duplicate()
 
 
 #func set_preview_state(state):

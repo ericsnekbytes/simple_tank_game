@@ -2,14 +2,15 @@ extends TextureRect
 
 signal cursor_moved()
 signal navigate_request()
-signal cursor_accept(coords)
+signal cursor_accept(node, coords)
+signal cursor_reject(node)
 
 @export var player_id = -1
 var start_process = false
 # ....
 var MAX_THRUST = 600
 var last_cursor_accept_timestamp = 0
-var cursor_accept_cooldown = 500
+var cursor_accept_cooldown = 200
 # ....
 @export var colorize: Color
 @export var label_text: String
@@ -35,11 +36,17 @@ func reset_position():
 func _unhandled_input(event):
 	if start_process:
 		var current_time := Time.get_ticks_msec()
-		if event.is_pressed() and (event.is_action('ui_down') or event.is_action('ui_up')) and not get_viewport().gui_get_focus_owner():
-			navigate_request.emit()
-		if event.is_pressed() and event.is_action('ui_accept') and not get_viewport().gui_get_focus_owner():
+		if not get_viewport().gui_get_focus_owner():
+			if event.is_pressed() and (event.is_action('ui_down') or event.is_action('ui_up')):
+				navigate_request.emit()
+			if event.is_pressed() and event.is_action('ui_accept'):
+				if current_time - last_cursor_accept_timestamp >= cursor_accept_cooldown:
+					last_cursor_accept_timestamp = current_time
+					cursor_accept.emit(self, global_position + (get_rect().size / 2.0))
+		if event.is_pressed() and event.is_action('ui_cancel'):
 			if current_time - last_cursor_accept_timestamp >= cursor_accept_cooldown:
-				cursor_accept.emit(global_position + (get_rect().size / 2.0))
+				last_cursor_accept_timestamp = current_time
+				cursor_reject.emit(self)
 
 
 func _physics_process(delta):

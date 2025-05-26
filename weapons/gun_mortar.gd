@@ -7,6 +7,8 @@ signal fired(bullet)
 var start_process = false
 var owning_player = null
 static var weapon_id = 'GUN_MORTAR'
+static var display_name = 'Mortar'
+@onready var weapon_icon = $WeaponIcon
 # ....
 var bullet_scn = preload('res://weapons/bullet_mortar.tscn')
 # ....
@@ -24,7 +26,7 @@ var fire_cooldown = 60.0 / rounds_per_min
 var enable_auto_fire = true
 # ....
 @onready var ammo_timer = $AmmoTimer
-var ammo_enabled = false
+var ammo_enabled = true
 var max_ammo_count = 2
 var ammo_count = max_ammo_count:
 	set(value):
@@ -61,6 +63,10 @@ func _ready():
 
 func _exit_tree():
 	owning_player = null
+
+
+func get_icon():
+	return weapon_icon.texture.duplicate()
 
 
 func fire(range_fraction: float):

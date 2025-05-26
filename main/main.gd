@@ -25,12 +25,13 @@ func _ready():
 	load_scene('MAIN_MENU', null)
 
 
-
 func load_scene(scene_id, args=null):
 	if scene_id in scenes:
 		print('LOAD SCN %s' % scene_id)
 		if scene_pivot.get_child_count() > 0:
-			scene_pivot.get_child(0).queue_free()
+			var old_scene = scene_pivot.get_child(0)
+			old_scene.process_mode = Node.PROCESS_MODE_DISABLED
+			old_scene.queue_free()
 		var new_scene = scenes[scene_id].instantiate()
 		new_scene.request_scene.connect(load_scene)
 		scene_pivot.add_child(new_scene)

@@ -30,7 +30,7 @@ func get_control_at_coords(coords):
 	return null
 
 
-func handle_cursor_accept(coords):
+func handle_cursor_accept(cursor_node, coords):
 	var node = get_control_at_coords(coords)
 	if node:
 		node.pressed.emit()

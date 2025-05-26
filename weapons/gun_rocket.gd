@@ -7,6 +7,8 @@ signal fired(bullet)
 var start_process = false
 var owning_player = null
 static var weapon_id = 'GUN_ROCKET'
+static var display_name = 'AP Shell'
+@onready var weapon_icon = $WeaponIcon
 # ....
 var bullet_scn = preload('res://weapons/bullet_rocket.tscn')
 # ....
@@ -45,6 +47,10 @@ func _ready():
 
 func _exit_tree():
 	owning_player = null
+
+
+func get_icon():
+	return weapon_icon.texture.duplicate()
 
 
 func fire():
