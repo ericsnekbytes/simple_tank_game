@@ -10,6 +10,17 @@ extends Control
 				node.set_meta('owning_player_id', owning_player.player_id)
 var weapon_order = [null, null, null, null]
 var current_slot = 0
+@onready var slots = [
+	$MarginContainer/EquippedWeapons/Container/ControlsSlot1/Slot1,
+	$MarginContainer/EquippedWeapons/Container/ControlsSlot2/Slot2,
+	$MarginContainer/EquippedWeapons/Container/ControlsSlot3/Slot3,
+	$MarginContainer/EquippedWeapons/Container/ControlsSlot4/Slot4,
+]
+@onready var guns = {
+	GunRocket.weapon_id: $GunPivot/GunRocket,
+	GunMortar.weapon_id: $GunPivot/GunMortar,
+	GunBlocks.weapon_id: $GunPivot/GunBlocks,
+}
 @onready var rows = [
 	$MarginContainer/WeaponPicker/HBoxContainer,
 	#$MarginContainer/WeaponPicker/HBoxContainer2,
@@ -30,6 +41,7 @@ func _ready():
 		$MarginContainer/WeaponPicker/HBoxContainer.add_child(selector)
 		selector.weapon_id = gun.weapon_id
 		selector.set_gun_icon(gun.get_icon())
+		selector.set_gun_text(gun.display_name)
 		selector.assign_slot.connect(handle_slot_assign)
 
 	$MarginContainer/WeaponPicker.process_mode = Node.PROCESS_MODE_DISABLED
@@ -37,14 +49,9 @@ func _ready():
 
 func handle_slot_assign(weapon_id):
 	print('Assign to slot %s' % weapon_id)
-	if current_slot == 0:
-		$MarginContainer/EquippedWeapons/Container/ControlsSlot1/Slot1.set_text(weapon_id)
-	elif current_slot == 1:
-		$MarginContainer/EquippedWeapons/Container/ControlsSlot2/Slot2.set_text(weapon_id)
-	elif current_slot == 2:
-		$MarginContainer/EquippedWeapons/Container/ControlsSlot3/Slot3.set_text(weapon_id)
-	elif current_slot == 3:
-		$MarginContainer/EquippedWeapons/Container/ControlsSlot4/Slot4.set_text(weapon_id)
+	if weapon_id in guns:
+		slots[current_slot].set_text(guns[weapon_id].display_name)
+		weapon_order[current_slot] = weapon_id
 	set_show_weapon_picker(false)
 
 

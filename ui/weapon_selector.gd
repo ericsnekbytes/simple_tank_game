@@ -6,6 +6,7 @@ signal assign_slot(weapon_id)
 
 var weapon_id = ''
 @onready var gun_icon = $MarginContainer/VBoxContainer/HBoxContainer/GunIcon
+@onready var gun_text = $MarginContainer/VBoxContainer/GunText
 
 
 func set_gun_icon(icon: Texture2D):
