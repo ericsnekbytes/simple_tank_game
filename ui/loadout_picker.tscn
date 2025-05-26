@@ -78,7 +78,7 @@ theme_override_colors/font_color = Color(0.258824, 0.258824, 0.258824, 1)
 theme_override_fonts/font = SubResource("FontVariation_ebnsr")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_soyi7")
-text = "Gun1"
+text = "Empty"
 autowrap_mode = 1
 
 [node name="ControlsSlot2" type="HBoxContainer" parent="MarginContainer/EquippedWeapons/Container"]
@@ -93,7 +93,7 @@ theme_override_colors/font_color = Color(0.258824, 0.258824, 0.258824, 1)
 theme_override_fonts/font = SubResource("FontVariation_ebnsr")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_soyi7")
-text = "Gun1"
+text = "Empty"
 autowrap_mode = 1
 
 [node name="ControlsSlot3" type="HBoxContainer" parent="MarginContainer/EquippedWeapons/Container"]
@@ -108,7 +108,7 @@ theme_override_colors/font_color = Color(0.258824, 0.258824, 0.258824, 1)
 theme_override_fonts/font = SubResource("FontVariation_ebnsr")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_soyi7")
-text = "Gun1"
+text = "Empty"
 autowrap_mode = 1
 
 [node name="ControlsSlot4" type="HBoxContainer" parent="MarginContainer/EquippedWeapons/Container"]
@@ -123,7 +123,7 @@ theme_override_colors/font_color = Color(0.258824, 0.258824, 0.258824, 1)
 theme_override_fonts/font = SubResource("FontVariation_ebnsr")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_soyi7")
-text = "Gun1"
+text = "Empty"
 autowrap_mode = 1
 
 [node name="WeaponPicker" type="VBoxContainer" parent="MarginContainer"]

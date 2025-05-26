@@ -61,6 +61,7 @@ func _ready():
 	loadout2.owning_player = menu_cursor2
 	loadout3.owning_player = menu_cursor3
 	loadout4.owning_player = menu_cursor4
+	
 
 
 func end_game():
@@ -71,9 +72,7 @@ func end_game():
 func get_control_at_coords(coords):
 	for node: Control in get_tree().get_nodes_in_group('menu_control'):
 		if node.get_global_rect().has_point(coords):
-			print('Node has point %s' % node.get_path())
 			if not node.is_visible_in_tree():
-				print('  Invisible!')
 				continue
 			return node
 	return null
@@ -147,6 +146,10 @@ func handle_player_count_changed():
 			cursor.hide()
 			if cursor.get_parent():
 				remove_child(cursor)
+
+
+func handle_cursor_use(node):
+	pass
 
 
 func handle_cursor_reject(node):
