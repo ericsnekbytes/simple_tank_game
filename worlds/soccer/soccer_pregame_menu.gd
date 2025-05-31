@@ -63,21 +63,21 @@ func _on_add_player_count_pressed():
 	player_count += 1
 
 
-func get_game_options():
-	var game_options = {
+func get_scene_options():
+	var scene_options = {
 		'player_count': player_count,
 		'player_loadouts': []
 	}
 	#for i in range(loadouts.size()):
 		#var loadout = loadouts[i]
 		#if i < player_count:
-			#game_options['player_loadouts'].append(loadout.get_loadout_data())
-	return game_options
+			#scene_options['player_loadouts'].append(loadout.get_loadout_data())
+	return scene_options
 
 
 func _on_start_game_pressed():
 	end_game()
-	request_scene.emit('SOCCER', player_count)
+	request_scene.emit('SOCCER', get_scene_options())
 
 
 func _on_input_timer_timeout():

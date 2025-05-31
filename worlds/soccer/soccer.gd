@@ -11,7 +11,7 @@ signal stats_changed()
 ]
 var player_count := 4
 # ....
-var game_options = {}
+var scene_options = {}
 # ....
 var score_gui_scn = preload('res://ui/point_display.tscn')
 var scoreboard_scn = preload("res://ui/game_stats.tscn")
@@ -42,7 +42,7 @@ func _ready() -> void:
 		player.add_gui(scoreboard_gui)
 		player.user_select.connect(scoreboard_gui.toggle_game_stats)
 	
-	set_game_options(game_options)
+	set_scene_options(scene_options)
 
 
 func handle_stat_change(_value):
@@ -83,7 +83,7 @@ func get_game_stats():
 	#return spawn_node
 
 
-func set_game_options(options):
+func set_scene_options(options):
 	if 'player_count' in options:
 		set_player_count(options['player_count'])
 

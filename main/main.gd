@@ -34,7 +34,7 @@ func load_scene(scene_id, args=null):
 			old_scene.queue_free()
 		var new_scene = scenes[scene_id].instantiate()
 		if args != null:
-			new_scene.game_options = args
+			new_scene.scene_options = args
 		new_scene.request_scene.connect(load_scene)
 		scene_pivot.add_child(new_scene)
 

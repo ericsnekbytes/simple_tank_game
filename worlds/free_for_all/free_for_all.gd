@@ -13,7 +13,7 @@ var player_count := 4:
 	set(value):
 		player_count = value
 # ....
-var game_options = {}
+var scene_options = {}
 # ....
 var scoreboard_scn = preload("res://ui/game_stats.tscn")
 # ....
@@ -38,7 +38,7 @@ func _ready() -> void:
 		player.add_gui(scoreboard_gui)
 		player.user_select.connect(scoreboard_gui.toggle_game_stats)
 
-	set_game_options(game_options)
+	set_scene_options(scene_options)
 	start_pregame_sequence()
 
 
@@ -80,7 +80,7 @@ func get_game_stats():
 	return game_stats
 
 
-func set_game_options(options):
+func set_scene_options(options):
 	if 'player_count' in options:
 		set_player_count(options['player_count'])
 	if 'player_loadouts' in options:
