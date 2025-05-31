@@ -3,13 +3,13 @@ extends Control
 signal request_scene(scene_id, args)
 
 @onready var menu_cursor := $MenuCursor
-@onready var focus_begin = $MarginContainer/VBoxContainer/FreeForAllBtn
+@onready var focus_begin = $MarginContainer/VBoxContainer/CampaignBtn
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GameData.global_pivot = $SubViewportContainer/Level/GlobalPivot
-	$MarginContainer/VBoxContainer/FreeForAllBtn.grab_focus()
+	focus_begin.grab_focus()
 
 	menu_cursor.start_process = true
 	menu_cursor.global_position = get_viewport_rect().size / 4.0
@@ -66,3 +66,8 @@ func _on_soccer_btn_pressed() -> void:
 
 func _physics_process(delta):
 	InputHandler.poll_for_devices()
+
+
+func _on_campaign_btn_pressed():
+	end_game()
+	request_scene.emit('CAMPAIGN', null)

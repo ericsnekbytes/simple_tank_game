@@ -3044,10 +3044,22 @@ size_flags_horizontal = 4
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="FreeForAllBtn" type="Button" parent="MarginContainer/VBoxContainer" groups=["menu_control"]]
+[node name="CampaignBtn" type="Button" parent="MarginContainer/VBoxContainer" groups=["menu_control"]]
 custom_minimum_size = Vector2(400, 80)
 layout_mode = 2
 focus_neighbor_top = NodePath("../ExitBtn")
+focus_neighbor_bottom = NodePath("../FreeForAllBtn")
+theme_override_colors/font_color = Color(0.258824, 0.258824, 0.258824, 1)
+theme_override_fonts/font = SubResource("FontVariation_oh0ky")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_1raui")
+text = "Campaign"
+
+[node name="FreeForAllBtn" type="Button" parent="MarginContainer/VBoxContainer" groups=["menu_control"]]
+custom_minimum_size = Vector2(400, 80)
+layout_mode = 2
+focus_neighbor_top = NodePath("../CampaignBtn")
+focus_neighbor_bottom = NodePath("../SoccerBtn")
 theme_override_colors/font_color = Color(0.258824, 0.258824, 0.258824, 1)
 theme_override_fonts/font = SubResource("FontVariation_oh0ky")
 theme_override_font_sizes/font_size = 24
@@ -3072,7 +3084,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(400, 80)
 layout_mode = 2
 focus_neighbor_top = NodePath("../SoccerBtn")
-focus_neighbor_bottom = NodePath("../FreeForAllBtn")
+focus_neighbor_bottom = NodePath("../CampaignBtn")
 theme_override_colors/font_color = Color(0.258824, 0.258824, 0.258824, 1)
 theme_override_fonts/font = SubResource("FontVariation_oh0ky")
 theme_override_font_sizes/font_size = 24
@@ -3133,6 +3145,7 @@ grow_vertical = 1
 colorize = Color(1, 0, 0.304688, 1)
 
 [connection signal="body_entered" from="SubViewportContainer/Level/KillBox" to="." method="_on_kill_box_body_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/CampaignBtn" to="." method="_on_campaign_btn_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/FreeForAllBtn" to="." method="_on_free_for_all_btn_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/SoccerBtn" to="." method="_on_soccer_btn_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ExitBtn" to="." method="_on_exit_btn_pressed"]
